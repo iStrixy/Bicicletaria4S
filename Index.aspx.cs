@@ -13,5 +13,10 @@ namespace PROJ_INTER_BC4S
         {
 
         }
+
+        protected void lb_sair_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

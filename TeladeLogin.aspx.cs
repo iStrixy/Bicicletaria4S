@@ -13,5 +13,20 @@ namespace PROJ_INTER_BC4S
         {
 
         }
+
+        protected void bt_entrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void tb_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void tb_pw_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
