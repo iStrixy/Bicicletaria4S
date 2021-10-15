@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FABRICANTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CIDADE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FORNECEDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CIDADE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME_FUNCIONARIO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LOGIN1" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SENHA" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORCAMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_FUNCIONARIO" Type="int" Nullable="false" />
+          <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="DESCRICAO_PRODUTOS" Type="varchar" MaxLength="100" />
+          <Property Name="VALOR_UNIT" Type="float" Nullable="false" />
+          <Property Name="QTD" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PESSOA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LOGRADOURO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NUM_LOGRADOURO" Type="int" Nullable="false" />
+          <Property Name="BAIRRO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="COMPLEMENTO" Type="varchar" MaxLength="20" />
+          <Property Name="CEP" Type="int" Nullable="false" />
+          <Property Name="CPF" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PROD_ORCAMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATA_ORCAMENTO" Type="date" Nullable="false" />
+          <Property Name="ID_ORCAMENTO" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUTO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VALOR" Type="float" Nullable="false" />
+          <Property Name="ID_FORNECEDOR" Type="int" Nullable="false" />
+          <Property Name="ID_FABRICANTE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REG_SERV_ORCAMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATA_SERV" Type="date" Nullable="false" />
+          <Property Name="ID_ORCAMENTO" Type="int" Nullable="false" />
+          <Property Name="ID_SERVICO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SERVICO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VALOR" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TELEFONE_FABRICANTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TELEFONE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TELEFONE_FORNECEDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TELEFONE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TELEFONE_PESSOA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TELEFONE" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CLIENTE_PESSOA">
+          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PESSOA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FUNCIONARIO_PESSOA">
+          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PESSOA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FUNCIONARIO">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORCAMENTO_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORCAMENTO">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORCAMENTO_FUNCIONARIO">
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="1" />
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORCAMENTO">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROD_ORCAMENTO_ORCAMENTO">
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="1" />
+          <End Role="PROD_ORCAMENTO" Type="Self.PROD_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORCAMENTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROD_ORCAMENTO">
+              <PropertyRef Name="ID_ORCAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROD_ORCAMENTO_PRODUTO">
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="1" />
+          <End Role="PROD_ORCAMENTO" Type="Self.PROD_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROD_ORCAMENTO">
+              <PropertyRef Name="ID_PRODUTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUTO_FABRICANTE">
+          <End Role="FABRICANTE" Type="Self.FABRICANTE" Multiplicity="1" />
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FABRICANTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUTO">
+              <PropertyRef Name="ID_FABRICANTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUTO_FORNECEDOR">
+          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORNECEDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUTO">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REG_SERV_ORCAMENTO_ORCAMENTO">
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="1" />
+          <End Role="REG_SERV_ORCAMENTO" Type="Self.REG_SERV_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORCAMENTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REG_SERV_ORCAMENTO">
+              <PropertyRef Name="ID_ORCAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REG_SERV_ORCAMENTO_SERVICO">
+          <End Role="SERVICO" Type="Self.SERVICO" Multiplicity="1" />
+          <End Role="REG_SERV_ORCAMENTO" Type="Self.REG_SERV_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REG_SERV_ORCAMENTO">
+              <PropertyRef Name="ID_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TELEFONE_FABRICANTE_FABRICANTE">
+          <End Role="FABRICANTE" Type="Self.FABRICANTE" Multiplicity="1" />
+          <End Role="TELEFONE_FABRICANTE" Type="Self.TELEFONE_FABRICANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FABRICANTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TELEFONE_FABRICANTE">
+              <PropertyRef Name="TELEFONE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR">
+          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
+          <End Role="TELEFONE_FORNECEDOR" Type="Self.TELEFONE_FORNECEDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORNECEDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TELEFONE_FORNECEDOR">
+              <PropertyRef Name="TELEFONE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TELEFONE_PESSOA_PESSOA">
+          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+          <End Role="TELEFONE_PESSOA" Type="Self.TELEFONE_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PESSOA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TELEFONE_PESSOA">
+              <PropertyRef Name="TELEFONE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_BICICLETARIA_4SModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FABRICANTE" EntityType="Self.FABRICANTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FORNECEDOR" EntityType="Self.FORNECEDOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FUNCIONARIO" EntityType="Self.FUNCIONARIO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORCAMENTO" EntityType="Self.ORCAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PESSOA" EntityType="Self.PESSOA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROD_ORCAMENTO" EntityType="Self.PROD_ORCAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="REG_SERV_ORCAMENTO" EntityType="Self.REG_SERV_ORCAMENTO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICO" EntityType="Self.SERVICO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TELEFONE_FABRICANTE" EntityType="Self.TELEFONE_FABRICANTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TELEFONE_FORNECEDOR" EntityType="Self.TELEFONE_FORNECEDOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TELEFONE_PESSOA" EntityType="Self.TELEFONE_PESSOA" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CLIENTE_PESSOA" Association="Self.FK_CLIENTE_PESSOA">
+            <End Role="PESSOA" EntitySet="PESSOA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FUNCIONARIO_PESSOA" Association="Self.FK_FUNCIONARIO_PESSOA">
+            <End Role="PESSOA" EntitySet="PESSOA" />
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORCAMENTO_CLIENTE" Association="Self.FK_ORCAMENTO_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORCAMENTO_FUNCIONARIO" Association="Self.FK_ORCAMENTO_FUNCIONARIO">
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROD_ORCAMENTO_ORCAMENTO" Association="Self.FK_PROD_ORCAMENTO_ORCAMENTO">
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+            <End Role="PROD_ORCAMENTO" EntitySet="PROD_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROD_ORCAMENTO_PRODUTO" Association="Self.FK_PROD_ORCAMENTO_PRODUTO">
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+            <End Role="PROD_ORCAMENTO" EntitySet="PROD_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUTO_FABRICANTE" Association="Self.FK_PRODUTO_FABRICANTE">
+            <End Role="FABRICANTE" EntitySet="FABRICANTE" />
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUTO_FORNECEDOR" Association="Self.FK_PRODUTO_FORNECEDOR">
+            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REG_SERV_ORCAMENTO_ORCAMENTO" Association="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO">
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+            <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REG_SERV_ORCAMENTO_SERVICO" Association="Self.FK_REG_SERV_ORCAMENTO_SERVICO">
+            <End Role="SERVICO" EntitySet="SERVICO" />
+            <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TELEFONE_FABRICANTE_FABRICANTE" Association="Self.FK_TELEFONE_FABRICANTE_FABRICANTE">
+            <End Role="FABRICANTE" EntitySet="FABRICANTE" />
+            <End Role="TELEFONE_FABRICANTE" EntitySet="TELEFONE_FABRICANTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR" Association="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR">
+            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
+            <End Role="TELEFONE_FORNECEDOR" EntitySet="TELEFONE_FORNECEDOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TELEFONE_PESSOA_PESSOA" Association="Self.FK_TELEFONE_PESSOA_PESSOA">
+            <End Role="PESSOA" EntitySet="PESSOA" />
+            <End Role="TELEFONE_PESSOA" EntitySet="TELEFONE_PESSOA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_BICICLETARIA_4SModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PESSOA" Relationship="Self.FK_CLIENTE_PESSOA" FromRole="CLIENTE" ToRole="PESSOA" />
+          <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="CLIENTE" ToRole="ORCAMENTO" />
+        </EntityType>
+        <EntityType Name="FABRICANTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIDADE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PRODUTO_FABRICANTE" FromRole="FABRICANTE" ToRole="PRODUTO" />
+          <NavigationProperty Name="TELEFONE_FABRICANTE" Relationship="Self.FK_TELEFONE_FABRICANTE_FABRICANTE" FromRole="FABRICANTE" ToRole="TELEFONE_FABRICANTE" />
+        </EntityType>
+        <EntityType Name="FORNECEDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CIDADE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PRODUTO_FORNECEDOR" FromRole="FORNECEDOR" ToRole="PRODUTO" />
+          <NavigationProperty Name="TELEFONE_FORNECEDOR" Relationship="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR" FromRole="FORNECEDOR" ToRole="TELEFONE_FORNECEDOR" />
+        </EntityType>
+        <EntityType Name="FUNCIONARIO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PESSOA" Relationship="Self.FK_FUNCIONARIO_PESSOA" FromRole="FUNCIONARIO" ToRole="PESSOA" />
+          <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_ORCAMENTO_FUNCIONARIO" FromRole="FUNCIONARIO" ToRole="ORCAMENTO" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME_FUNCIONARIO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGIN1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SENHA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORCAMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_FUNCIONARIO" Type="Int32" Nullable="false" />
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="DESCRICAO_PRODUTOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VALOR_UNIT" Type="Double" Nullable="false" />
+          <Property Name="QTD" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="ORCAMENTO" ToRole="CLIENTE" />
+          <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK_ORCAMENTO_FUNCIONARIO" FromRole="ORCAMENTO" ToRole="FUNCIONARIO" />
+          <NavigationProperty Name="PROD_ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_ORCAMENTO" FromRole="ORCAMENTO" ToRole="PROD_ORCAMENTO" />
+          <NavigationProperty Name="REG_SERV_ORCAMENTO" Relationship="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO" FromRole="ORCAMENTO" ToRole="REG_SERV_ORCAMENTO" />
+        </EntityType>
+        <EntityType Name="PESSOA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOGRADOURO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUM_LOGRADOURO" Type="Int32" Nullable="false" />
+          <Property Name="BAIRRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COMPLEMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CEP" Type="Int32" Nullable="false" />
+          <Property Name="CPF" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_PESSOA" FromRole="PESSOA" ToRole="CLIENTE" />
+          <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK_FUNCIONARIO_PESSOA" FromRole="PESSOA" ToRole="FUNCIONARIO" />
+          <NavigationProperty Name="TELEFONE_PESSOA" Relationship="Self.FK_TELEFONE_PESSOA_PESSOA" FromRole="PESSOA" ToRole="TELEFONE_PESSOA" />
+        </EntityType>
+        <EntityType Name="PROD_ORCAMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATA_ORCAMENTO" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID_ORCAMENTO" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUTO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_ORCAMENTO" FromRole="PROD_ORCAMENTO" ToRole="ORCAMENTO" />
+          <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PROD_ORCAMENTO_PRODUTO" FromRole="PROD_ORCAMENTO" ToRole="PRODUTO" />
+        </EntityType>
+        <EntityType Name="PRODUTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VALOR" Type="Double" Nullable="false" />
+          <Property Name="ID_FORNECEDOR" Type="Int32" Nullable="false" />
+          <Property Name="ID_FABRICANTE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FABRICANTE" Relationship="Self.FK_PRODUTO_FABRICANTE" FromRole="PRODUTO" ToRole="FABRICANTE" />
+          <NavigationProperty Name="FORNECEDOR" Relationship="Self.FK_PRODUTO_FORNECEDOR" FromRole="PRODUTO" ToRole="FORNECEDOR" />
+          <NavigationProperty Name="PROD_ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_PRODUTO" FromRole="PRODUTO" ToRole="PROD_ORCAMENTO" />
+        </EntityType>
+        <EntityType Name="REG_SERV_ORCAMENTO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATA_SERV" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID_ORCAMENTO" Type="Int32" Nullable="false" />
+          <Property Name="ID_SERVICO" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO" FromRole="REG_SERV_ORCAMENTO" ToRole="ORCAMENTO" />
+          <NavigationProperty Name="SERVICO" Relationship="Self.FK_REG_SERV_ORCAMENTO_SERVICO" FromRole="REG_SERV_ORCAMENTO" ToRole="SERVICO" />
+        </EntityType>
+        <EntityType Name="SERVICO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRICAO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VALOR" Type="Double" Nullable="false" />
+          <NavigationProperty Name="REG_SERV_ORCAMENTO" Relationship="Self.FK_REG_SERV_ORCAMENTO_SERVICO" FromRole="SERVICO" ToRole="REG_SERV_ORCAMENTO" />
+        </EntityType>
+        <EntityType Name="TELEFONE_FABRICANTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FABRICANTE" Relationship="Self.FK_TELEFONE_FABRICANTE_FABRICANTE" FromRole="TELEFONE_FABRICANTE" ToRole="FABRICANTE" />
+        </EntityType>
+        <EntityType Name="TELEFONE_FORNECEDOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FORNECEDOR" Relationship="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR" FromRole="TELEFONE_FORNECEDOR" ToRole="FORNECEDOR" />
+        </EntityType>
+        <EntityType Name="TELEFONE_PESSOA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PESSOA" Relationship="Self.FK_TELEFONE_PESSOA_PESSOA" FromRole="TELEFONE_PESSOA" ToRole="PESSOA" />
+        </EntityType>
+        <Association Name="FK_CLIENTE_PESSOA">
+          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PESSOA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORCAMENTO_CLIENTE">
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="1" />
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORCAMENTO">
+              <PropertyRef Name="ID_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUTO_FABRICANTE">
+          <End Role="FABRICANTE" Type="Self.FABRICANTE" Multiplicity="1" />
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FABRICANTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUTO">
+              <PropertyRef Name="ID_FABRICANTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TELEFONE_FABRICANTE_FABRICANTE">
+          <End Role="FABRICANTE" Type="Self.FABRICANTE" Multiplicity="1" />
+          <End Role="TELEFONE_FABRICANTE" Type="Self.TELEFONE_FABRICANTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FABRICANTE">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TELEFONE_FABRICANTE">
+              <PropertyRef Name="TELEFONE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRODUTO_FORNECEDOR">
+          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORNECEDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUTO">
+              <PropertyRef Name="ID_FORNECEDOR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR">
+          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
+          <End Role="TELEFONE_FORNECEDOR" Type="Self.TELEFONE_FORNECEDOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FORNECEDOR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TELEFONE_FORNECEDOR">
+              <PropertyRef Name="TELEFONE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FUNCIONARIO_PESSOA">
+          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PESSOA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FUNCIONARIO">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORCAMENTO_FUNCIONARIO">
+          <End Role="FUNCIONARIO" Type="Self.FUNCIONARIO" Multiplicity="1" />
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FUNCIONARIO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORCAMENTO">
+              <PropertyRef Name="ID_FUNCIONARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROD_ORCAMENTO_ORCAMENTO">
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="1" />
+          <End Role="PROD_ORCAMENTO" Type="Self.PROD_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORCAMENTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROD_ORCAMENTO">
+              <PropertyRef Name="ID_ORCAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REG_SERV_ORCAMENTO_ORCAMENTO">
+          <End Role="ORCAMENTO" Type="Self.ORCAMENTO" Multiplicity="1" />
+          <End Role="REG_SERV_ORCAMENTO" Type="Self.REG_SERV_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORCAMENTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REG_SERV_ORCAMENTO">
+              <PropertyRef Name="ID_ORCAMENTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TELEFONE_PESSOA_PESSOA">
+          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
+          <End Role="TELEFONE_PESSOA" Type="Self.TELEFONE_PESSOA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PESSOA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TELEFONE_PESSOA">
+              <PropertyRef Name="TELEFONE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PROD_ORCAMENTO_PRODUTO">
+          <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="1" />
+          <End Role="PROD_ORCAMENTO" Type="Self.PROD_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUTO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PROD_ORCAMENTO">
+              <PropertyRef Name="ID_PRODUTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_REG_SERV_ORCAMENTO_SERVICO">
+          <End Role="SERVICO" Type="Self.SERVICO" Multiplicity="1" />
+          <End Role="REG_SERV_ORCAMENTO" Type="Self.REG_SERV_ORCAMENTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICO">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="REG_SERV_ORCAMENTO">
+              <PropertyRef Name="ID_SERVICO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_BICICLETARIA_4SEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="FABRICANTE" EntityType="Self.FABRICANTE" />
+          <EntitySet Name="FORNECEDOR" EntityType="Self.FORNECEDOR" />
+          <EntitySet Name="FUNCIONARIO" EntityType="Self.FUNCIONARIO" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" />
+          <EntitySet Name="ORCAMENTO" EntityType="Self.ORCAMENTO" />
+          <EntitySet Name="PESSOA" EntityType="Self.PESSOA" />
+          <EntitySet Name="PROD_ORCAMENTO" EntityType="Self.PROD_ORCAMENTO" />
+          <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" />
+          <EntitySet Name="REG_SERV_ORCAMENTO" EntityType="Self.REG_SERV_ORCAMENTO" />
+          <EntitySet Name="SERVICO" EntityType="Self.SERVICO" />
+          <EntitySet Name="TELEFONE_FABRICANTE" EntityType="Self.TELEFONE_FABRICANTE" />
+          <EntitySet Name="TELEFONE_FORNECEDOR" EntityType="Self.TELEFONE_FORNECEDOR" />
+          <EntitySet Name="TELEFONE_PESSOA" EntityType="Self.TELEFONE_PESSOA" />
+          <AssociationSet Name="FK_CLIENTE_PESSOA" Association="Self.FK_CLIENTE_PESSOA">
+            <End Role="PESSOA" EntitySet="PESSOA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORCAMENTO_CLIENTE" Association="Self.FK_ORCAMENTO_CLIENTE">
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUTO_FABRICANTE" Association="Self.FK_PRODUTO_FABRICANTE">
+            <End Role="FABRICANTE" EntitySet="FABRICANTE" />
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TELEFONE_FABRICANTE_FABRICANTE" Association="Self.FK_TELEFONE_FABRICANTE_FABRICANTE">
+            <End Role="FABRICANTE" EntitySet="FABRICANTE" />
+            <End Role="TELEFONE_FABRICANTE" EntitySet="TELEFONE_FABRICANTE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRODUTO_FORNECEDOR" Association="Self.FK_PRODUTO_FORNECEDOR">
+            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR" Association="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR">
+            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
+            <End Role="TELEFONE_FORNECEDOR" EntitySet="TELEFONE_FORNECEDOR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FUNCIONARIO_PESSOA" Association="Self.FK_FUNCIONARIO_PESSOA">
+            <End Role="PESSOA" EntitySet="PESSOA" />
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORCAMENTO_FUNCIONARIO" Association="Self.FK_ORCAMENTO_FUNCIONARIO">
+            <End Role="FUNCIONARIO" EntitySet="FUNCIONARIO" />
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROD_ORCAMENTO_ORCAMENTO" Association="Self.FK_PROD_ORCAMENTO_ORCAMENTO">
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+            <End Role="PROD_ORCAMENTO" EntitySet="PROD_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REG_SERV_ORCAMENTO_ORCAMENTO" Association="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO">
+            <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
+            <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TELEFONE_PESSOA_PESSOA" Association="Self.FK_TELEFONE_PESSOA_PESSOA">
+            <End Role="PESSOA" EntitySet="PESSOA" />
+            <End Role="TELEFONE_PESSOA" EntitySet="TELEFONE_PESSOA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PROD_ORCAMENTO_PRODUTO" Association="Self.FK_PROD_ORCAMENTO_PRODUTO">
+            <End Role="PRODUTO" EntitySet="PRODUTO" />
+            <End Role="PROD_ORCAMENTO" EntitySet="PROD_ORCAMENTO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_REG_SERV_ORCAMENTO_SERVICO" Association="Self.FK_REG_SERV_ORCAMENTO_SERVICO">
+            <End Role="SERVICO" EntitySet="SERVICO" />
+            <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_BICICLETARIA_4SModelStoreContainer" CdmEntityContainer="BD_BICICLETARIA_4SEntities">
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FABRICANTE">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.FABRICANTE">
+              <MappingFragment StoreEntitySet="FABRICANTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FORNECEDOR">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.FORNECEDOR">
+              <MappingFragment StoreEntitySet="FORNECEDOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FUNCIONARIO">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.FUNCIONARIO">
+              <MappingFragment StoreEntitySet="FUNCIONARIO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGIN">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.LOGIN">
+              <MappingFragment StoreEntitySet="LOGIN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOME_FUNCIONARIO" ColumnName="NOME_FUNCIONARIO" />
+                <ScalarProperty Name="LOGIN1" ColumnName="LOGIN1" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORCAMENTO">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.ORCAMENTO">
+              <MappingFragment StoreEntitySet="ORCAMENTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_FUNCIONARIO" ColumnName="ID_FUNCIONARIO" />
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="DESCRICAO_PRODUTOS" ColumnName="DESCRICAO_PRODUTOS" />
+                <ScalarProperty Name="VALOR_UNIT" ColumnName="VALOR_UNIT" />
+                <ScalarProperty Name="QTD" ColumnName="QTD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PESSOA">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PESSOA">
+              <MappingFragment StoreEntitySet="PESSOA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="LOGRADOURO" ColumnName="LOGRADOURO" />
+                <ScalarProperty Name="NUM_LOGRADOURO" ColumnName="NUM_LOGRADOURO" />
+                <ScalarProperty Name="BAIRRO" ColumnName="BAIRRO" />
+                <ScalarProperty Name="COMPLEMENTO" ColumnName="COMPLEMENTO" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROD_ORCAMENTO">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO">
+              <MappingFragment StoreEntitySet="PROD_ORCAMENTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DATA_ORCAMENTO" ColumnName="DATA_ORCAMENTO" />
+                <ScalarProperty Name="ID_ORCAMENTO" ColumnName="ID_ORCAMENTO" />
+                <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUTO">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PRODUTO">
+              <MappingFragment StoreEntitySet="PRODUTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="ID_FORNECEDOR" ColumnName="ID_FORNECEDOR" />
+                <ScalarProperty Name="ID_FABRICANTE" ColumnName="ID_FABRICANTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REG_SERV_ORCAMENTO">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.REG_SERV_ORCAMENTO">
+              <MappingFragment StoreEntitySet="REG_SERV_ORCAMENTO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DATA_SERV" ColumnName="DATA_SERV" />
+                <ScalarProperty Name="ID_ORCAMENTO" ColumnName="ID_ORCAMENTO" />
+                <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICO">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.SERVICO">
+              <MappingFragment StoreEntitySet="SERVICO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TELEFONE_FABRICANTE">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.TELEFONE_FABRICANTE">
+              <MappingFragment StoreEntitySet="TELEFONE_FABRICANTE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TELEFONE_FORNECEDOR">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.TELEFONE_FORNECEDOR">
+              <MappingFragment StoreEntitySet="TELEFONE_FORNECEDOR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TELEFONE_PESSOA">
+            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.TELEFONE_PESSOA">
+              <MappingFragment StoreEntitySet="TELEFONE_PESSOA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
