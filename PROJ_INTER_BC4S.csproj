@@ -67,8 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Consulta_cliente.aspx" />
+    <Content Include="Consulta_fabricante.aspx" />
+    <Content Include="Consulta_fornecedor.aspx" />
+    <Content Include="Consulta_produto.aspx" />
+    <Content Include="Consulta_servico.aspx" />
     <Content Include="Imagens\Logotipo.png" />
     <Content Include="Index.aspx" />
+    <Content Include="Menu_cadastro.aspx" />
+    <Content Include="Menu_consulta.aspx" />
+    <Content Include="Menu_orcamento.aspx" />
+    <Content Include="Ordem_servico.aspx" />
+    <Content Include="Quem_somos.aspx" />
     <Content Include="styles\Folhadeestilo.css" />
     <Content Include="styles\Folhaestilo.css" />
     <Content Include="styles\login.css" />
@@ -77,6 +87,41 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consulta_cliente.aspx.cs">
+      <DependentUpon>Consulta_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_cliente.aspx.designer.cs">
+      <DependentUpon>Consulta_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_fabricante.aspx.cs">
+      <DependentUpon>Consulta_fabricante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_fabricante.aspx.designer.cs">
+      <DependentUpon>Consulta_fabricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_fornecedor.aspx.cs">
+      <DependentUpon>Consulta_fornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_fornecedor.aspx.designer.cs">
+      <DependentUpon>Consulta_fornecedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_produto.aspx.cs">
+      <DependentUpon>Consulta_produto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_produto.aspx.designer.cs">
+      <DependentUpon>Consulta_produto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta_servico.aspx.cs">
+      <DependentUpon>Consulta_servico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta_servico.aspx.designer.cs">
+      <DependentUpon>Consulta_servico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -84,7 +129,42 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Menu_cadastro.aspx.cs">
+      <DependentUpon>Menu_cadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_cadastro.aspx.designer.cs">
+      <DependentUpon>Menu_cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_consulta.aspx.cs">
+      <DependentUpon>Menu_consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_consulta.aspx.designer.cs">
+      <DependentUpon>Menu_consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_orcamento.aspx.cs">
+      <DependentUpon>Menu_orcamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_orcamento.aspx.designer.cs">
+      <DependentUpon>Menu_orcamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ordem_servico.aspx.cs">
+      <DependentUpon>Ordem_servico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ordem_servico.aspx.designer.cs">
+      <DependentUpon>Ordem_servico.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quem_somos.aspx.cs">
+      <DependentUpon>Quem_somos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quem_somos.aspx.designer.cs">
+      <DependentUpon>Quem_somos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TeladeLogin.aspx.cs">
       <DependentUpon>TeladeLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
