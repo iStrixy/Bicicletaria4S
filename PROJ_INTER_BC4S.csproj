@@ -75,6 +75,12 @@
     <Content Include="BICICLETARIA4S.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BICICLETARIA4S.Context.cs</LastGenOutput>
+      <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
+    </Content>
+    <Content Include="BICICLETARIA4S.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
+      <LastGenOutput>BICICLETARIA4S.cs</LastGenOutput>
     </Content>
     <Content Include="Consulta_cliente.aspx" />
     <Content Include="Consulta_fabricante.aspx" />
@@ -88,12 +94,11 @@
     <Content Include="Menu_orcamento.aspx" />
     <Content Include="Ordem_servico.aspx" />
     <Content Include="Quem_somos.aspx" />
-    <Content Include="styles\Folhadeestilo.css" />
     <Content Include="styles\Folhaestilo.css" />
-    <Content Include="styles\login.css" />
     <Content Include="styles\telalogin.css" />
     <Content Include="TeladeLogin.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Cadastro_cliente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BICICLETARIA4S.Context.cs">
@@ -101,10 +106,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BICICLETARIA4S.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="BICICLETARIA4S.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
     <Compile Include="BICICLETARIA4S.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CLIENTE.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="Consulta_cliente.aspx.cs">
       <DependentUpon>Consulta_cliente.aspx</DependentUpon>
@@ -141,12 +154,24 @@
     <Compile Include="Consulta_servico.aspx.designer.cs">
       <DependentUpon>Consulta_servico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FABRICANTE.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FORNECEDOR.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FUNCIONARIO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="Menu_cadastro.aspx.cs">
       <DependentUpon>Menu_cadastro.aspx</DependentUpon>
@@ -169,12 +194,24 @@
     <Compile Include="Menu_orcamento.aspx.designer.cs">
       <DependentUpon>Menu_orcamento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ORCAMENTO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
     <Compile Include="Ordem_servico.aspx.cs">
       <DependentUpon>Ordem_servico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Ordem_servico.aspx.designer.cs">
       <DependentUpon>Ordem_servico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PESSOA.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUTO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_ORCAMENTO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quem_somos.aspx.cs">
@@ -184,6 +221,12 @@
     <Compile Include="Quem_somos.aspx.designer.cs">
       <DependentUpon>Quem_somos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="REG_SERV_ORCAMENTO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SERVICO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
     <Compile Include="TeladeLogin.aspx.cs">
       <DependentUpon>TeladeLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,15 +234,31 @@
     <Compile Include="TeladeLogin.aspx.designer.cs">
       <DependentUpon>TeladeLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TELEFONE_FABRICANTE.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TELEFONE_FORNECEDOR.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TELEFONE_PESSOA.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_cliente.aspx.cs">
+      <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_cliente.aspx.designer.cs">
+      <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="BICICLETARIA4S.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BICICLETARIA4S.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BICICLETARIA4S.edmx.diagram">
+    <Content Include="BICICLETARIA4S.edmx.diagram">
       <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

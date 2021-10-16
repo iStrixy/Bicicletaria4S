@@ -272,7 +272,7 @@ td #vunit_input {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 10px;
-    margin-bottom: -3%;
+    max-height: 100%;
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
 }
@@ -281,7 +281,7 @@ td #vunit_input {
     padding: -5px;
     font-weight: bold;
     font-size: 20px;
-    margin-top: 2%;
+    margin-bottom: 5%;
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
@@ -289,6 +289,7 @@ td #vunit_input {
     padding: 10px 15px;
     border: none;
     border-radius: 30px;
+    margin-top: 10%;
     margin-left: 15%;
     width: 70%;
     font-size: 16px;
@@ -303,25 +304,54 @@ td #vunit_input {
 
 .inputname {
     width: 200px;
+    margin: 0;
+    padding-top: 5%;
 }
 
 .inputstreet {
     width: 200px;
+    margin: 0;
+    padding-top: 5%;
 }
 
 .inputnumber {
     width: 30px;
+    margin: 0;
+    padding-top: 5%;
 }
 
 .inputdistrict {
     margin-top: 10px;
     width: 150px;
+    margin: 0;
+    padding-top: 5%;
 }
 
 .inputcomplement {
     width: 150px;
+    margin: 0;
+    padding-top: 5%;
 }
-
+.inputcep {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+.inputcpf {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+.inputemail {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+.inputphone {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
 /* Formulário */
 
 input {
