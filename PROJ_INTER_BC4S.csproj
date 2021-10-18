@@ -82,6 +82,8 @@
       <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
       <LastGenOutput>BICICLETARIA4S.cs</LastGenOutput>
     </Content>
+    <Content Include="Cadastro_fabricante.aspx" />
+    <Content Include="Cadastro_fornecedor.aspx" />
     <Content Include="Consulta_cliente.aspx" />
     <Content Include="Consulta_fabricante.aspx" />
     <Content Include="Consulta_fornecedor.aspx" />
@@ -115,6 +117,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_fabricante.aspx.cs">
+      <DependentUpon>Cadastro_fabricante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_fabricante.aspx.designer.cs">
+      <DependentUpon>Cadastro_fabricante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_fornecedor.aspx.cs">
+      <DependentUpon>Cadastro_fornecedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_fornecedor.aspx.designer.cs">
+      <DependentUpon>Cadastro_fornecedor.aspx</DependentUpon>
     </Compile>
     <Compile Include="CLIENTE.cs">
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>

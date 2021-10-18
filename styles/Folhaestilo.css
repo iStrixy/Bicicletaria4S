@@ -1,8 +1,10 @@
 ﻿* {
-    margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif;
     scroll-behavior: smooth;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
 }
 
 /*MENU*/
@@ -352,6 +354,7 @@ td #vunit_input {
     margin: 0;
     padding-top: 5%;
 }
+
 /* Formulário */
 
 input {
