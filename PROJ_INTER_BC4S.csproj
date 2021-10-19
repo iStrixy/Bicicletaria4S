@@ -96,6 +96,7 @@
     <Content Include="Menu_cadastro.aspx" />
     <Content Include="Menu_consulta.aspx" />
     <Content Include="Menu_orcamento.aspx" />
+    <Content Include="Orcamento.aspx" />
     <Content Include="Ordem_servico.aspx" />
     <Content Include="Quem_somos.aspx" />
     <Content Include="styles\Folhaestilo.css" />
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="Menu_orcamento.aspx.designer.cs">
       <DependentUpon>Menu_orcamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orcamento.aspx.cs">
+      <DependentUpon>Orcamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orcamento.aspx.designer.cs">
+      <DependentUpon>Orcamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="ORCAMENTO.cs">
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
