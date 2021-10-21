@@ -50,6 +50,12 @@
 	</div>
 
 	<div class="corpo">
+		<section id="titulo_consul_prod">
+			<p>Consulta de produto</p>
+		</section>
+		<form class="consul_prod" runat="server">
+			<asp:GridView ID="gvProduto" runat="server"></asp:GridView>
+		</form>
 	</div>
 
 	<footer>

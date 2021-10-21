@@ -50,6 +50,12 @@
 	</div>
 
 	<div class="corpo">
+		<section id="titulo_consul_fabr">
+			<p>Consulta de fabricante</p>
+		</section>
+		<form class="consul_fabr" runat="server">
+			<asp:GridView ID="gvFabricante" runat="server" OnSelectedIndexChanged="gvFabricante_SelectedIndexChanged"></asp:GridView>
+		</form>
 	</div>
 
 	<footer>

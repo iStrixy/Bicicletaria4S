@@ -104,6 +104,7 @@
     <Content Include="TeladeLogin.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cadastro_cliente.aspx" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BICICLETARIA4S.Context.cs">
@@ -289,6 +290,13 @@
     </Compile>
     <Compile Include="Cadastro_cliente.aspx.designer.cs">
       <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -50,7 +50,12 @@
 	</div>
 
 	<div class="corpo">
-		<p></p>
+		<section id="titulo_consul_cliente">
+			<p>Consulta de cliente</p>
+		</section>
+		<form class="consul_cliente" runat="server">
+			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged"></asp:GridView>
+		</form>
 	</div>
 
 	<footer>

@@ -13,5 +13,10 @@ namespace PROJ_INTER_BC4S
         {
 
         }
+
+        protected void gvFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
