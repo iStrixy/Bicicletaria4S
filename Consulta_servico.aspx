@@ -55,6 +55,20 @@
 		</section>
 		<form class="consul_serv" runat="server">
 			<asp:GridView ID="gvServico" runat="server"></asp:GridView>
+			<div class="dados_serv" runat="server">
+				<div class="campo_consul_serv">
+					Descrição:
+					<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_serv_consul" ID="txtDescricaoServico"></asp:TextBox>
+				</div>
+				<div class="campo_consul_serv">
+					Valor:
+					<asp:TextBox runat="server" type="text" name="valor" class="input_vlr_serv_consul" ID="txtValorServico"></asp:TextBox>
+				</div>
+				<br /><br />
+				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar" OnClick="btnEditar_Click"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
+			</div>
 		</form>
 	</div>
 

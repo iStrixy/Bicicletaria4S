@@ -13,5 +13,20 @@ namespace PROJ_INTER_BC4S
         {
 
         }
+
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
