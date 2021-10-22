@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cadastro_cliente.aspx.cs" Inherits="PROJ_INTER_BC4S.Consulta_cliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cadastro_cliente.aspx.cs" Inherits="PROJ_INTER_BC4S.WebForm1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bicicletaria 4S - Cadastro de cliente</title>
+    <title>Bicicletaria 4S - Cadastramento</title>
 	<link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
 </head>
 
@@ -13,13 +13,13 @@
     <div class="menu" id="topo">
         <header>
             <div class="logo">
-                <a href="Index.aspx">
+                <a href="Index.html">
                     <img src="Imagens/Logotipo.png" alt="logotipo_site"/>
                 </a>
             </div>
             <nav>
                 <ul class="menu">
-                    <li><a href="Index.aspx" class="tmenu">Início</a></li>
+                    <li><a href="Index.html" class="tmenu">Início</a></li>
                     <li class="has-submenu"><a href="#" class="tmenu">Cadastro</a>
                         <ul class="content_menu">
                             <li><a href="#" class="tmenu">Cadastro de cliente</a></li>
@@ -52,10 +52,9 @@
 
     <div class="corpo">
         <section id="titulocadastramento">
-            <p>Cadastro de cliente (Pessoa Física)</p>
+            <p>Cadastro de cliente (pessoa física)</p>
         </section>
-        
-        <form method="post" class="form_cadastramento" autocomplete="off" runat="server">
+        <form method="post" class="form_cadastramento" runat="server">
             <div class="campos" id="nome">
                 Nome:
                 <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva" required="" ID="tb_nome"></asp:Textbox>
@@ -97,21 +96,21 @@
                 Telefone:
                 <asp:Textbox runat="server" type="text" name="telefone" class="inputphone" placeholder="(xx) xxxxx-xxxx" ID="tb_tel"></asp:Textbox>
             </div>
-            <asp:Button runat="server" class="enviar-cadastramento" ID="bt_cadastrar" Text="Cadastrar"></asp:Button>
+            <asp:Button runat="server" class="enviar-cadastramento" ID="bt_cadastrar" Text="Cadastrar" OnClick="bt_cadastrar_Click"></asp:Button>
         </form>
     </div>
 
     <footer>
         <div class="topicos" id="topicos-principais">
             <h3><b>Menu</b></h3>
-            <p><a href="Index.aspx" class="trodape">Início</a></p>
-            <p><a href="Menu_cadastro.aspx" class="trodape">Cadastro</a></p>
-            <p><a href="Menu_consulta.aspx" class="trodape">Consulta</a></p>
-            <p><a href="Menu_orcamento.aspx" class="trodape">Orçamento</a></p>
+            <p><a href="Index.html" class="trodape">Início</a></p>
+            <p><a href="Menu_cadastro.html" class="trodape">Cadastro</a></p>
+            <p><a href="Menu_consulta.html" class="trodape">Consulta</a></p>
+            <p><a href="Menu_orcamento.html" class="trodape">Orçamento</a></p>
         </div>
         <div class="topicos" id="topicos-sobre">
             <h3><b>Sobre</b></h3>
-            <p><a href="Quem_somos.aspx" style="text-decoration: none;" class="trodape">Quem somos</a></p>
+            <p><a href="Quem_somos.html" style="text-decoration: none;" class="trodape">Quem somos</a></p>
         </div>
         <div class="topicos" id="topicos-contatos">
             <h3><b>Telefones para contato:</b></h3>

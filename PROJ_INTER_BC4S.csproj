@@ -74,8 +74,8 @@
   <ItemGroup>
     <Content Include="BICICLETARIA4S.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BICICLETARIA4S.Context.cs</LastGenOutput>
       <DependentUpon>BICICLETARIA4S.edmx</DependentUpon>
+      <LastGenOutput>BICICLETARIA4S.Context.cs</LastGenOutput>
     </Content>
     <Content Include="BICICLETARIA4S.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -275,6 +275,13 @@
     <Compile Include="TeladeLogin.aspx.designer.cs">
       <DependentUpon>TeladeLogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Cadastro_cliente.aspx.cs">
+      <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_cliente.aspx.designer.cs">
+      <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TELEFONE_FABRICANTE.cs">
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
@@ -283,13 +290,6 @@
     </Compile>
     <Compile Include="TELEFONE_PESSOA.cs">
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Cadastro_cliente.aspx.cs">
-      <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Cadastro_cliente.aspx.designer.cs">
-      <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>

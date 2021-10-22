@@ -11,7 +11,7 @@ namespace PROJ_INTER_BC4S
 {
 
 
-    public partial class Consulta_cliente
+    public partial class WebForm1
     {
 
         /// <summary>
