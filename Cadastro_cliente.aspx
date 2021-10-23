@@ -13,13 +13,13 @@
     <div class="menu" id="topo">
         <header>
             <div class="logo">
-                <a href="Index.html">
+                <a href="Index.aspx">
                     <img src="Imagens/Logotipo.png" alt="logotipo_site"/>
                 </a>
             </div>
             <nav>
                 <ul class="menu">
-                    <li><a href="Index.html" class="tmenu">Início</a></li>
+                    <li><a href="Index.aspx" class="tmenu">Início</a></li>
                     <li class="has-submenu"><a href="#" class="tmenu">Cadastro</a>
                         <ul class="content_menu">
                             <li><a href="#" class="tmenu">Cadastro de cliente</a></li>
@@ -52,7 +52,7 @@
 
     <div class="corpo">
         <section id="titulocadastramento">
-            <p>Cadastro de cliente (pessoa física)</p>
+            <p>Cadastro de cliente</p>
         </section>
         <form method="post" class="form_cadastramento" runat="server">
             <div class="campos" id="nome">
