@@ -53,6 +53,9 @@
     <div class="corpo">
         <section id="titulocadastramento">
             <p>Cadastro de cliente</p>
+            <div>
+                <asp:Label runat="server" ID="lblError"></asp:Label>
+            </div>
         </section>
         <form method="post" class="form_cadastramento" runat="server">
             <div class="campos" id="nome">
