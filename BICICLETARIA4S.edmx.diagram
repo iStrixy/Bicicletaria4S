@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FABRICANTE" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FORNECEDOR" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FUNCIONARIO" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.LOGIN" Width="1.5" PointX="7.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.LOGIN" Width="1.5" PointX="2.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.ORCAMENTO" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PESSOA" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />

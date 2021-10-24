@@ -16,7 +16,7 @@ namespace PROJ_INTER_BC4S
     {
         public int ID { get; set; }
         public string NOME_FUNCIONARIO { get; set; }
-        public string LOGIN1 { get; set; }
         public string SENHA { get; set; }
+        public string LOGIN11 { get; set; }
     }
 }
