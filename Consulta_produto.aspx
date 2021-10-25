@@ -57,6 +57,28 @@
 		<div class="consul_prod">
 			<asp:GridView ID="gvProduto" runat="server"></asp:GridView>
 		</div>
+		<div class="dados_prod" runat="server">
+			<div class="campos_consul_prod">
+				Fabricante:
+				<select runat="server" multiple="false" id="slc_fabr_prod_consul"></select>
+			</div>
+			<div class="campos_consul_prod">
+				Fornecedor:
+				<select runat="server" multiple="false" id="slc_forn_prod_consul"></select>
+			</div>
+			<div class="campos_consul_prod">
+				Descrição:
+				<asp:TextBox runat="server" type="text" name="desc_prod" class="input_desc_prod_consul" ID="txtDescProd"></asp:TextBox>
+			</div>
+			<div class="campos_consul_prod">
+				Valor unitário:
+				<asp:TextBox runat="server" type="text" name="vlr_uni_prod" class="input_vlr_uni_prod_consul" ID="txtVlrUni"></asp:TextBox>
+			</div>
+			<br/><br/>
+			<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar"></asp:Button>
+			<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar"></asp:Button>
+			<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir"></asp:Button>
+		</div>
 	</div>
 
 	<footer>
