@@ -16,11 +16,41 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+            lblError.Text = String.Empty;
         }
 
+        private void limpar_campos()
+        {
+            txtNomeFabricante.Text = String.Empty;
+            txtTelefoneFabricante.Text = String.Empty;
+            txtCidadeFabricante.Text = String.Empty;
+            txtUfFabricante.Text = String.Empty;
+        }
         protected void btnCadastrarFabricante_Click(object sender, EventArgs e)
         {
+            txtTelefoneFabricante.MaxLength = 10;
+            int tel = 0;
+            if (!int.TryParse(txtTelefoneFabricante.Text, out tel))
+            {
+                lblError.Text = "Campo telefone inválido!";
+            }
+            else
+            {
+                lblError.ForeColor = System.Drawing.Color.Green;
+                lblError.Text = "Usuário cadastrado com sucesso!";
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    FABRICANTE cad_fabricante = new FABRICANTE();
+                    cad_fabricante.NOME = txtNomeFabricante.Text;
+                    cad_fabricante.TELEFONE = Convert.ToInt32(txtTelefoneFabricante.Text);
+                    cad_fabricante.CIDADE = txtCidadeFabricante.Text;
+                    cad_fabricante.UF = txtUfFabricante.Text;
 
+                    con_bd.FABRICANTE.Add(cad_fabricante);
+                    con_bd.SaveChanges();
+                    limpar_campos();
+                }
+            }
         }
 
         protected void txtNomeFabricante_TextChanged(object sender, EventArgs e)
@@ -42,6 +72,11 @@ namespace PROJ_INTER_BC4S
         {
             Session.RemoveAll();
             Response.Redirect("TeladeLogin.aspx");
+        }
+
+        protected void txtUfFabricante_TextChanged(object sender, EventArgs e)
+        {
+            txtUfFabricante.Text = txtUfFabricante.Text.ToUpper();
         }
     }
 }

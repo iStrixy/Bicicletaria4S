@@ -19,6 +19,7 @@
           <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CIDADE" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="TELEFONE" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="FORNECEDOR">
           <Key>
@@ -28,6 +29,8 @@
           <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CIDADE" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="TELEFONE" Type="int" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="FUNCIONARIO">
           <Key>
@@ -68,6 +71,7 @@
           <Property Name="CEP" Type="int" Nullable="false" />
           <Property Name="CPF" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TELEFONE" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -372,6 +376,7 @@
           <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PRODUTO_FABRICANTE" FromRole="FABRICANTE" ToRole="PRODUTO" />
           <NavigationProperty Name="TELEFONE_FABRICANTE" Relationship="Self.FK_TELEFONE_FABRICANTE_FABRICANTE" FromRole="FABRICANTE" ToRole="TELEFONE_FABRICANTE" />
+          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="FORNECEDOR">
           <Key>
@@ -383,6 +388,8 @@
           <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PRODUTO_FORNECEDOR" FromRole="FORNECEDOR" ToRole="PRODUTO" />
           <NavigationProperty Name="TELEFONE_FORNECEDOR" Relationship="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR" FromRole="FORNECEDOR" ToRole="TELEFONE_FORNECEDOR" />
+          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="FUNCIONARIO">
           <Key>
@@ -432,6 +439,7 @@
           <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_PESSOA" FromRole="PESSOA" ToRole="CLIENTE" />
           <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK_FUNCIONARIO_PESSOA" FromRole="PESSOA" ToRole="FUNCIONARIO" />
           <NavigationProperty Name="TELEFONE_PESSOA" Relationship="Self.FK_TELEFONE_PESSOA_PESSOA" FromRole="PESSOA" ToRole="TELEFONE_PESSOA" />
+          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -741,6 +749,7 @@
           <EntitySetMapping Name="FABRICANTE">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.FABRICANTE">
               <MappingFragment StoreEntitySet="FABRICANTE">
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NOME" ColumnName="NOME" />
                 <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
@@ -751,6 +760,8 @@
           <EntitySetMapping Name="FORNECEDOR">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.FORNECEDOR">
               <MappingFragment StoreEntitySet="FORNECEDOR">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NOME" ColumnName="NOME" />
                 <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
@@ -790,6 +801,7 @@
           <EntitySetMapping Name="PESSOA">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PESSOA">
               <MappingFragment StoreEntitySet="PESSOA">
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="NOME" ColumnName="NOME" />
                 <ScalarProperty Name="LOGRADOURO" ColumnName="LOGRADOURO" />

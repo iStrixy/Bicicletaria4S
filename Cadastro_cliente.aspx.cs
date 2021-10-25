@@ -74,14 +74,14 @@ namespace PROJ_INTER_BC4S
                     cad_pessoa.CEP = Convert.ToInt32(tb_cep.Text);
                     cad_pessoa.CPF = tb_cpf.Text;
                     cad_pessoa.EMAIL = tb_email.Text;
-                    telefone.TELEFONE = Convert.ToInt32(tb_tel.Text);
+                    cad_pessoa.TELEFONE = Convert.ToInt32(tb_tel.Text);
 
                     con_bd.PESSOA.Add(cad_pessoa);
                     con_bd.SaveChanges();
+                    limpar_campos();
                 }
 
             }
-            limpar_campos();
         }
     }
 }
