@@ -9,6 +9,7 @@
     <title>Bicicletaria 4S - Menu de cadastros</title>
 </head>
 <body>
+	<form id="form1" runat="server">
     <div class="menu" id="topo">
 		<header>
 			<div class="logo">
@@ -43,7 +44,7 @@
 							<li><a href="Consulta_fornecedor.aspx" class="tmenu">Consulta de fornecedor</a></li>
 						</ul>
 					</li>
-						<li id="logout"><a href="#" class="tmenu">Sair</a></li>
+						<li id="logout"><asp:LinkButton ID="lb_sair" runat="server" OnClick="lb_sair_Click">Sair</asp:LinkButton></li>
 				</ul>
 			</nav>
 		</header>
@@ -82,5 +83,6 @@
 			<p>(17) 3542-7605</p>
 		</div>
 	</footer>
+		</form>
 </body>
 </html>

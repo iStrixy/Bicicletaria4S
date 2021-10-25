@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
 </head>
 <body>
+	<form id="form1" runat="server" method="post">
     <div class="menu" id="topo">
 		<header>
 			<div class="logo">
@@ -43,7 +44,7 @@
 							<li><a href="Consulta_fornecedor.aspx" class="tmenu">Consulta de fornecedor</a></li>
 						</ul>
 					</li>
-						<li id="logout"><a href="#" class="tmenu">Sair</a></li>
+						<li id="logout"><asp:LinkButton ID="lb_sair" runat="server" OnClick="lb_sair_Click">Sair</asp:LinkButton></li>
 				</ul>
 			</nav>
 		</header>
@@ -54,7 +55,7 @@
 			<p>Cadastro de produto</p>
 		</section>
 		<br/><br/>
-		<form method="post" class="form_cad_prod" runat="server">
+		<div class="form_cad_prod">
 			<div class="campos_cad_prod" id="nome_prod_fabr">
 				Fabricante:
 				<select runat="server" multiple="false" id="slcNomeFabricanteProduto"> </select>
@@ -73,7 +74,7 @@
 			</div>
 			<br/><br/>
 			<asp:Button runat="server" class="btn_cad_prod" Text="Cadastrar produto" ID="btnCadastrarProduto" OnClick="btnCadastrarProduto_Click"></asp:Button>
-		</form>
+		</div>
 	</div>
 
 	<footer>
@@ -94,5 +95,6 @@
 			<p>(17) 3542-7605</p>
 		</div>
 	</footer>
+	</form>
 </body>
 </html>

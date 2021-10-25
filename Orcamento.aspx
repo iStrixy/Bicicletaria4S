@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
 </head>
 <body>
+	<form id="form1" runat="server">
     <div class="menu" id="topo">
 		<header>
 			<div class="logo">
@@ -43,7 +44,7 @@
 							<li><a href="Consulta_fornecedor.aspx" class="tmenu">Consulta de fornecedor</a></li>
 						</ul>
 					</li>
-						<li id="logout"><a href="#" class="tmenu">Sair</a></li>
+						<li id="logout"><asp:LinkButton ID="lb_sair" runat="server" OnClick="lb_sair_Click">Sair</asp:LinkButton></li>
 				</ul>
 			</nav>
 		</header>
@@ -54,23 +55,23 @@
 			<p>Formulário de orçamento</p>
 		</section>
 		<br/><br/>
-		<form method="post" class="form_orcamento" autocomplete="off">
+		<div class="form_orcamento" autocomplete="off">
 			<div id="titulo_dados_orcamento">Dados cadastrais do cliente</div><br/>
 			<div class="campos_orcamento" id="nome_cliente_orcamento">
 				Nome do cliente: <select> </select>
 			</div>
 			<div class="campos_orcamento" id="rua_cliente_orcamento">
-				Rua: <input type="text" name="endereco_cliente" class="input_endereco_cliente">
+				Rua: <input type="text" name="endereco_cliente" class="input_endereco_cliente"/>
 			</div>
 			<div class="campos_orcamento" id="endereco_cliente_orcamento">
-				Bairro: <input type="text" name="bairro_cliente" class="input_bairro_cliente">
-				Número: <input type="text" name="numero_cliente" class="input_numero_cliente">
+				Bairro: <input type="text" name="bairro_cliente" class="input_bairro_cliente"/>
+				Número: <input type="text" name="numero_cliente" class="input_numero_cliente"/>
 			</div>
 			<div class="campos_orcamento" id="telefone_cliente_orcamento">
-				Celular: <input type="text" name="celular_cliente" class="input_telefone_cliente">
+				Celular: <input type="text" name="celular_cliente" class="input_telefone_cliente"/>
 			</div>
 			<div class="campos_orcamento" id="cpf_cliente_orcamento">
-				CPF: <input type="text" name="cpf_cliente" class="input_cpf_cliente">
+				CPF: <input type="text" name="cpf_cliente" class="input_cpf_cliente"/>
 			</div>
 			<br/><br/>
 			<div id="titulo_dados_orcamento">Orçamento de produtos</div><br/>
@@ -85,18 +86,18 @@
 					</tr>
 					<tbody>
 						<tr>
-							<td><input class="inpt_orc" id="cod_input" type="text"></td>
-							<td><input class="inpt_orc" id="desc_input" type="text"></td>
-							<td><input class="inpt_orc" id="qtd_input" type="text"></td>
-							<td><input class="inpt_orc" id="vunit_input" type="text"></td>
-							<td><input class="inpt_orc" id="subt_input" type="text"></td>
+							<td><input class="inpt_orc" id="cod_input" type="text"/></td>
+							<td><input class="inpt_orc" id="desc_input" type="text"/></td>
+							<td><input class="inpt_orc" id="qtd_input" type="text"/></td>
+							<td><input class="inpt_orc" id="vunit_input" type="text"/></td>
+							<td><input class="inpt_orc" id="subt_input" type="text"/></td>
 						</tr>
 						<tr>
-							<td><input class="inpt_orc" id="cod_input" type="text"></td>
-							<td><input class="inpt_orc" id="desc_input" type="text"></td>
-							<td><input class="inpt_orc" id="qtd_input" type="text"></td>
-							<td><input class="inpt_orc" id="vunit_input" type="text"></td>
-							<td><input class="inpt_orc" id="subt_input" type="text"></td>
+							<td><input class="inpt_orc" id="cod_input" type="text"/></td>
+							<td><input class="inpt_orc" id="desc_input" type="text"/></td>
+							<td><input class="inpt_orc" id="qtd_input" type="text"/></td>
+							<td><input class="inpt_orc" id="vunit_input" type="text"/></td>
+							<td><input class="inpt_orc" id="subt_input" type="text"/></td>
 						</tr>
 					</tbody>
 				</table>
@@ -112,14 +113,14 @@
 					</tr>
 					<tbody>
 						<tr>
-							<td><input class="inpt_orc" id="cod_input" type="text"></td>
-							<td><input class="inpt_orc" id="desc_input" type="text"></td>
-							<td><input class="inpt_orc" id="subt_input" type="text"></td>
+							<td><input class="inpt_orc" id="cod_input" type="text"/></td>
+							<td><input class="inpt_orc" id="desc_input" type="text"/></td>
+							<td><input class="inpt_orc" id="subt_input" type="text"/></td>
 						</tr>
 						<tr>
-							<td><input class="inpt_orc" id="cod_input" type="text"></td>
-							<td><input class="inpt_orc" id="desc_input" type="text"></td>
-							<td><input class="inpt_orc" id="subt_input" type="text"></td>
+							<td><input class="inpt_orc" id="cod_input" type="text"/></td>
+							<td><input class="inpt_orc" id="desc_input" type="text"/></td>
+							<td><input class="inpt_orc" id="subt_input" type="text"/></td>
 						</tr>
 					</tbody>
 				</table>
@@ -134,7 +135,7 @@
 			<div>Assinatura do funcionário: </div>
 			<br/><br/>
 			<button class="enviar-orcamento">Confirmar orçamento</button>
-		</form>
+		</div>
 	</div>
 
 	<footer>
@@ -155,5 +156,6 @@
 			<p>(17) 3542-7605</p>
 		</div>
 	</footer>
+	</form>
 </body>
 </html>

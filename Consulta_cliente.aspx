@@ -9,6 +9,7 @@
     <title>Bicicletaria 4S - Consulta de cliente</title>
 </head>
 <body>
+	<form id="form1" runat="server" method="post">
     <div class="menu" id="topo">
 		<header>
 			<div class="logo">
@@ -43,7 +44,7 @@
 							<li><a href="Consulta_fornecedor.aspx" class="tmenu">Consulta de fornecedor</a></li>
 						</ul>
 					</li>
-						<li id="logout"><a href="#" class="tmenu">Sair</a></li>
+						<li id="logout"><asp:LinkButton ID="lb_sair" runat="server" OnClick="lb_sair_Click">Sair</asp:LinkButton></li>
 				</ul>
 			</nav>
 		</header>
@@ -53,7 +54,7 @@
 		<section id="titulo_consul_cliente">
 			<p>Consulta de cliente</p>
 		</section>
-		<form class="consul_cliente" runat="server">
+		<div class="consul_cliente">
 			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged"></asp:GridView>
 			<div class="dados_cliente" runat="server">
 				<div class="campo_consul_cliente">
@@ -95,7 +96,7 @@
 				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar"></asp:Button>
 				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir"></asp:Button>
 			</div>
-		</form>
+		</div>
 	</div>
 
 	<footer>
@@ -116,5 +117,6 @@
 			<p>(17) 3542-7605</p>
 		</div>
 	</footer>
+	</form>
 </body>
 </html>

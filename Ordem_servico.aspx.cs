@@ -11,7 +11,17 @@ namespace PROJ_INTER_BC4S
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String nomeuserlogado = (String)Session["userlogado"];
+            if (nomeuserlogado == null)
+            {
+                Response.Redirect("TeladeLogin.aspx");
+            }
+        }
 
+        protected void lb_sair_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("TeladeLogin.aspx");
         }
     }
 }
