@@ -51,6 +51,9 @@
 	</div>
 
 	<div class="corpo">
+		<section class="user">
+			<asp:Label runat="server" ID="lblUserLogado"></asp:Label>
+		</section>
 	</div>
 
 	<footer>

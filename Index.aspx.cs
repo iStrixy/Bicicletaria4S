@@ -16,6 +16,10 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+            else
+            {
+                lblUserLogado.Text = "Bem-vindo, " + nomeuserlogado + "!";
+            }
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
