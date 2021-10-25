@@ -68,34 +68,34 @@
 				Cidade:
 				<asp:TextBox runat="server" type="text" name="cidade_fabr" class="input_cidade_fabr" required="" ID="txtCidadeFabricante" OnTextChanged="txtCidadeFabricante_TextChanged"></asp:TextBox>
 				UF:
-				<select id="slcEstadoFabricante" runat="server" multiple="false">
-						<option value="1" text="RO" runat="server"></option>
-						<option value="2" text="AC" runat="server"></option>
-						<option value="3" text="AM" runat="server"></option>
-						<option value="4" text="RR" runat="server"></option>
-						<option value="5" text="PA" runat="server"></option>
-						<option value="6" text="AP" runat="server"></option>
-						<option value="7" text="TO" runat="server"></option>
-						<option value="8" text="MA" runat="server"></option>
-						<option value="9" text="PI" runat="server"></option>
-						<option value="10" text="CE" runat="server"></option>
-						<option value="11" text="RN" runat="server"></option>
-						<option value="12" text="PB" runat="server"></option>
-						<option value="13" text="PE" runat="server"></option>
-						<option value="14" text="AL" runat="server"></option>
-						<option value="15" text="SE" runat="server"></option>
-						<option value="16" text="BA" runat="server"></option>
-						<option value="17" text="MG" runat="server"></option>
-						<option value="18" text="ES" runat="server"></option>
-						<option value="19" text="RJ" runat="server"></option>
-						<option value="20" text="SP" runat="server" selected="selected"></option>
-						<option value="21" text="PR" runat="server"></option>
-						<option value="22" text="SC" runat="server"></option>
-						<option value="23" text="RS" runat="server"></option>
-						<option value="24" text="MS" runat="server"></option>
-						<option value="25" text="MT" runat="server"></option>
-						<option value="26" text="GO" runat="server"></option>
-						<option value="27" text="DF" runat="server"></option>
+				<select id="slcEstadoFabricante">
+						<option value="1" runat="server">RO</option>
+						<option value="2" runat="server">AC</option>
+						<option value="3" runat="server">AM</option>
+						<option value="4" runat="server">RR</option>
+						<option value="5" runat="server">PA</option>
+						<option value="6" runat="server">AP</option>
+						<option value="7" runat="server">TO</option>
+						<option value="8" runat="server">MA</option>
+						<option value="9" runat="server">PI</option>
+						<option value="10" runat="server">CE</option>
+						<option value="11" runat="server">RN</option>
+						<option value="12" runat="server">PB</option>
+						<option value="13" runat="server">PE</option>
+						<option value="14" runat="server">AL</option>
+						<option value="15" runat="server">SE</option>
+						<option value="16" runat="server">BA</option>
+						<option value="17" runat="server">MG</option>
+						<option value="18" runat="server">ES</option>
+						<option value="19" runat="server">RJ</option>
+						<option value="20" runat="server" selected="selected">SP</option>
+						<option value="21" runat="server">PR</option>
+						<option value="22" runat="server">SC</option>
+						<option value="23" runat="server">RS</option>
+						<option value="24" runat="server">MS</option>
+						<option value="25" runat="server">MT</option>
+						<option value="26" runat="server">GO</option>
+						<option value="27" runat="server">DF</option>
 				</select>
 			</div>
 			<br/><br/>
