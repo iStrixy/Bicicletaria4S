@@ -99,7 +99,7 @@
 				</select>
 			</div><br/>
 			<div class="campos_cad_forn" id="email_cad_forn">
-				Email:
+				E-mail:
 				<asp:TextBox runat="server" type="text" name="email_forn" class="input_email_forn" required="" ID="txtEmailFornecedor" OnTextChanged="txtEmailFornecedor_TextChanged"></asp:TextBox>
 			</div>
 			<br/><br/>
