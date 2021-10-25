@@ -17,7 +17,23 @@ namespace PROJ_INTER_BC4S
                 Response.Redirect("TeladeLogin.aspx");
             }
         }
-
+        protected void lb_sair_Click(object sender, EventArgs e)
+        {
+            Session.RemoveAll();
+            Response.Redirect("TeladeLogin.aspx");
+        }
+        private void limpar_campos()
+        {
+            tb_nome.Text = String.Empty;
+            tb_rua.Text = String.Empty;
+            tb_number.Text = String.Empty;
+            tb_bairro.Text = String.Empty;
+            tb_cmpt.Text = String.Empty;
+            tb_cep.Text = String.Empty;
+            tb_cpf.Text = String.Empty;
+            tb_email.Text = String.Empty;
+            tb_tel.Text = String.Empty;
+        }
         protected void bt_cadastrar_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
@@ -60,15 +76,12 @@ namespace PROJ_INTER_BC4S
                     cad_pessoa.EMAIL = tb_email.Text;
                     telefone.TELEFONE = Convert.ToInt32(tb_tel.Text);
 
-
-
                     con_bd.PESSOA.Add(cad_pessoa);
                     con_bd.SaveChanges();
-
-
                 }
 
             }
+            limpar_campos();
         }
     }
 }

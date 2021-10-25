@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <form id="form1" runat="server" method="post">
     <div class="menu" id="topo">
         <header>
             <div class="logo">
@@ -44,7 +45,7 @@
                             <li><a href="Consulta_fornecedor.aspx" class="tmenu">Consulta de fornecedor</a></li>
                         </ul>
                     </li>
-                    <li id="logout"><a id="logout2" href="#" class="tmenu">Sair</a></li>
+                    <li id="logout" runat="server"><asp:LinkButton ID="lb_sair" runat="server" OnClick="lb_sair_Click">Sair</asp:LinkButton></li>
                 </ul>
             </nav>
         </header>
@@ -57,7 +58,7 @@
                 <asp:Label runat="server" ID="lblError"></asp:Label>
             </div>
         </section>
-        <form method="post" class="form_cadastramento" runat="server">
+        <div class="form_cadastramento">
             <div class="campos" id="nome">
                 Nome:
                 <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva" required="" ID="tb_nome"></asp:Textbox>
@@ -100,7 +101,7 @@
                 <asp:Textbox runat="server" type="text" name="telefone" class="inputphone" placeholder="(xx) xxxxx-xxxx" ID="tb_tel"></asp:Textbox>
             </div>
             <asp:Button runat="server" class="enviar-cadastramento" ID="bt_cadastrar" Text="Cadastrar" OnClick="bt_cadastrar_Click"></asp:Button>
-        </form>
+        </div>
     </div>
 
     <footer>
@@ -121,6 +122,6 @@
             <p>(17) 3542-7605</p>
         </div>
     </footer>
-
+    </form>
 </body>
 </html>

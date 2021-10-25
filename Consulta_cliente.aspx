@@ -55,6 +55,46 @@
 		</section>
 		<form class="consul_cliente" runat="server">
 			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged"></asp:GridView>
+			<div class="dados_cliente" runat="server">
+				<div class="campo_consul_cliente">
+					Nome:
+					<asp:TextBox runat="server" type="text" name="nome" class="input_nome_cliente_consul" ID="txtNomeCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					Rua
+					<asp:TextBox runat="server" type="text" name="rua" class="input_rua_cliente_consul" ID="txtRuaCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					Número:
+					<asp:TextBox runat="server" type="text" name="numero" class="input_numero_cliente_consul" ID="txtNumeroCliente"></asp:TextBox>
+					Bairro:
+					<asp:TextBox runat="server" type="text" name="bairro" class="input_bairro_cliente_consul" ID="txtBairroCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					Complemento:
+					<asp:TextBox runat="server" type="text" name="complemento" class="input_complemento_cliente_consul" ID="txtComplementoCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					CEP:
+					<asp:TextBox runat="server" type="text" name="CEP" class="input_cep_cliente_consul" ID="txtCepCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					CPF:
+					<asp:TextBox runat="server" type="text" name="CPF" class="input_cpf_cliente_consul" ID="txtCpfCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					E-mail:
+					<asp:TextBox runat="server" type="text" name="email" class="input_email_cliente_consul" ID="txtEmailCliente"></asp:TextBox>
+				</div>
+				<div class="campo_consul_cliente">
+					Telefone:
+					<asp:TextBox runat="server" type="text" name="telefone" class="input_tel_cliente_consul" ID="txtTelCliente"></asp:TextBox>
+				</div>
+				<br/><br/>
+				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir"></asp:Button>
+			</div>
 		</form>
 	</div>
 
