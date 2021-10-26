@@ -40,20 +40,22 @@ namespace PROJ_INTER_BC4S
             int number = 0;
             int cep = 0;
             int cpf = 0;
-            tb_tel.MaxLength = 10;
+            tb_tel.MaxLength = 11;
+            tb_cep.MaxLength = 8;
+            tb_cpf.MaxLength = 11;
             if (!int.TryParse(tb_number.Text, out number))
             {
                 lblError.Text = "Campo Número inválido";
             }
-            else if (!int.TryParse(tb_cep.Text, out cep))
+            else if (!int.TryParse(tb_cep.Text, out cep) || tb_cep.MaxLength > 8)
             {
                 lblError.Text = "Campo CEP inválido";
             }
-            else if (!int.TryParse(tb_cpf.Text, out cpf))
+            else if (!int.TryParse(tb_cpf.Text, out cpf) || tb_cpf.MaxLength > 11)
             {
                 lblError.Text = "Campo CPF inválido!";
             }
-            else if (!int.TryParse(tb_tel.Text, out cpf) || tb_tel.MaxLength > 10)
+            else if (!int.TryParse(tb_tel.Text, out cpf) || tb_tel.MaxLength > 11)
             {
                 lblError.Text = "Campo inválido! ou utilize '1797480961' para cadastrar o número";
             }

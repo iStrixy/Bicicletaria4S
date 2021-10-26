@@ -19,7 +19,7 @@
           <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CIDADE" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
-          <Property Name="TELEFONE" Type="int" Nullable="false" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <EntityType Name="FORNECEDOR">
           <Key>
@@ -29,7 +29,7 @@
           <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="CIDADE" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
-          <Property Name="TELEFONE" Type="int" Nullable="false" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="FUNCIONARIO">
@@ -69,9 +69,9 @@
           <Property Name="BAIRRO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="COMPLEMENTO" Type="varchar" MaxLength="20" />
           <Property Name="CEP" Type="int" Nullable="false" />
-          <Property Name="CPF" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="TELEFONE" Type="int" Nullable="false" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -434,7 +434,7 @@
           <Property Name="BAIRRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="COMPLEMENTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CEP" Type="Int32" Nullable="false" />
-          <Property Name="CPF" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" Unicode="false" FixedLength="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_PESSOA" FromRole="PESSOA" ToRole="CLIENTE" />
           <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK_FUNCIONARIO_PESSOA" FromRole="PESSOA" ToRole="FUNCIONARIO" />

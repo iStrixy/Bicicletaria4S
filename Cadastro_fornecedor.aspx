@@ -53,6 +53,9 @@
 	<div class="corpo">
 		<section id="titulo_cad_forn">
 			<p>Cadastro de fornecedor</p>
+			<div>
+				<asp:Label runat="server" ID="lblError"></asp:Label>
+			</div>
 		</section>
 		<br/><br/>
 		<div class="form_cad_forn">
@@ -68,35 +71,7 @@
 				Cidade:
 				<asp:TextBox runat="server" type="text" name="cidade_forn" class="input_cidade_forn" required="" ID="txtCidadeFornecedor" OnTextChanged="txtCidadeFornecedor_TextChanged"></asp:TextBox>
 				UF:
-				<select id="slcEstadoFabricante" runat="server" multiple="false">
-						<option value="1" runat="server">RO</option>
-						<option value="2" runat="server">AC</option>
-						<option value="3" runat="server">AM</option>
-						<option value="4" runat="server">RR</option>
-						<option value="5" runat="server">PA</option>
-						<option value="6" runat="server">AP</option>
-						<option value="7" runat="server">TO</option>
-						<option value="8" runat="server">MA</option>
-						<option value="9" runat="server">PI</option>
-						<option value="10" runat="server">CE</option>
-						<option value="11" runat="server">RN</option>
-						<option value="12" runat="server">PB</option>
-						<option value="13" runat="server">PE</option>
-						<option value="14" runat="server">AL</option>
-						<option value="15" runat="server">SE</option>
-						<option value="16" runat="server">BA</option>
-						<option value="17" runat="server">MG</option>
-						<option value="18" runat="server">ES</option>
-						<option value="19" runat="server">RJ</option>
-						<option value="20" runat="server" selected="selected">SP</option>
-						<option value="21" runat="server">PR</option>
-						<option value="22" runat="server">SC</option>
-						<option value="23" runat="server">RS</option>
-						<option value="24" runat="server">MS</option>
-						<option value="25" runat="server">MT</option>
-						<option value="26" runat="server">GO</option>
-						<option value="27" runat="server">DF</option>
-				</select>
+				<asp:TextBox runat="server" type="text" name="uf_forn" class="input_uf_forn" required="" ID="txtUfFornecedor" Columns="4" MaxLength="2" OnTextChanged="txtUfFornecedor_TextChanged"></asp:TextBox>
 			</div><br/>
 			<div class="campos_cad_forn" id="email_cad_forn">
 				E-mail:

@@ -16,11 +16,12 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+            lblError.Text = String.Empty;
         }
 
         protected void btnCadastrarFornecedor_Click(object sender, EventArgs e)
         {
-
+            txtTelefoneFornecedor.MaxLength = 11;
         }
 
         protected void txtEmailFornecedor_TextChanged(object sender, EventArgs e)
@@ -47,6 +48,11 @@ namespace PROJ_INTER_BC4S
         {
             Session.RemoveAll();
             Response.Redirect("TeladeLogin.aspx");
+        }
+
+        protected void txtUfFornecedor_TextChanged(object sender, EventArgs e)
+        {
+            txtUfFornecedor.Text = txtUfFornecedor.Text.ToUpper();
         }
     }
 }

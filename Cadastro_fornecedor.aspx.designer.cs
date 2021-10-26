@@ -33,6 +33,15 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.LinkButton lb_sair;
 
         /// <summary>
+        /// Controle lblError.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
         /// Controle txtNomeFornecedor.
         /// </summary>
         /// <remarks>
@@ -60,13 +69,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.TextBox txtCidadeFornecedor;
 
         /// <summary>
-        /// Controle slcEstadoFabricante.
+        /// Controle txtUfFornecedor.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect slcEstadoFabricante;
+        protected global::System.Web.UI.WebControls.TextBox txtUfFornecedor;
 
         /// <summary>
         /// Controle txtEmailFornecedor.
