@@ -25,7 +25,7 @@ namespace PROJ_INTER_BC4S
         public string NOME { get; set; }
         public string CIDADE { get; set; }
         public string UF { get; set; }
-        public int TELEFONE { get; set; }
+        public string TELEFONE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUTO> PRODUTO { get; set; }

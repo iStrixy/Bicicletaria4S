@@ -29,7 +29,7 @@ namespace PROJ_INTER_BC4S
         public int CEP { get; set; }
         public string CPF { get; set; }
         public string EMAIL { get; set; }
-        public int TELEFONE { get; set; }
+        public string TELEFONE { get; set; }
     
         public virtual CLIENTE CLIENTE { get; set; }
         public virtual FUNCIONARIO FUNCIONARIO { get; set; }

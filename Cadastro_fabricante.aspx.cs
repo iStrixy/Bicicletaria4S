@@ -42,7 +42,7 @@ namespace PROJ_INTER_BC4S
                 {
                     FABRICANTE cad_fabricante = new FABRICANTE();
                     cad_fabricante.NOME = txtNomeFabricante.Text;
-                    cad_fabricante.TELEFONE = Convert.ToInt32(txtTelefoneFabricante.Text);
+                    cad_fabricante.TELEFONE = txtTelefoneFabricante.Text;
                     cad_fabricante.CIDADE = txtCidadeFabricante.Text;
                     cad_fabricante.UF = txtUfFabricante.Text;
 
