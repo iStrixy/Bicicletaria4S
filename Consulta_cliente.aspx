@@ -53,16 +53,35 @@
 	<div class="corpo">
 		<section id="titulo_consul_cliente">
 			<p>Consulta de cliente</p>
+			<div>
+				<asp:Label runat="server" ID="lblError"></asp:Label>
+			</div>
 		</section>
 		<div class="consul_cliente">
-			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged"></asp:GridView>
+			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="NOME" HeaderText="Nome" />
+                    <asp:BoundField DataField="LOGRADOURO" HeaderText="Logradouro" />
+                    <asp:BoundField DataField="NUM_LOGRADOURO" HeaderText="Num_logradouro" />
+                    <asp:BoundField DataField="BAIRRO" HeaderText="Bairro" />
+                    <asp:BoundField DataField="COMPLEMENTO" HeaderText="Complemento" />
+                    <asp:BoundField DataField="CEP" HeaderText="CEP" />
+                    <asp:BoundField DataField="CPF" HeaderText="CPF" />
+                    <asp:BoundField DataField="EMAIL" HeaderText="E-mail" />
+                    <asp:BoundField DataField="TELEFONE" HeaderText="Telefone" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
 			<div class="dados_cliente" runat="server">
+				<div>
+					<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
+				</div>
 				<div class="campo_consul_cliente">
 					Nome:
 					<asp:TextBox runat="server" type="text" name="nome" class="input_nome_cliente_consul" ID="txtNomeCliente"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
-					Rua
+					Rua:
 					<asp:TextBox runat="server" type="text" name="rua" class="input_rua_cliente_consul" ID="txtRuaCliente"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
@@ -92,9 +111,9 @@
 					<asp:TextBox runat="server" type="text" name="telefone" class="input_tel_cliente_consul" ID="txtTelCliente"></asp:TextBox>
 				</div>
 				<br/><br/>
-				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar"></asp:Button>
-				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar"></asp:Button>
-				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar" OnClick="btnEditar_Click"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
 			</div>
 		</div>
 	</div>
