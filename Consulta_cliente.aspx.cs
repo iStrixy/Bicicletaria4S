@@ -33,6 +33,19 @@ namespace PROJ_INTER_BC4S
                 lblError.Text = String.Empty;
         }
 
+        private void limpar_campos()
+        {
+            txtNomeCliente.Text = String.Empty;
+            txtRuaCliente.Text = String.Empty;
+            txtNumeroCliente.Text = String.Empty;
+            txtBairroCliente.Text = String.Empty;
+            txtComplementoCliente.Text = String.Empty;
+            txtCepCliente.Text = String.Empty;
+            txtCpfCliente.Text = String.Empty;
+            txtEmailCliente.Text = String.Empty;
+            txtTelCliente.Text = String.Empty;
+        }
+
         private void carregarGrid(BD_BICICLETARIA_4SEntities con_bd)
         {
             List<PESSOA> pessoa = con_bd.PESSOA.ToList();
@@ -107,6 +120,7 @@ namespace PROJ_INTER_BC4S
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Dados alterados com sucesso!";
+                    limpar_campos();
                 }
             }
         }
@@ -151,6 +165,7 @@ namespace PROJ_INTER_BC4S
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Usuário excluído com sucesso!";
+                    limpar_campos();
                 }
             }
         }

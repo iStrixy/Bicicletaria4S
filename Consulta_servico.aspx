@@ -53,10 +53,22 @@
 	<div class="corpo">
 		<section id="titulo_consul_serv">
 			<p>Consulta de serviço</p>
+			<div>
+				<asp:Label runat="server" ID="lblError"></asp:Label>
+			</div>
 		</section>
 		<div class="consul_serv">
-			<asp:GridView ID="gvServico" runat="server"></asp:GridView>
+			<asp:GridView ID="gvServico" runat="server" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:BoundField DataField="DESCRICAO" HeaderText="Descrição" />
+                    <asp:BoundField DataField="VALOR" HeaderText="Valor unitário" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
 			<div class="dados_serv" runat="server">
+				<div>
+					<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
+				</div>
 				<div class="campo_consul_serv">
 					Descrição:
 					<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_serv_consul" ID="txtDescricaoServico"></asp:TextBox>
