@@ -11,9 +11,6 @@ namespace PROJ_INTER_BC4S
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnEditar.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnSalvar.Enabled = false;
             lblError.Text = String.Empty;
             String nomeuserlogado = (String)Session["userlogado"];
             if (nomeuserlogado == null)
@@ -26,10 +23,6 @@ namespace PROJ_INTER_BC4S
                 {
                     carregarGrid(con_bd);
                 }
-            }
-            else if(gvServico.SelectedValue != null)
-            {
-                btnEditar.Enabled = true;
             }
         }
 
@@ -96,8 +89,6 @@ namespace PROJ_INTER_BC4S
         {
             if(gvServico.SelectedValue != null)
             {
-                btnSalvar.Enabled = true;
-                btnExcluir.Enabled = true;
                 lblError.Text = String.Empty;
                 int ID = Convert.ToInt32(gvServico.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())

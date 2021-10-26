@@ -11,9 +11,6 @@ namespace PROJ_INTER_BC4S
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnEditar.Enabled = false;
-            btnExcluir.Enabled = false;
-            btnSalvar.Enabled = false;
             String nomeuserlogado = (String)Session["userlogado"];
             if (nomeuserlogado == null)
             {
@@ -25,10 +22,6 @@ namespace PROJ_INTER_BC4S
                 {
                     carregarGrid(con_bd);
                 }
-            }
-            else if (gvCliente.SelectedValue != null)
-            {
-                btnEditar.Enabled = true;
             }
                 lblError.Text = String.Empty;
         }
@@ -109,7 +102,7 @@ namespace PROJ_INTER_BC4S
                     pessoa.CEP = Convert.ToInt32(txtCepCliente.Text);
                     pessoa.CPF = txtCpfCliente.Text;
                     pessoa.EMAIL = txtEmailCliente.Text;
-                    pessoa.TELEFONE = Convert.ToInt32(txtTelCliente.Text);
+                    pessoa.TELEFONE = txtTelCliente.Text;
 
                     if(lblError.Text.Equals(String.Empty))
                     {
