@@ -16,6 +16,7 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+            lblError.Text = String.Empty;
         }
 
         protected void txtDescricaoProduto_TextChanged(object sender, EventArgs e)

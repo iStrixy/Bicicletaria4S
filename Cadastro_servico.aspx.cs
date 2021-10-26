@@ -16,11 +16,36 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+            lblError.Text = String.Empty;
         }
 
+        private void limpar_campos()
+        {
+            txtDescricaoServico.Text = String.Empty;
+            txtValorServico.Text = String.Empty;
+        }
         protected void btnCadastrarServico_Click(object sender, EventArgs e)
         {
+            double vlr_unit;
+            if (!double.TryParse(txtValorServico.Text, out vlr_unit))
+            {
+                lblError.Text = "Valor inválido!";
+            }
+            else
+            {
+                lblError.ForeColor = System.Drawing.Color.Green;
+                lblError.Text = "Serviço cadastrado com sucesso!";
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    SERVICO cad_servico = new SERVICO();
+                    cad_servico.DESCRICAO = txtDescricaoServico.Text;
+                    cad_servico.VALOR = Convert.ToDouble(txtValorServico.Text);
 
+                    con_bd.SERVICO.Add(cad_servico);
+                    con_bd.SaveChanges();
+                    limpar_campos();
+                }
+            }
         }
 
         protected void txtValorServico_TextChanged(object sender, EventArgs e)

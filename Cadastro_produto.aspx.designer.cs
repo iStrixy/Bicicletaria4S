@@ -33,22 +33,31 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.LinkButton lb_sair;
 
         /// <summary>
-        /// Controle slcNomeFabricanteProduto.
+        /// Controle lblError.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect slcNomeFabricanteProduto;
+        protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// Controle slcNomeFornecedorProduto.
+        /// Controle txtNomeFabricanteProduto.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect slcNomeFornecedorProduto;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeFabricanteProduto;
+
+        /// <summary>
+        /// Controle txtNomeFornecedorProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeFornecedorProduto;
 
         /// <summary>
         /// Controle txtDescricaoProduto.
