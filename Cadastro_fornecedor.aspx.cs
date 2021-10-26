@@ -20,7 +20,21 @@ namespace PROJ_INTER_BC4S
 
         protected void btnCadastrarFornecedor_Click(object sender, EventArgs e)
         {
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
 
+            {
+                FORNECEDOR cad_fornecedor = new FORNECEDOR();
+                TELEFONE_FORNECEDOR telefone = new TELEFONE_FORNECEDOR();
+
+                cad_fornecedor.NOME = txtNomeFornecedor.Text;
+                cad_fornecedor.CIDADE = txtCidadeFornecedor.Text;
+                //cad_fornecedor.UF = slcEstadoFabricante.ToString();
+                telefone.TELEFONE = Convert.ToInt32(txtTelefoneFornecedor.Text);
+
+                con_bd.FORNECEDOR.Add(cad_fornecedor);
+                con_bd.SaveChanges();
+
+            }
         }
 
         protected void txtEmailFornecedor_TextChanged(object sender, EventArgs e)
