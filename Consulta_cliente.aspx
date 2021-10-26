@@ -58,7 +58,7 @@
 			</div>
 		</section>
 		<div class="consul_cliente">
-			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged" AutoGenerateColumns="False">
+			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
                     <asp:BoundField DataField="NOME" HeaderText="Nome" />
                     <asp:BoundField DataField="LOGRADOURO" HeaderText="Logradouro" />

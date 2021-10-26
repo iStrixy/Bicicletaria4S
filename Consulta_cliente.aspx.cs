@@ -122,8 +122,6 @@ namespace PROJ_INTER_BC4S
         {
             if(gvCliente.SelectedValue != null)
             {
-                btnExcluir.Enabled = true;
-                btnSalvar.Enabled = true;
                 lblError.Text = String.Empty;
                 int ID = Convert.ToInt32(gvCliente.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())

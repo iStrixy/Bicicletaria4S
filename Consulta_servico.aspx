@@ -58,7 +58,7 @@
 			</div>
 		</section>
 		<div class="consul_serv">
-			<asp:GridView ID="gvServico" runat="server" AutoGenerateColumns="False">
+			<asp:GridView ID="gvServico" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
                     <asp:BoundField DataField="DESCRICAO" HeaderText="Descrição" />
                     <asp:BoundField DataField="VALOR" HeaderText="Valor unitário" />
