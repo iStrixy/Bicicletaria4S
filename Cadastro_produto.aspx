@@ -53,16 +53,19 @@
 	<div class="corpo">
 		<section id="titulo_cad_prod">
 			<p>Cadastro de produto</p>
+			<div>
+				<asp:Label runat="server" ID="lblError"></asp:Label>
+			</div>
 		</section>
 		<br/><br/>
 		<div class="form_cad_prod">
 			<div class="campos_cad_prod" id="nome_prod_fabr">
 				Fabricante:
-				<select runat="server" multiple="false" id="slcNomeFabricanteProduto"> </select>
+				<asp:TextBox runat="server" type="text" name="nome_fabr" class="input_nome_fabr_prod" required="" ID="txtNomeFabricanteProduto"></asp:TextBox>
 			</div><br/>
 			<div class="campos_cad_prod" id="nome_prod_forn">
 				Fornecedor: 
-				<select runat="server" multiple="false" id="slcNomeFornecedorProduto"> </select>
+				<asp:TextBox runat="server" type="text" name="nome_forn" class="input_nome_forn_prod" required="" ID="txtNomeFornecedorProduto"></asp:TextBox>
 			</div><br/>
 			<div class="campo_cad_prod" id="desc_prod">
 				Descrição: 

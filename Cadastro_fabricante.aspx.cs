@@ -37,7 +37,7 @@ namespace PROJ_INTER_BC4S
             else
             {
                 lblError.ForeColor = System.Drawing.Color.Green;
-                lblError.Text = "Usuário cadastrado com sucesso!";
+                lblError.Text = "Fabricante cadastrado com sucesso!";
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     FABRICANTE cad_fabricante = new FABRICANTE();
