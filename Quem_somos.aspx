@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
     <title>Bicicletaria 4S - Quem somos</title>
 </head>
+
 <body>
 	<form id="form1" runat="server">
    <div class="menu" id="topo">
@@ -49,7 +50,6 @@
 			</nav>
 		</header>
 	</div>
-	
 		<section id="sobre">
 		<div class="corpo" id="corpo-sobre">
 			<p id="psobre"> História da empresa </p>
@@ -59,7 +59,6 @@
 			mas após a mudança o seu nome foi alterado. O termo “4S” refere-se à sua família (Sebastião, Silvana, Saulo e Sávio).</p>
 		</div>
 	</section>
-
 	<footer>
 		<div class="topicos" id="topicos-principais">
 			<h3><b>Menu</b></h3>

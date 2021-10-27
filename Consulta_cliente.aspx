@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
     <title>Bicicletaria 4S - Consulta de cliente</title>
 </head>
+
 <body>
 	<form id="form1" runat="server" method="post">
     <div class="menu" id="topo">
@@ -49,7 +50,6 @@
 			</nav>
 		</header>
 	</div>
-
 	<div class="corpo">
 		<section id="titulo_consul_cliente">
 			<p>Consulta de cliente</p>
@@ -72,6 +72,7 @@
                     <asp:CommandField ShowSelectButton="True" />
                 </Columns>
             </asp:GridView>
+		</div>
 			<div class="dados_cliente" runat="server">
 				<div>
 					<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
@@ -117,8 +118,6 @@
 				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
 			</div>
 		</div>
-	</div>
-
 	<footer>
 		<div class="topicos" id="topicos-principais">
 			<h3><b>Menu</b></h3>

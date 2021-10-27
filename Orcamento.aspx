@@ -8,6 +8,7 @@
     <title>Bicicletaria 4S - Orçamento</title>
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
 </head>
+
 <body>
 	<form id="form1" runat="server">
     <div class="menu" id="topo">
@@ -49,7 +50,6 @@
 			</nav>
 		</header>
 	</div>
-
 	<div class="corpo">
 		<section id="titulo_orcamento">
 			<p>Formulário de orçamento</p>
@@ -137,7 +137,6 @@
 			<button class="enviar-orcamento">Confirmar orçamento</button>
 		</div>
 	</div>
-
 	<footer>
 		<div class="topicos" id="topicos-principais">
 			<h3><b>Menu</b></h3>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
     <title>Bicicletaria 4S - Consulta de fornecedor</title>
 </head>
+
 <body>
 	<form id="form1" runat="server" method="post">
     <div class="menu" id="topo">
@@ -49,15 +50,29 @@
 			</nav>
 		</header>
 	</div>
-
 	<div class="corpo">
 		<section id="titulo_consul_forn">
 			<p>Consulta de fornecedor</p>
+			<div>
+				<asp:Label runat="server" ID="lblError"></asp:Label>
+			</div>
 		</section>
 		<div class="consul_forn">
-			<asp:GridView ID="gvFornecedor" runat="server" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged"></asp:GridView>
+			<asp:GridView ID="gvFornecedor" runat="server" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
+                <Columns>
+                    <asp:BoundField DataField="NOME" HeaderText="Nome" />
+                    <asp:BoundField DataField="TELEFONE" HeaderText="Telefone" />
+                    <asp:BoundField DataField="CIDADE" HeaderText="Cidade" />
+                    <asp:BoundField DataField="UF" HeaderText="UF" />
+                    <asp:BoundField DataField="EMAIL" HeaderText="E-mail" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
 		</div>
 		<div class="dados_fornecedor" runat="server">
+			<div>
+				<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
+			</div>
 			<div class="campos_consul_fabr">
 				Nome:
 				<asp:TextBox runat="server" type="text" name="nome_forn" class="input_nome_forn_consul" ID="txtNomeForn"></asp:TextBox>
@@ -70,47 +85,18 @@
 				Cidade:
 				<asp:TextBox runat="server" type="text" name="cidade_forn" class="input_cidade_forn_consul" ID="txtCidadeForn"></asp:TextBox>
 				UF:
-				<select class="slc_uf_fabr_consul">
-						<option value="1" runat="server">RO</option>
-						<option value="2" runat="server">AC</option>
-						<option value="3" runat="server">AM</option>
-						<option value="4" runat="server">RR</option>
-						<option value="5" runat="server">PA</option>
-						<option value="6" runat="server">AP</option>
-						<option value="7" runat="server">TO</option>
-						<option value="8" runat="server">MA</option>
-						<option value="9" runat="server">PI</option>
-						<option value="10" runat="server">CE</option>
-						<option value="11" runat="server">RN</option>
-						<option value="12" runat="server">PB</option>
-						<option value="13" runat="server">PE</option>
-						<option value="14" runat="server">AL</option>
-						<option value="15" runat="server">SE</option>
-						<option value="16" runat="server">BA</option>
-						<option value="17" runat="server">MG</option>
-						<option value="18" runat="server">ES</option>
-						<option value="19" runat="server">RJ</option>
-						<option value="20" runat="server" selected="selected">SP</option>
-						<option value="21" runat="server">PR</option>
-						<option value="22" runat="server">SC</option>
-						<option value="23" runat="server">RS</option>
-						<option value="24" runat="server">MS</option>
-						<option value="25" runat="server">MT</option>
-						<option value="26" runat="server">GO</option>
-						<option value="27" runat="server">DF</option>
-				</select>
+				<asp:TextBox runat="server" type="text" name="uf_forn" class="input_uf_forn_consul" ID="txtUfForn" Columns="4" MaxLength="2"></asp:TextBox>
 				</div>
 				<div class="campos_consul_fabr">
 					E-mail:
 					<asp:TextBox runat="server" type="text" name="email_forn" class="input_email_forn_consul" ID="txtEmailForn"></asp:TextBox>
 				</div>
 				<br/><br/>
-				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar"></asp:Button>
-				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar"></asp:Button>
-				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar" OnClick="btnEditar_Click"></asp:Button>
+				<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
 		</div>
 	</div>
-
 	<footer>
 		<div class="topicos" id="topicos-principais">
 			<h3><b>Menu</b></h3>

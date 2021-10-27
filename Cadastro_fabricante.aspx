@@ -8,6 +8,7 @@
     <title>Bicicletaria 4S - Cadastro de fabricante</title>
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
 </head>
+
 <body>
 	<form id="form1" runat="server" method="post">
     <div class="menu" id="topo">
@@ -49,7 +50,6 @@
 			</nav>
 		</header>
 	</div>
-
 	<div class="corpo">
 		<section id="titulo_cad_fabr">
 			<p>Cadastro de fabricante</p>
@@ -77,7 +77,6 @@
             <asp:Button runat="server" class="btn_cad_fabr" ID="btnCadastrarFabricante" Text="Cadastrar" OnClick="btnCadastrarFabricante_Click"></asp:Button>
 		</div>
 	</div>
-
 	<footer>
 		<div class="topicos" id="topicos-principais">
 			<h3><b>Menu</b></h3>

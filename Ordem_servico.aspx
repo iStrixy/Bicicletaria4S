@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
     <title>Bicicletaria 4S - Ordem de serviço</title>
 </head>
+
 <body>
 	<form id="form1" runat="server">
     <div class="menu" id="topo">
@@ -49,7 +50,6 @@
 			</nav>
 		</header>
 	</div>
-
 	<div class="corpo">
 		<section id="titulo_consul_ordem_serv">
 			<p>Ordem de serviço</p>
@@ -58,7 +58,6 @@
 			<asp:GridView ID="gvOrdemServico" runat="server"></asp:GridView>
 		</div>
 	</div>
-
 	<footer>
 		<div class="topicos" id="topicos-principais">
 			<h3><b>Menu</b></h3>

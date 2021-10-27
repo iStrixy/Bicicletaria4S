@@ -50,7 +50,6 @@
             </nav>
         </header>
     </div>
-
     <div class="corpo">
         <section id="titulocadastramento">
             <p>Cadastro de cliente</p>
@@ -63,39 +62,32 @@
                 Nome:
                 <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva"  ID="tb_nome"></asp:Textbox>
             </div>
-            
             <div class="campos" id="rua" required="">
                 Rua:
                 <asp:Textbox runat="server" type="text" name="rua" class="inputstreet"  ID="tb_rua"></asp:Textbox>
             </div>
-            
             <div class="campos" id="endereco">
                 Número:
                 <asp:Textbox runat="server" type="text" name="numero" class="inputnumber"  ID="tb_number"></asp:Textbox>
                 Bairro:
                 <asp:Textbox runat="server" type="text" name="bairro" class="inputdistrict"  ID="tb_bairro"></asp:Textbox>
             </div>
-            
             <div class="campos" id="complemento">
                 Complemento:
                 <asp:Textbox runat="server" type="text" name="complemento" class="inputcomplement" placeholder="Ex. Casa" required="" ID="tb_cmpt"></asp:Textbox>
             </div>
-            
             <div class="campos" id="cep">
                 CEP:
                 <asp:Textbox runat="server" type="text" name="cep" class="inputcep" required="" ID="tb_cep"></asp:Textbox>
             </div>
-            
             <div class="campos" id="cpf">
                 CPF:
                 <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" required="" ID="tb_cpf" OnTextChanged="tb_cpf_TextChanged"></asp:Textbox>
             </div>
-            
             <div class="campos" id="email">
                 E-mail:
                 <asp:Textbox runat="server" type="text" name="email" class="inputemail" placeholder="user@email.com" ID="tb_email" OnTextChanged="tb_email_TextChanged"></asp:Textbox>
             </div>
-            
             <div class="campos" id="tel">
                 Telefone:
                 <asp:Textbox runat="server" type="text" name="telefone" class="inputphone" placeholder="(xx) xxxxx-xxxx" ID="tb_tel"></asp:Textbox>
@@ -103,7 +95,6 @@
             <asp:Button runat="server" class="enviar-cadastramento" ID="bt_cadastrar" Text="Cadastrar" OnClick="bt_cadastrar_Click"></asp:Button>
         </div>
     </div>
-
     <footer>
         <div class="topicos" id="topicos-principais">
             <h3><b>Menu</b></h3>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/telalogin.css" />
     <title>Bicicletaria 4S - Login</title>
 </head>
+
 <body>
     <div class="centro">
         <h1>
@@ -22,9 +23,7 @@
                 <asp:Label class="inp_label" ID="lb_pw" runat="server" Text="Senha"></asp:Label>
             </div>
             <div class="lberror">
-
                 <asp:Label ID="lb_error" runat="server" Font-Names="poppins" ForeColor="Red"></asp:Label>
-
             </div>
             <div>
                 <a href="Index.html">

@@ -68,7 +68,7 @@ namespace PROJ_INTER_BC4S
             {
                 lblError.Text = "Campo Número inválido";
             }
-            else if(!int.TryParse(txtCepCliente.Text, out cep) || txtCepCliente.MaxLength > 8)
+            else if(!int.TryParse(txtCepCliente.Text, out cep))
             {
                 lblError.Text = "Campo CEP inválido";
             }

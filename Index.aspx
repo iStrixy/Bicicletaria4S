@@ -8,6 +8,7 @@
     <title>Bicicletaria 4S - Página Inicial</title>
     <link rel="stylesheet" type="text/css" href="styles/Folhaestilo.css"/>
 </head>
+
 <body>
     <form id="form1" runat="server">
     <div class="menu" id="topo">
@@ -49,7 +50,6 @@
 			</nav>
 		</header>
 	</div>
-
 	<div class="corpo">
 		<section class="user">
 			<asp:Label runat="server" ID="lblUserLogado"></asp:Label>
