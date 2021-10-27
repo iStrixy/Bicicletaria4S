@@ -130,6 +130,7 @@ namespace PROJ_INTER_BC4S
                         txtCpfCliente.Text = pessoa.CPF;
                         txtEmailCliente.Text = pessoa.EMAIL;
                         txtTelCliente.Text = pessoa.TELEFONE.ToString();
+                        lblID.Text = pessoa.ID.ToString();
                     }
                 }
             }

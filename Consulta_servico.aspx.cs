@@ -104,6 +104,7 @@ namespace PROJ_INTER_BC4S
                     {
                         txtDescricaoServico.Text = servico.DESCRICAO;
                         txtValorServico.Text = servico.VALOR.ToString();
+                        lblID.Text = servico.ID.ToString();
                     }
                 }
             }
