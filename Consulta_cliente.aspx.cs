@@ -60,14 +60,12 @@ namespace PROJ_INTER_BC4S
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             lblError.Text = String.Empty;
-            int number = 0;
             int cep = 0;
-            int cpf = 0;
-            int tel = 0;
+            double number, cpf, tel;
             txtTelCliente.MaxLength = 11;
             txtCepCliente.MaxLength = 8;
             txtCpfCliente.MaxLength = 11;
-            if (!int.TryParse(txtNumeroCliente.Text, out number))
+            if (!double.TryParse(txtNumeroCliente.Text, out number))
             {
                 lblError.Text = "Campo Número inválido";
             }
@@ -75,16 +73,19 @@ namespace PROJ_INTER_BC4S
             {
                 lblError.Text = "Campo CEP inválido";
             }
-            else if(!int.TryParse(txtCpfCliente.Text, out cpf) || txtCpfCliente.MaxLength > 11)
+            else if(!double.TryParse(txtCpfCliente.Text, out cpf) || txtCpfCliente.MaxLength > 11)
             {
                 lblError.Text = "Campo CPF inválido";
             }
-            else if(!int.TryParse(txtTelCliente.Text, out tel) || txtTelCliente.MaxLength > 11)
+            else if(!double.TryParse(txtTelCliente.Text, out tel) || txtTelCliente.MaxLength > 11)
             {
                 lblError.Text = "Campo Telefone inválido";
             }
             else
             {
+                number = Convert.ToDouble(txtNumeroCliente.Text);
+                cpf = Convert.ToDouble(txtCpfCliente.Text);
+                tel = Convert.ToDouble(txtTelCliente.Text);
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     PESSOA pessoa = null;

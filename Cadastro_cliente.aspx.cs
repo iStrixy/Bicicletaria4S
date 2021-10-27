@@ -65,7 +65,10 @@ namespace PROJ_INTER_BC4S
                 }
                 else
                 {
+<<<<<<< HEAD
                     string cpf = tb_cpf.Text;
+=======
+>>>>>>> 3f94ef61fff1629cf9d5ac7bfcc876a57d7bcd41
                     PESSOA cliente = con_bd.PESSOA.Where(linha => linha.CPF.Equals(cpf)).FirstOrDefault();
                     if (cliente != null)
                     {
@@ -96,7 +99,16 @@ namespace PROJ_INTER_BC4S
                         con_bd.PESSOA.Add(cad_pessoa);
                         con_bd.SaveChanges();
                         limpar_campos();
+<<<<<<< HEAD
                         
+=======
+
+                    }
+
+                    else
+                    {
+                        lblError.Text = "Cliente já cadastrado!";
+>>>>>>> 3f94ef61fff1629cf9d5ac7bfcc876a57d7bcd41
                     }
                 }
             }
