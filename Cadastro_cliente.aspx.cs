@@ -11,11 +11,14 @@ namespace PROJ_INTER_BC4S
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             String nomeuserlogado = (String)Session["userlogado"];
             if (nomeuserlogado == null)
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+
+         
         }
         protected void lb_sair_Click(object sender, EventArgs e)
         {
@@ -41,33 +44,39 @@ namespace PROJ_INTER_BC4S
 
                 lblError.Text = string.Empty;
                 int number = 0;
-                string cpf = tb_cpf.Text;
                 int cep = 0;
                 int cpf1 = 0;
                 int tel = 0;
                 tb_tel.MaxLength = 10;
                 if (!int.TryParse(tb_number.Text, out number))
                 {
+                    lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Número inválido";
                 }
                 else if (!int.TryParse(tb_cep.Text, out cep))
                 {
+                    lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo CEP inválido";
                 }
-                else if (!int.TryParse(tb_cpf.Text, out cpf1))
+                else if (!int.TryParse(tb_tel.Text, out tel))
                 {
-                    lblError.Text = "Campo CPF inválido!";
-                }
-                else if (!int.TryParse(tb_tel.Text, out tel) || tb_tel.MaxLength > 10)
-                {
-                    lblError.Text = "Campo inválido! ou utilize '179999999' para cadastrar o número";
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo TELEFONE inválido!";
                 }
                 else
                 {
-
+                    string cpf = tb_cpf.Text;
                     PESSOA cliente = con_bd.PESSOA.Where(linha => linha.CPF.Equals(cpf)).FirstOrDefault();
                     if (cliente != null)
                     {
+
+                        lblError.Text = "Cliente já cadastrado!";
+
+                    }
+
+                    else
+                    {
+
                         lblError.ForeColor = System.Drawing.Color.Green;
                         lblError.Text = "Usuário cadastrado com sucesso!";
 
@@ -87,13 +96,7 @@ namespace PROJ_INTER_BC4S
                         con_bd.PESSOA.Add(cad_pessoa);
                         con_bd.SaveChanges();
                         limpar_campos();
-
-                    }
-
-                    else
-                    {
-
-                        lblError.Text = "Cliente já cadastrado!";
+                        
                     }
                 }
             }

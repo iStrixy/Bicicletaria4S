@@ -61,19 +61,19 @@
         <div class="form_cadastramento">
             <div class="campos" id="nome">
                 Nome:
-                <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva" required="" ID="tb_nome"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva"  ID="tb_nome"></asp:Textbox>
             </div>
             
             <div class="campos" id="rua" required="">
                 Rua:
-                <asp:Textbox runat="server" type="text" name="rua" class="inputstreet" required="" ID="tb_rua"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="rua" class="inputstreet"  ID="tb_rua"></asp:Textbox>
             </div>
             
             <div class="campos" id="endereco">
                 Número:
-                <asp:Textbox runat="server" type="text" name="numero" class="inputnumber" required="" ID="tb_number"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="numero" class="inputnumber"  ID="tb_number"></asp:Textbox>
                 Bairro:
-                <asp:Textbox runat="server" type="text" name="bairro" class="inputdistrict" required="" ID="tb_bairro"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="bairro" class="inputdistrict"  ID="tb_bairro"></asp:Textbox>
             </div>
             
             <div class="campos" id="complemento">
