@@ -18,7 +18,8 @@ namespace PROJ_INTER_BC4S
                 Response.Redirect("TeladeLogin.aspx");
             }
 
-         
+            lblError.Text = String.Empty;
+
         }
         protected void lb_sair_Click(object sender, EventArgs e)
         {
@@ -48,6 +49,7 @@ namespace PROJ_INTER_BC4S
                 int cpf1 = 0;
                 int tel = 0;
                 tb_tel.MaxLength = 10;
+
                 if (!int.TryParse(tb_number.Text, out number))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
@@ -65,15 +67,12 @@ namespace PROJ_INTER_BC4S
                 }
                 else
                 {
-<<<<<<< HEAD
                     string cpf = tb_cpf.Text;
-=======
->>>>>>> 3f94ef61fff1629cf9d5ac7bfcc876a57d7bcd41
                     PESSOA cliente = con_bd.PESSOA.Where(linha => linha.CPF.Equals(cpf)).FirstOrDefault();
                     if (cliente != null)
                     {
 
-                        lblError.Text = "Cliente já cadastrado!";
+                        lblError.Text = "Usuário já cadastrado!";
 
                     }
 
@@ -99,16 +98,7 @@ namespace PROJ_INTER_BC4S
                         con_bd.PESSOA.Add(cad_pessoa);
                         con_bd.SaveChanges();
                         limpar_campos();
-<<<<<<< HEAD
-                        
-=======
 
-                    }
-
-                    else
-                    {
-                        lblError.Text = "Cliente já cadastrado!";
->>>>>>> 3f94ef61fff1629cf9d5ac7bfcc876a57d7bcd41
                     }
                 }
             }
