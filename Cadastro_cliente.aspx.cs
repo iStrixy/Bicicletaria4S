@@ -64,7 +64,6 @@ namespace PROJ_INTER_BC4S
                 }
                 else
                 {
-
                     PESSOA cliente = con_bd.PESSOA.Where(linha => linha.CPF.Equals(cpf)).FirstOrDefault();
                     if (cliente != null)
                     {
@@ -92,7 +91,6 @@ namespace PROJ_INTER_BC4S
 
                     else
                     {
-
                         lblError.Text = "Cliente já cadastrado!";
                     }
                 }
