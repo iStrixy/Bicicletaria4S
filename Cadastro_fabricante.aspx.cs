@@ -28,18 +28,41 @@ namespace PROJ_INTER_BC4S
         }
         protected void btnCadastrarFabricante_Click(object sender, EventArgs e)
         {
-            txtTelefoneFabricante.MaxLength = 10;
-            int tel = 0;
-            if (!int.TryParse(txtTelefoneFabricante.Text, out tel))
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
-                lblError.Text = "Campo telefone inválido!";
-            }
-            else
-            {
-                lblError.ForeColor = System.Drawing.Color.Green;
-                lblError.Text = "Fabricante cadastrado com sucesso!";
-                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                double tel;
+                string tel_max = txtTelefoneFabricante.Text;
+                string uf_max = txtUfFabricante.Text;
+                if (!double.TryParse(txtTelefoneFabricante.Text, out tel))
                 {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido!";
+                }
+                else if (tel_max.Length < 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido!";
+                }
+                else if (tel_max.Length > 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido!";
+                }
+                else if (uf_max.Length < 2)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo UF inválido!";
+                }
+                else if (uf_max.Length > 2)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo UF inválido!";
+                }
+                else
+                {
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                    lblError.Text = "Fabricante cadastrado com sucesso!";
+
                     FABRICANTE cad_fabricante = new FABRICANTE();
                     cad_fabricante.NOME = txtNomeFabricante.Text;
                     cad_fabricante.TELEFONE = txtTelefoneFabricante.Text;

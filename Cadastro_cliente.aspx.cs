@@ -42,14 +42,13 @@ namespace PROJ_INTER_BC4S
         {
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
-
                 lblError.Text = string.Empty;
                 int number = 0;
                 int cep = 0;
-                int cpf1 = 0;
-                int tel = 0;
-                tb_tel.MaxLength = 10;
-
+                double tel, cpf1;
+                string cep_max = tb_cep.Text;
+                string tel_max = tb_tel.Text;
+                string cpf_max = tb_cpf.Text;
                 if (!int.TryParse(tb_number.Text, out number))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
@@ -60,28 +59,66 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo CEP inválido";
                 }
-                else if (!int.TryParse(tb_tel.Text, out tel))
+                else if (cep_max.Length < 8)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo TELEFONE inválido!";
+                    lblError.Text = "Campo CEP inválido";
+                }
+                else if (cep_max.Length > 8)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CEP inválido";
+                }
+                else if (!double.TryParse(tb_tel.Text, out tel))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido!";
+                }
+                else if (tel_max.Length > 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido";
+                }
+                else if (tel_max.Length < 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido";
+                }
+                else if (!double.TryParse(tb_cpf.Text, out cpf1))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF inválido";
+                }
+                else if (cpf_max.Length > 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF inválido";
+                }
+                else if (cpf_max.Length < 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF inválido";
                 }
                 else
                 {
                     string cpf = tb_cpf.Text;
+                    string email = tb_email.Text;
                     PESSOA cliente = con_bd.PESSOA.Where(linha => linha.CPF.Equals(cpf)).FirstOrDefault();
+                    PESSOA clientemail = con_bd.PESSOA.Where(linha => linha.EMAIL.Equals(email)).FirstOrDefault();
                     if (cliente != null)
                     {
-
-                        lblError.Text = "Usuário já cadastrado!";
-
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                        lblError.Text = "CPF já cadastrado!";
                     }
-
+                    else if (clientemail != null)
+                    {
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                        lblError.Text = "E-mail já cadastrado!";
+                    }
                     else
                     {
-
                         lblError.ForeColor = System.Drawing.Color.Green;
                         lblError.Text = "Usuário cadastrado com sucesso!";
-
 
                         PESSOA cad_pessoa = new PESSOA();
 
@@ -98,10 +135,19 @@ namespace PROJ_INTER_BC4S
                         con_bd.PESSOA.Add(cad_pessoa);
                         con_bd.SaveChanges();
                         limpar_campos();
-
                     }
                 }
             }
+        }
+
+        protected void tb_cpf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void tb_email_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

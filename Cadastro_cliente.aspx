@@ -88,12 +88,12 @@
             
             <div class="campos" id="cpf">
                 CPF:
-                <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" required="" ID="tb_cpf"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" required="" ID="tb_cpf" OnTextChanged="tb_cpf_TextChanged"></asp:Textbox>
             </div>
             
             <div class="campos" id="email">
                 E-mail:
-                <asp:Textbox runat="server" type="text" name="email" class="inputemail" placeholder="user@email.com" ID="tb_email"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="email" class="inputemail" placeholder="user@email.com" ID="tb_email" OnTextChanged="tb_email_TextChanged"></asp:Textbox>
             </div>
             
             <div class="campos" id="tel">

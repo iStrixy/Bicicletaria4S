@@ -60,12 +60,11 @@ namespace PROJ_INTER_BC4S
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             lblError.Text = String.Empty;
+            int number = 0;
             int cep = 0;
-            double number, cpf, tel;
-            txtTelCliente.MaxLength = 11;
-            txtCepCliente.MaxLength = 8;
-            txtCpfCliente.MaxLength = 11;
-            if (!double.TryParse(txtNumeroCliente.Text, out number))
+            int cpf1 = 0;
+            int tel = 0;
+            if (!int.TryParse(txtNumeroCliente.Text, out number))
             {
                 lblError.Text = "Campo Número inválido";
             }
@@ -73,23 +72,16 @@ namespace PROJ_INTER_BC4S
             {
                 lblError.Text = "Campo CEP inválido";
             }
-            else if(!double.TryParse(txtCpfCliente.Text, out cpf) || txtCpfCliente.MaxLength > 11)
-            {
-                lblError.Text = "Campo CPF inválido";
-            }
-            else if(!double.TryParse(txtTelCliente.Text, out tel) || txtTelCliente.MaxLength > 11)
+            else if(!int.TryParse(txtTelCliente.Text, out tel))
             {
                 lblError.Text = "Campo Telefone inválido";
             }
             else
             {
-                number = Convert.ToDouble(txtNumeroCliente.Text);
-                cpf = Convert.ToDouble(txtCpfCliente.Text);
-                tel = Convert.ToDouble(txtTelCliente.Text);
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     PESSOA pessoa = null;
-                    if(lblError.Text.Equals(String.Empty))
+                    if(lblError.Text == null)
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         pessoa = con_bd.PESSOA.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
@@ -105,7 +97,7 @@ namespace PROJ_INTER_BC4S
                     pessoa.EMAIL = txtEmailCliente.Text;
                     pessoa.TELEFONE = txtTelCliente.Text;
 
-                    if(lblError.Text.Equals(String.Empty))
+                    if(lblError.Text == null)
                     {
                         con_bd.Entry(pessoa);
                     }

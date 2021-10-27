@@ -75,6 +75,7 @@
 			<div class="dados_cliente" runat="server">
 				<div>
 					<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
+					<asp:Label runat="server" ID="lbl2" Visible="false"></asp:Label>
 				</div>
 				<div class="campo_consul_cliente">
 					Nome:

@@ -19,23 +19,64 @@ namespace PROJ_INTER_BC4S
             lblError.Text = String.Empty;
         }
 
+        private void limpar_campos()
+        {
+            txtCidadeFornecedor.Text = string.Empty;
+            txtEmailFornecedor.Text = string.Empty;
+            txtNomeFornecedor.Text = string.Empty;
+            txtTelefoneFornecedor.Text = string.Empty;
+            txtUfFornecedor.Text = string.Empty;
+        }
+
         protected void btnCadastrarFornecedor_Click(object sender, EventArgs e)
         {
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
-
             {
-                FORNECEDOR cad_fornecedor = new FORNECEDOR();
-                TELEFONE_FORNECEDOR telefone = new TELEFONE_FORNECEDOR();
+                double tel;
+                string UF = txtUfFornecedor.Text;
+                string tel_max = txtTelefoneFornecedor.Text;
+                if (!double.TryParse(txtTelefoneFornecedor.Text, out tel))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido";
+                }
+                else if (tel_max.Length < 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido";
+                }
+                else if (tel_max.Length > 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone inválido";
+                }
+                else if (UF.Length > 2)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo UF inválido";
+                }
+                else if (UF.Length < 2)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo UF inválido";
+                }
+                else
+                {
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                    lblError.Text = "Fornecedor cadastrado com sucesso!";
 
-                cad_fornecedor.NOME = txtNomeFornecedor.Text;
-                cad_fornecedor.CIDADE = txtCidadeFornecedor.Text;
-                //cad_fornecedor.UF = slcEstadoFabricante.ToString();
-                telefone.TELEFONE = Convert.ToInt32(txtTelefoneFornecedor.Text);
+                    FORNECEDOR cad_fornecedor = new FORNECEDOR();
 
-            txtTelefoneFornecedor.MaxLength = 11;
-                con_bd.FORNECEDOR.Add(cad_fornecedor);
-                con_bd.SaveChanges();
+                    cad_fornecedor.NOME = txtNomeFornecedor.Text;
+                    cad_fornecedor.TELEFONE = txtTelefoneFornecedor.Text;
+                    cad_fornecedor.CIDADE = txtCidadeFornecedor.Text;
+                    cad_fornecedor.UF = txtUfFornecedor.Text;
+                    cad_fornecedor.EMAIL = txtEmailFornecedor.Text;
 
+                    con_bd.FORNECEDOR.Add(cad_fornecedor);
+                    con_bd.SaveChanges();
+                    limpar_campos();
+                }
             }
         }
 

@@ -62,7 +62,7 @@ namespace PROJ_INTER_BC4S
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     SERVICO servico = null;
-                    if (lblError.Text.Equals(String.Empty))
+                    if (lblError.Text == null)
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         servico = con_bd.SERVICO.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
@@ -71,7 +71,7 @@ namespace PROJ_INTER_BC4S
                     servico.VALOR = vlr_unit;
                     servico.DESCRICAO = txtDescricaoServico.Text;
 
-                    if (lblError.Text.Equals(String.Empty))
+                    if (lblError.Text == null)
                     {
                         con_bd.Entry(servico);
                     }
@@ -94,7 +94,7 @@ namespace PROJ_INTER_BC4S
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     SERVICO servico = con_bd.SERVICO.Where(linha => linha.ID == ID).FirstOrDefault();
-                    if( servico != null)
+                    if(servico != null)
                     {
                         txtDescricaoServico.Text = servico.DESCRICAO;
                         txtValorServico.Text = servico.VALOR.ToString();
@@ -115,7 +115,7 @@ namespace PROJ_INTER_BC4S
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Usuário excluído com sucesso!";
+                    lblError.Text = "Item excluído com sucesso!";
                     limpar_campos();
                 }
             }
