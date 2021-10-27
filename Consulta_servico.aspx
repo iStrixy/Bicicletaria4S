@@ -54,7 +54,7 @@
 		<section id="titulo_consul_serv">
 			<p>Consulta de serviço</p>
 			<div>
-				<asp:Label runat="server" ID="lblError"></asp:Label>
+				<asp:Label runat="server" ID="lblError" Visible="false"></asp:Label>
 			</div>
 		</section>
 		<div class="consul_serv">

@@ -37,6 +37,11 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Inserir informações no campo Descrição!";
             }
+            else if(txtValorServico.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Valor inválido!";
+            }
             else
             {
                 lblError.ForeColor = System.Drawing.Color.Green;

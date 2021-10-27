@@ -41,7 +41,7 @@ namespace PROJ_INTER_BC4S
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            lblError.Text = String.Empty;
+            lblError.Text = string.Empty;
             double vlr_unit;
             if (!double.TryParse(txtValorServico.Text, out vlr_unit))
             {
@@ -58,22 +58,29 @@ namespace PROJ_INTER_BC4S
             else
             {
                 vlr_unit = Convert.ToDouble(txtValorServico.Text);
-
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    SERVICO servico = null;
-                    if (lblError.Text == null)
+                    SERVICO servicos = null;
+                    if (lblError.Text.Equals("Novo registro!"))
+                    {
+                        servicos = new SERVICO();
+                    }
+                    else
                     {
                         int ID = Convert.ToInt32(lblID.Text);
-                        servico = con_bd.SERVICO.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
+                        servicos = con_bd.SERVICO.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
                     }
 
-                    servico.VALOR = vlr_unit;
-                    servico.DESCRICAO = txtDescricaoServico.Text;
+                    servicos.VALOR = Convert.ToDouble(txtValorServico.Text);
+                    servicos.DESCRICAO = txtDescricaoServico.Text;
 
-                    if (lblError.Text == null)
+                    if (lblError.Text.Equals("Novo registro!"))
                     {
-                        con_bd.Entry(servico);
+                        con_bd.SERVICO.Add(servicos);
+                    }
+                    else
+                    {
+                        con_bd.Entry(servicos);
                     }
 
                     con_bd.SaveChanges();
