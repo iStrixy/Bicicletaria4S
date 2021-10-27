@@ -74,7 +74,6 @@ namespace PROJ_INTER_BC4S
         {
             if(gvFabricante.SelectedValue != null)
             {
-                lblError.Text = string.Empty;
                 int ID = Convert.ToInt32(gvFabricante.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {

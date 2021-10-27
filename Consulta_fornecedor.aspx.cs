@@ -73,7 +73,22 @@ namespace PROJ_INTER_BC4S
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-
+            if (gvFornecedor.SelectedValue != null)
+            {
+                int ID = Convert.ToInt32(gvFornecedor.SelectedValue.ToString());
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    FORNECEDOR fornecedor = con_bd.FORNECEDOR.Where(linha => linha.ID == ID).FirstOrDefault();
+                    if(fornecedor != null)
+                    {
+                        txtNomeForn.Text = fornecedor.NOME;
+                        txtTelForn.Text = fornecedor.TELEFONE.ToString();
+                        txtCidadeForn.Text = fornecedor.CIDADE.ToString();
+                        txtUfForn.Text = fornecedor.UF.ToString();
+                        txtEmailForn.Text = fornecedor.EMAIL.ToString();
+                    }
+                }
+            }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
