@@ -86,6 +86,7 @@ namespace PROJ_INTER_BC4S
                         txtCidadeForn.Text = fornecedor.CIDADE.ToString();
                         txtUfForn.Text = fornecedor.UF.ToString();
                         txtEmailForn.Text = fornecedor.EMAIL.ToString();
+                        lblID.Text = fornecedor.ID.ToString();
                     }
                 }
             }
@@ -93,7 +94,95 @@ namespace PROJ_INTER_BC4S
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            lblError.Text = string.Empty;
+            double tel;
+            string UF = txtUfForn.Text;
+            string tel_max = txtTelForn.Text;
+            if (!double.TryParse(txtTelForn.Text, out tel))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (tel_max.Length < 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (tel_max.Length > 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (UF.Length > 2)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo UF inválido!";
+            }
+            else if (UF.Length < 2)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo UF inválido!";
+            }
+            else if (txtNomeForn.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome vazio!";
+            }
+            else if (txtTelForn.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone vazio!";
+            }
+            else if (txtCidadeForn.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Cidade vazio!";
+            }
+            else if (txtUfForn.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo UF vazio!";
+            }
+            else if (txtEmailForn.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo E-mail vazio!";
+            }
+            else
+            {
+                lblError.Text = string.Empty;
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    FORNECEDOR fornecedor = null;
+                    if(lblError.Text.Equals(string.Empty))
+                    {
+                        int ID = Convert.ToInt32(lblID.Text);
+                        fornecedor = con_bd.FORNECEDOR.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
+                    }
 
+                    fornecedor.NOME = txtNomeForn.Text;
+                    fornecedor.TELEFONE = txtTelForn.Text;
+                    fornecedor.CIDADE = txtCidadeForn.Text;
+                    fornecedor.UF = txtUfForn.Text;
+                    fornecedor.EMAIL = txtEmailForn.Text;
+
+                    if (lblError.Text.Equals(string.Empty))
+                    {
+                        con_bd.Entry(fornecedor);
+                    }
+
+                    con_bd.SaveChanges();
+                    carregarGrid(con_bd);
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                    lblError.Text = "Dados alterados com sucesso!";
+                    limpar_campos();
+                }
+            }
+        }
+
+        protected void txtUfForn_TextChanged(object sender, EventArgs e)
+        {
+            txtUfForn.Text = txtUfForn.Text.ToUpper();
         }
     }
 }

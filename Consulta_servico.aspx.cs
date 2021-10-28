@@ -42,30 +42,30 @@ namespace PROJ_INTER_BC4S
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
-            double vlr_unit;
-            if (!double.TryParse(txtValorServico.Text, out vlr_unit))
+            int vlr_unit;
+            if (!int.TryParse(txtValorServico.Text, out vlr_unit))
             {
+                lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Valor inválido!";
             }
             else if (txtDescricaoServico.Text == String.Empty)
             {
-                lblError.Text = "Insira as informações no campo descrição";
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Insira as informações no campo descrição!";
             }
             else if (txtValorServico.Text == String.Empty)
             {
-                lblError.Text = "Insira as informações no campo valor";
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Insira as informações no campo valor!";
             }
             else
             {
-                vlr_unit = Convert.ToDouble(txtValorServico.Text);
+                lblError.Text = string.Empty;
+                vlr_unit = Convert.ToInt32(txtValorServico.Text);
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     SERVICO servicos = null;
-                    if (lblError.Text.Equals("Novo registro!"))
-                    {
-                        servicos = new SERVICO();
-                    }
-                    else
+                    if (lblError.Text.Equals(string.Empty))
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         servicos = con_bd.SERVICO.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
@@ -74,11 +74,7 @@ namespace PROJ_INTER_BC4S
                     servicos.VALOR = Convert.ToDouble(txtValorServico.Text);
                     servicos.DESCRICAO = txtDescricaoServico.Text;
 
-                    if (lblError.Text.Equals("Novo registro!"))
-                    {
-                        con_bd.SERVICO.Add(servicos);
-                    }
-                    else
+                    if (lblError.Text.Equals(string.Empty))
                     {
                         con_bd.Entry(servicos);
                     }

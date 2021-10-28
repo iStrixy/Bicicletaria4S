@@ -62,26 +62,67 @@ namespace PROJ_INTER_BC4S
             lblError.Text = String.Empty;
             int number = 0;
             int cep = 0;
-            int cpf1 = 0;
-            int tel = 0;
+            double tel, cpf;
+            string cep_max = txtCepCliente.Text;
+            string tel_max = txtTelCliente.Text;
+            string cpf_max = txtCpfCliente.Text;
             if (!int.TryParse(txtNumeroCliente.Text, out number))
             {
+                lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Número inválido";
             }
             else if(!int.TryParse(txtCepCliente.Text, out cep))
             {
+                lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo CEP inválido";
             }
-            else if(!int.TryParse(txtTelCliente.Text, out tel))
+            else if (cep_max.Length < 8)
             {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo CEP inválido";
+            }
+            else if (cep_max.Length > 8)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo CEP inválido";
+            }
+            else if(!double.TryParse(txtTelCliente.Text, out tel))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Telefone inválido";
+            }
+            else if (tel_max.Length > 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido";
+            }
+            else if (tel_max.Length < 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido";
+            }
+            else if (!double.TryParse(txtCpfCliente.Text, out cpf))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo CPF inválido";
+            }
+            else if (cpf_max.Length > 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo CPF inválido";
+            }
+            else if (cpf_max.Length < 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo CPF inválido";
             }
             else
             {
+                lblError.Text = string.Empty;
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     PESSOA pessoa = null;
-                    if(lblError.Text == null)
+                    if(lblError.Text.Equals(string.Empty))
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         pessoa = con_bd.PESSOA.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
@@ -97,7 +138,7 @@ namespace PROJ_INTER_BC4S
                     pessoa.EMAIL = txtEmailCliente.Text;
                     pessoa.TELEFONE = txtTelCliente.Text;
 
-                    if(lblError.Text == null)
+                    if(lblError.Text.Equals(string.Empty))
                     {
                         con_bd.Entry(pessoa);
                     }

@@ -85,7 +85,7 @@
 				Cidade:
 				<asp:TextBox runat="server" type="text" name="cidade_forn" class="input_cidade_forn_consul" ID="txtCidadeForn"></asp:TextBox>
 				UF:
-				<asp:TextBox runat="server" type="text" name="uf_forn" class="input_uf_forn_consul" ID="txtUfForn" Columns="4" MaxLength="2"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="uf_forn" class="input_uf_forn_consul" ID="txtUfForn" Columns="4" MaxLength="2" OnTextChanged="txtUfForn_TextChanged"></asp:TextBox>
 				</div>
 				<div class="campos_consul_fabr">
 					E-mail:

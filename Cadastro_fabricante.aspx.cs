@@ -58,6 +58,26 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo UF inválido!";
                 }
+                else if(txtNomeFabricante.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Nome vazio!";
+                }
+                else if(txtTelefoneFabricante.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone vazio!";
+                }
+                else if(txtCidadeFabricante.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Cidade vazio!";
+                }
+                else if(txtUfFabricante.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo UF vazio!";
+                }
                 else
                 {
                     lblError.ForeColor = System.Drawing.Color.Green;
