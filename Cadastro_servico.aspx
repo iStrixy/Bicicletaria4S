@@ -53,11 +53,11 @@
 	<div class="corpo">
 		<section id="titulo_cad_serv">
 			<p>Cadastro de serviço</p>
-			<div>
-				<asp:Label runat="server" ID="lblError"></asp:Label>
-			</div>
 		</section>
-		<br/><br/>
+		<div>
+            <asp:Label runat="server" ID="lblError"></asp:Label>
+        </div>
+        <br/>
 		<div class="form_cad_serv">
 			<div class="campo_cad_serv" id="desc_serv">
 				Descrição:

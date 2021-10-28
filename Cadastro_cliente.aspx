@@ -53,10 +53,11 @@
     <div class="corpo">
         <section id="titulocadastramento">
             <p>Cadastro de cliente</p>
-            <div>
-                <asp:Label runat="server" ID="lblError"></asp:Label>
-            </div>
         </section>
+        <div>
+            <asp:Label runat="server" ID="lblError"></asp:Label>
+        </div>
+        <br/>
         <div class="form_cadastramento">
             <div class="campos" id="nome">
                 Nome:

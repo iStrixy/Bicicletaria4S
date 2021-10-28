@@ -53,10 +53,11 @@
 	<div class="corpo">
 		<section id="titulo_consul_serv">
 			<p>Consulta de serviço</p>
-			<div>
-				<asp:Label runat="server" ID="lblError"></asp:Label>
-			</div>
 		</section>
+		<div>
+			<asp:Label runat="server" ID="lblError"></asp:Label>
+		</div>
+		<br/>
 		<div class="consul_serv">
 			<asp:GridView ID="gvServico" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
@@ -66,6 +67,7 @@
                 </Columns>
             </asp:GridView>
 		</div>
+		<br/>
 			<div class="dados_serv" runat="server">
 				<div>
 					<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
@@ -76,7 +78,7 @@
 				</div>
 				<div class="campo_consul_serv">
 					Valor:
-					<asp:TextBox runat="server" type="text" name="valor" class="input_vlr_serv_consul" ID="txtValorServico"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="valor" class="input_vlr_serv_consul" ID="txtValorServico" Width="55px"></asp:TextBox>
 				</div>
 				<br /><br />
 				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>

@@ -53,10 +53,11 @@
 	<div class="corpo">
 		<section id="titulo_consul_forn">
 			<p>Consulta de fornecedor</p>
-			<div>
-				<asp:Label runat="server" ID="lblError"></asp:Label>
-			</div>
 		</section>
+		<div>
+			<asp:Label runat="server" ID="lblError"></asp:Label>
+		</div>
+		<br/>
 		<div class="consul_forn">
 			<asp:GridView ID="gvFornecedor" runat="server" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
@@ -69,6 +70,7 @@
                 </Columns>
             </asp:GridView>
 		</div>
+		<br/>
 		<div class="dados_fornecedor" runat="server">
 			<div>
 				<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>

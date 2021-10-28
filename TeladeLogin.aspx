@@ -26,8 +26,8 @@
                 <asp:Label ID="lb_error" runat="server" Font-Names="poppins" ForeColor="Red"></asp:Label>
             </div>
             <div>
-                <a href="Index.html">
-                    <asp:Button ID="bt_entrar" runat="server" Text="Entrar" OnClick="bt_entrar_Click" />
+                <a href="Index.aspx">
+                    <asp:Button ID="bt_entrar" runat="server" Text="Entrar" OnClick="bt_entrar_Click"/>
                 </a>
             </div>
         </form>

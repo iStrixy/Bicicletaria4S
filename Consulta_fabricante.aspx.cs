@@ -84,6 +84,7 @@ namespace PROJ_INTER_BC4S
                         txtTelFabr.Text = fabricante.TELEFONE.ToString();
                         txtCidadeFabr.Text = fabricante.CIDADE;
                         txtUfFabr.Text = fabricante.UF;
+                        lblID.Text = fabricante.ID.ToString();
                     }
                 }
             }
@@ -91,12 +92,89 @@ namespace PROJ_INTER_BC4S
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            lblError.Text = string.Empty;
+            double tel;
+            string tel_max = txtTelFabr.Text;
+            string uf_max = txtUfFabr.Text;
+            if (!double.TryParse(txtTelFabr.Text, out tel))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (tel_max.Length < 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (tel_max.Length > 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (uf_max.Length < 2)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo UF inválido!";
+            }
+            else if (uf_max.Length > 2)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo UF inválido!";
+            }
+            else if (txtNomeFabr.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome vazio!";
+            }
+            else if (txtTelFabr.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone vazio!";
+            }
+            else if (txtCidadeFabr.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Cidade vazio!";
+            }
+            else if (txtUfFabr.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo UF vazio!";
+            }
+            else
+            {
+                lblError.Text = string.Empty;
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    FABRICANTE fabricante = null;
+                    if(lblError.Text.Equals(string.Empty))
+                    {
+                        int ID = Convert.ToInt32(lblID.Text);
+                        fabricante = con_bd.FABRICANTE.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
+                    }
 
+                    fabricante.NOME = txtNomeFabr.Text;
+                    fabricante.TELEFONE = txtTelFabr.Text;
+                    fabricante.CIDADE = txtCidadeFabr.Text;
+                    fabricante.UF = txtUfFabr.Text;
+
+                    if (lblError.Text.Equals(string.Empty))
+                    {
+                        con_bd.Entry(fabricante);
+                    }
+
+                    con_bd.SaveChanges();
+                    carregarGrid(con_bd);
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                    lblError.Text = "Dados alterados com sucesso!";
+                    limpar_campos();
+                }
+            }
         }
 
         protected void txtUfFabr_TextChanged(object sender, EventArgs e)
         {
-
+            txtUfFabr.Text = txtUfFabr.Text.ToUpper();
         }
     }
 }

@@ -72,7 +72,7 @@
 			</div>
 			<div class="campos_consul_prod">
 				Valor unitário:
-				<asp:TextBox runat="server" type="text" name="vlr_uni_prod" class="input_vlr_uni_prod_consul" ID="txtVlrUni"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="vlr_uni_prod" class="input_vlr_uni_prod_consul" ID="txtVlrUni" OnTextChanged="txtVlrUni_TextChanged" Width="55px"></asp:TextBox>
 			</div>
 			<br/><br/>
 			<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar"></asp:Button>

@@ -53,10 +53,11 @@
 	<div class="corpo">
 		<section id="titulo_consul_cliente">
 			<p>Consulta de cliente</p>
-			<div>
-				<asp:Label runat="server" ID="lblError"></asp:Label>
-			</div>
 		</section>
+		<div>
+			<asp:Label runat="server" ID="lblError"></asp:Label>
+		</div>
+		<br/>
 		<div class="consul_cliente">
 			<asp:GridView ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
@@ -73,44 +74,44 @@
                 </Columns>
             </asp:GridView>
 		</div>
+		<br/>
 			<div class="dados_cliente" runat="server">
 				<div>
 					<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
-					<asp:Label runat="server" ID="lbl2" Visible="false"></asp:Label>
 				</div>
 				<div class="campo_consul_cliente">
 					Nome:
-					<asp:TextBox runat="server" type="text" name="nome" class="input_nome_cliente_consul" ID="txtNomeCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="nome" class="input_nome_cliente_consul" ID="txtNomeCliente" Width="200px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					Rua:
-					<asp:TextBox runat="server" type="text" name="rua" class="input_rua_cliente_consul" ID="txtRuaCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="rua" class="input_rua_cliente_consul" ID="txtRuaCliente" Width="200px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					Número:
-					<asp:TextBox runat="server" type="text" name="numero" class="input_numero_cliente_consul" ID="txtNumeroCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="numero" class="input_numero_cliente_consul" ID="txtNumeroCliente" Width="30px"></asp:TextBox>
 					Bairro:
-					<asp:TextBox runat="server" type="text" name="bairro" class="input_bairro_cliente_consul" ID="txtBairroCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="bairro" class="input_bairro_cliente_consul" ID="txtBairroCliente" Width="150px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					Complemento:
-					<asp:TextBox runat="server" type="text" name="complemento" class="input_complemento_cliente_consul" ID="txtComplementoCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="complemento" class="input_complemento_cliente_consul" ID="txtComplementoCliente" Width="150px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					CEP:
-					<asp:TextBox runat="server" type="text" name="CEP" class="input_cep_cliente_consul" ID="txtCepCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="CEP" class="input_cep_cliente_consul" ID="txtCepCliente" Width="150px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					CPF:
-					<asp:TextBox runat="server" type="text" name="CPF" class="input_cpf_cliente_consul" ID="txtCpfCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="CPF" class="input_cpf_cliente_consul" ID="txtCpfCliente" Width="150px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					E-mail:
-					<asp:TextBox runat="server" type="text" name="email" class="input_email_cliente_consul" ID="txtEmailCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="email" class="input_email_cliente_consul" ID="txtEmailCliente" Width="150px"></asp:TextBox>
 				</div>
 				<div class="campo_consul_cliente">
 					Telefone:
-					<asp:TextBox runat="server" type="text" name="telefone" class="input_tel_cliente_consul" ID="txtTelCliente"></asp:TextBox>
+					<asp:TextBox runat="server" type="text" name="telefone" class="input_tel_cliente_consul" ID="txtTelCliente" Width="150px"></asp:TextBox>
 				</div>
 				<br/><br/>
 				<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>

@@ -7,7 +7,7 @@
     margin-top: 0;
 }
 
-/*MENU*/
+/* MENU */
 
 .menu {
     font-family: 'Helvetica';
@@ -140,7 +140,7 @@ body {
     align-items: center;
 }
 
-/* Quem_somos.html */
+/* Quem_somos */
 
 #corpo-sobre {
     text-align: center;
@@ -164,7 +164,7 @@ body {
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
-/* Orcamento.html*/
+/* Orcamento */
 
 #titulo_dados_orcamento {
     border-bottom: 1px solid white;
@@ -264,7 +264,7 @@ td #vunit_input {
     text-align: right;
 }
 
-/* Cadastro_cliente.html */
+/* Cadastro_cliente */
 
 .form_cadastramento {
     display: flex;
@@ -412,7 +412,7 @@ a.trodape {
     text-decoration: none;
 }
 
-/* Cadastro_produto.html */
+/* Cadastro_produto */
 
 #titulo_cad_prod {
     padding: -5px;
@@ -457,7 +457,7 @@ a.trodape {
     width: 55px;
 }
 
-/* Cadastro_servico.html */
+/* Cadastro_servico */
 
 .form_cad_serv {
     display: flex;
@@ -502,7 +502,7 @@ a.trodape {
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
-/* Cadastro_fabricante.html */
+/* Cadastro_fabricante */
 
 .form_cad_fabr {
     display: flex;
@@ -543,7 +543,7 @@ a.trodape {
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
-/* Cadastro_fornecedor.html */
+/* Cadastro_fornecedor */
 
 .form_cad_forn {
     display: flex;
@@ -584,7 +584,7 @@ a.trodape {
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
-/* Menu_cadastro.html */
+/* Menu_cadastro */
 
 #titulo_menu_cad {
     padding: -5px;
@@ -613,7 +613,7 @@ a.menu_cad:hover {
     opacity: 80%;
 }
 
-/* Menu_consulta.html */
+/* Menu_consulta */
 
 #titulo_menu_consulta {
     padding: -5px;
@@ -642,7 +642,7 @@ a.menu_consulta:hover {
     opacity: 80%;
 }
 
-/* Menu_orcamento.html */
+/* Menu_orcamento */
 
 #titulo_menu_orc {
     padding: -5px;
@@ -678,3 +678,72 @@ a.menu_orc:hover {
     .content_menu a {
         width: 100%;
     }
+
+/* Consulta_produto */
+
+.input_vlr_uni_prod_consul {
+    width: 55px;
+}
+
+/* Consulta_servico */
+.input_vlr_serv_consul {
+    width: 55px;
+}
+
+/* Consulta_cliente */
+
+.input_nome_cliente_consul {
+    width: 200px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_rua_cliente_consul {
+    width: 200px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_numero_cliente_consul {
+    width: 30px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_bairro_cliente_consul {
+    margin-top: 10px;
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_complemento_cliente_consul {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_cep_cliente_consul {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+    outline: transparent;
+}
+
+.input_cpf_cliente_consul {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_email_cliente_consul {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}
+
+.input_tel_cliente_consul {
+    width: 150px;
+    margin: 0;
+    padding-top: 5%;
+}

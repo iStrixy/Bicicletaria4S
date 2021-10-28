@@ -69,52 +69,52 @@ namespace PROJ_INTER_BC4S
             if (!int.TryParse(txtNumeroCliente.Text, out number))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Número inválido";
+                lblError.Text = "Campo Número inválido!";
             }
             else if(!int.TryParse(txtCepCliente.Text, out cep))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo CEP inválido";
+                lblError.Text = "Campo CEP inválido!";
             }
             else if (cep_max.Length < 8)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo CEP inválido";
+                lblError.Text = "Campo CEP inválido!";
             }
             else if (cep_max.Length > 8)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo CEP inválido";
+                lblError.Text = "Campo CEP inválido!";
             }
             else if(!double.TryParse(txtTelCliente.Text, out tel))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone inválido";
+                lblError.Text = "Campo Telefone inválido!";
             }
             else if (tel_max.Length > 11)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone inválido";
+                lblError.Text = "Campo Telefone inválido!";
             }
             else if (tel_max.Length < 11)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone inválido";
+                lblError.Text = "Campo Telefone inválido!";
             }
             else if (!double.TryParse(txtCpfCliente.Text, out cpf))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo CPF inválido";
+                lblError.Text = "Campo CPF inválido!";
             }
             else if (cpf_max.Length > 11)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo CPF inválido";
+                lblError.Text = "Campo CPF inválido!";
             }
             else if (cpf_max.Length < 11)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo CPF inválido";
+                lblError.Text = "Campo CPF inválido!";
             }
             else
             {

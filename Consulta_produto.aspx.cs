@@ -23,5 +23,10 @@ namespace PROJ_INTER_BC4S
             Session.RemoveAll();
             Response.Redirect("TeladeLogin.aspx");
         }
+
+        protected void txtVlrUni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
