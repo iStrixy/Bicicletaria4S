@@ -100,5 +100,24 @@ namespace PROJ_INTER_BC4S
             Response.Redirect("TeladeLogin.aspx");
         }
 
+        protected void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtTelefoneFornecedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtCidadeFornecedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtEmailFornecedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
