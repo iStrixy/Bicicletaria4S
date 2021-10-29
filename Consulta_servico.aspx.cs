@@ -43,7 +43,12 @@ namespace PROJ_INTER_BC4S
         {
             lblError.Text = string.Empty;
             int vlr_unit;
-            if (!int.TryParse(txtValorServico.Text, out vlr_unit))
+            if (gvServico.SelectedValue == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (!int.TryParse(txtValorServico.Text, out vlr_unit))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Valor inválido!";
@@ -82,7 +87,7 @@ namespace PROJ_INTER_BC4S
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Dados alterados com sucesso!";
+                    lblError.Text = "Dados do serviço alterado com sucesso!";
                     limpar_campos();
                 }
             }
@@ -90,7 +95,12 @@ namespace PROJ_INTER_BC4S
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            if(gvServico.SelectedValue != null)
+            if (gvServico.SelectedValue == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvServico.SelectedValue != null)
             {
                 int ID = Convert.ToInt32(gvServico.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
@@ -108,7 +118,12 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(gvServico.SelectedValue != null)
+            if (gvServico.SelectedValue == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvServico.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
@@ -118,7 +133,7 @@ namespace PROJ_INTER_BC4S
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Item excluído com sucesso!";
+                    lblError.Text = "Serviço excluído com sucesso!";
                     limpar_campos();
                 }
             }

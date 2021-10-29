@@ -61,7 +61,7 @@
         <div class="form_cadastramento">
             <div class="campos" id="nome">
                 Nome:
-                <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva"  ID="tb_nome"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva"  ID="tb_nome" OnTextChanged="tb_nome_TextChanged"></asp:Textbox>
             </div>
             <div class="campos" id="rua" required="">
                 Rua:

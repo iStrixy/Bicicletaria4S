@@ -54,17 +54,33 @@
 		<section id="titulo_consul_prod">
 			<p>Consulta de produto</p>
 		</section>
-		<div class="consul_prod">
-			<asp:GridView ID="gvProduto" runat="server"></asp:GridView>
+		<div>
+			<asp:Label runat="server" ID="lblError"></asp:Label>
 		</div>
+		<br/>
+		<div class="consul_prod">
+			<asp:GridView ID="gvProduto" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged">
+                <Columns>
+                    <asp:BoundField DataField="FABRICANTE.NOME" HeaderText="Fabricante" />
+                    <asp:BoundField DataField="FORNECEDOR.NOME" HeaderText="Fornecedor" />
+                    <asp:BoundField DataField="DESCRICAO" HeaderText="Descrição" />
+                    <asp:BoundField DataField="VALOR" HeaderText="Valor Unitário" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
+		</div>
+		<br/>
 		<div class="dados_prod" runat="server">
+			<div>
+				<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
+			</div>
 			<div class="campos_consul_prod">
 				Fabricante:
-				<select runat="server" multiple="false" id="slc_fabr_prod_consul"></select>
+				<asp:DropDownList ID="ddlFabricante" runat="server"></asp:DropDownList>
 			</div>
 			<div class="campos_consul_prod">
 				Fornecedor:
-				<select runat="server" multiple="false" id="slc_forn_prod_consul"></select>
+				<asp:DropDownList ID="ddlFornecedor" runat="server"></asp:DropDownList>
 			</div>
 			<div class="campos_consul_prod">
 				Descrição:
@@ -75,9 +91,9 @@
 				<asp:TextBox runat="server" type="text" name="vlr_uni_prod" class="input_vlr_uni_prod_consul" ID="txtVlrUni" OnTextChanged="txtVlrUni_TextChanged" Width="55px"></asp:TextBox>
 			</div>
 			<br/><br/>
-			<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar"></asp:Button>
-			<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar"></asp:Button>
-			<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir"></asp:Button>
+			<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>
+			<asp:Button runat="server" class="btn_consul_editar" Text="Editar" ID="btnEditar" OnClick="btnEditar_Click"></asp:Button>
+			<asp:Button runat="server" class="btn_consul_remover" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
 		</div>
 	</div>
 	<footer>
@@ -98,6 +114,6 @@
 			<p>(17) 3542-7605</p>
 		</div>
 	</footer>
-		</form>
+	</form>
 </body>
 </html>

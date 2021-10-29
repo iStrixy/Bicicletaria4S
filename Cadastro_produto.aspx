@@ -61,12 +61,14 @@
 		<div class="form_cad_prod">
 			<div class="campos_cad_prod" id="nome_prod_fabr">
 				Fabricante:
-				<asp:TextBox runat="server" type="text" name="nome_fabr" class="input_nome_fabr_prod" required="" ID="txtNomeFabricanteProduto"></asp:TextBox>
-			</div><br/>
+				<asp:DropDownList ID="ddlFabricante" runat="server" OnSelectedIndexChanged="ddlFabricante_SelectedIndexChanged"></asp:DropDownList>
+			</div>
+            <br/>
 			<div class="campos_cad_prod" id="nome_prod_forn">
 				Fornecedor: 
-				<asp:TextBox runat="server" type="text" name="nome_forn" class="input_nome_forn_prod" required="" ID="txtNomeFornecedorProduto"></asp:TextBox>
-			</div><br/>
+				<asp:DropDownList ID="ddlFornecedor" runat="server" OnSelectedIndexChanged="ddlFornecedor_SelectedIndexChanged"></asp:DropDownList>
+			</div>
+            <br/>
 			<div class="campo_cad_prod" id="desc_prod">
 				Descrição: 
 				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_prod" required="" ID="txtDescricaoProduto" OnTextChanged="txtDescricaoProduto_TextChanged"></asp:TextBox>

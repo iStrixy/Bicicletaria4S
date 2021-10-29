@@ -72,7 +72,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Cidade vazio!";
                 }
-                else if (DpUF.SelectedValue.ToString() == string.Empty)
+                else if (DpUF.SelectedValue.ToString() == "Selecionar...")
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo UF vazio!";
