@@ -516,14 +516,13 @@ a.trodape {
     margin-bottom: 12%;
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
-    width: 300px;
+    width: 350px;
 }
 
 .campos_cad_fabr {
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .uf{
     margin-left: 10px;
