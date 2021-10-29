@@ -25,7 +25,7 @@ namespace PROJ_INTER_BC4S
             txtEmailFornecedor.Text = string.Empty;
             txtNomeFornecedor.Text = string.Empty;
             txtTelefoneFornecedor.Text = string.Empty;
-            
+
         }
 
         protected void btnCadastrarFornecedor_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Cidade vazio!";
                 }
-                else if (DpUF.SelectedValue.ToString() == null)
+                else if (DpUF.SelectedValue.ToString() == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo UF vazio!";
@@ -92,26 +92,6 @@ namespace PROJ_INTER_BC4S
                     limpar_campos();
                 }
             }
-        }
-
-        protected void txtEmailFornecedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtCidadeFornecedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtTelefoneFornecedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtNomeFornecedor_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
