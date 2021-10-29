@@ -56,7 +56,7 @@ namespace PROJ_INTER_BC4S
                 if (!Regex.IsMatch(tb_nome.Text, @"^[a-zA-Z]+$"))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Camopo Nome inválido!";
+                    lblError.Text = "Campo Nome inválido!";
                 }
                 else if (!int.TryParse(tb_number.Text, out number))
                 {
