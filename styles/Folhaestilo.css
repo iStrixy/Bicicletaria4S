@@ -364,15 +364,10 @@ td #vunit_input {
 input {
     /*border-bottom-style: 1px solid darkgray;*/
     background-color: transparent;
-    border-left-style: none;
-    border-left-color: inherit;
-    border-left-width: medium;
-    border-right-style: none;
-    border-right-color: inherit;
-    border-right-width: medium;
-    border-top-style: none;
-    border-top-color: inherit;
-    border-top-width: medium;
+    border:hidden;
+    border-bottom: 2px solid;
+    border-color: rgb(82, 82, 82);
+    
 }
 
     input:focus {
@@ -524,6 +519,11 @@ a.trodape {
     align-items: center;
     justify-content: flex-start;
 }
+.campos_cad_forn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
 .uf{
     margin-left: 10px;
 }
@@ -566,7 +566,7 @@ a.trodape {
     margin-bottom: 9%;
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
-    width: 300px;
+    width: 370px;
 }
 
 .btn_cad_forn {
