@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace PROJ_INTER_BC4S
 {
@@ -23,8 +24,8 @@ namespace PROJ_INTER_BC4S
                     carregarGrid(con_bd);
                 }
             }
-             btnSalvar.Enabled = false;
-                lblError.Text = String.Empty;
+            btnSalvar.Enabled = false;
+            lblError.Text = String.Empty;
         }
 
         private void limpar_campos()
@@ -67,12 +68,19 @@ namespace PROJ_INTER_BC4S
             string cep_max = txtCepCliente.Text;
             string tel_max = txtTelCliente.Text;
             string cpf_max = txtCpfCliente.Text;
-            if (!int.TryParse(txtNumeroCliente.Text, out number))
+            string nome = txtNomeCliente.Text;
+            if (!Regex.IsMatch(txtNomeCliente.Text, @"^[a\b-zA\b-Z\b]+$"))
+            {
+                
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome inválido!";
+            }
+            else if (!int.TryParse(txtNumeroCliente.Text, out number))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Número inválido!";
             }
-            else if(!int.TryParse(txtCepCliente.Text, out cep))
+            else if (!int.TryParse(txtCepCliente.Text, out cep))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo CEP inválido!";
@@ -87,7 +95,7 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo CEP inválido!";
             }
-            else if(!double.TryParse(txtTelCliente.Text, out tel))
+            else if (!double.TryParse(txtTelCliente.Text, out tel))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Telefone inválido!";
@@ -123,7 +131,7 @@ namespace PROJ_INTER_BC4S
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     PESSOA pessoa = null;
-                    if(lblError.Text.Equals(string.Empty))
+                    if (lblError.Text.Equals(string.Empty))
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         pessoa = con_bd.PESSOA.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
@@ -139,7 +147,7 @@ namespace PROJ_INTER_BC4S
                     pessoa.EMAIL = txtEmailCliente.Text;
                     pessoa.TELEFONE = txtTelCliente.Text;
 
-                    if(lblError.Text.Equals(string.Empty))
+                    if (lblError.Text.Equals(string.Empty))
                     {
                         con_bd.Entry(pessoa);
                     }
@@ -155,14 +163,14 @@ namespace PROJ_INTER_BC4S
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            if(gvCliente.SelectedValue != null)
+            if (gvCliente.SelectedValue != null)
             {
                 btnSalvar.Enabled = true;
                 int ID = Convert.ToInt32(gvCliente.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     PESSOA pessoa = con_bd.PESSOA.Where(linha => linha.ID == ID).FirstOrDefault();
-                    if(pessoa != null)
+                    if (pessoa != null)
                     {
                         txtNomeCliente.Text = pessoa.NOME;
                         txtRuaCliente.Text = pessoa.LOGRADOURO;
@@ -181,7 +189,7 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(gvCliente.SelectedValue != null)
+            if (gvCliente.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {

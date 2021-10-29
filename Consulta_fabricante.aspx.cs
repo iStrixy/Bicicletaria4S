@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Text.RegularExpressions;
 namespace PROJ_INTER_BC4S
 {
     public partial class Consulta_fabricante : System.Web.UI.Page
@@ -17,7 +17,7 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
-            else if(!IsPostBack)
+            else if (!IsPostBack)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
@@ -72,13 +72,13 @@ namespace PROJ_INTER_BC4S
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            if(gvFabricante.SelectedValue != null)
+            if (gvFabricante.SelectedValue != null)
             {
                 int ID = Convert.ToInt32(gvFabricante.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     FABRICANTE fabricante = con_bd.FABRICANTE.Where(linha => linha.ID == ID).FirstOrDefault();
-                    if(fabricante != null)
+                    if (fabricante != null)
                     {
                         txtNomeFabr.Text = fabricante.NOME;
                         txtTelFabr.Text = fabricante.TELEFONE.ToString();
@@ -96,7 +96,13 @@ namespace PROJ_INTER_BC4S
             double tel;
             string tel_max = txtTelFabr.Text;
             string uf_max = txtUfFabr.Text;
-            if (!double.TryParse(txtTelFabr.Text, out tel))
+            string cidade = txtCidadeFabr.Text;
+            if (!Regex.IsMatch(txtCidadeFabr.Text, @"^[a-zA-Z-[\b]]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Camopo Cidade inválido!";
+            }
+            else if (!double.TryParse(txtTelFabr.Text, out tel))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Telefone inválido!";
@@ -147,7 +153,7 @@ namespace PROJ_INTER_BC4S
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     FABRICANTE fabricante = null;
-                    if(lblError.Text.Equals(string.Empty))
+                    if (lblError.Text.Equals(string.Empty))
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         fabricante = con_bd.FABRICANTE.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
