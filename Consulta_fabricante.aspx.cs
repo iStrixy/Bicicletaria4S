@@ -54,7 +54,12 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (gvFabricante.SelectedValue != null)
+            if (gvFabricante.SelectedValue == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvFabricante.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
@@ -64,7 +69,7 @@ namespace PROJ_INTER_BC4S
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Item excluído com sucesso!";
+                    lblError.Text = "Fabricante excluído com sucesso!";
                     limpar_campos();
                 }
             }
@@ -72,7 +77,12 @@ namespace PROJ_INTER_BC4S
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            if (gvFabricante.SelectedValue != null)
+            if (gvFabricante.SelectedValue == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvFabricante.SelectedValue != null)
             {
                 int ID = Convert.ToInt32(gvFabricante.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
@@ -97,10 +107,16 @@ namespace PROJ_INTER_BC4S
             string tel_max = txtTelFabr.Text;
             string uf_max = txtUfFabr.Text;
             string cidade = txtCidadeFabr.Text;
-            if (!Regex.IsMatch(txtCidadeFabr.Text, @"^[a-zA-Z-[\b]]+$"))
+
+            if (gvFabricante.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Camopo Cidade inválido!";
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (!Regex.IsMatch(txtCidadeFabr.Text, @"^[a-zA-Z-[\b]]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Cidade inválido!";
             }
             else if (!double.TryParse(txtTelFabr.Text, out tel))
             {
@@ -172,7 +188,7 @@ namespace PROJ_INTER_BC4S
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Dados alterados com sucesso!";
+                    lblError.Text = "Dados do fabricante alterado com sucesso!";
                     limpar_campos();
                 }
             }

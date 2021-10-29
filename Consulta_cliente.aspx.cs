@@ -12,6 +12,7 @@ namespace PROJ_INTER_BC4S
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblError.Text = String.Empty;
             String nomeuserlogado = (String)Session["userlogado"];
             if (nomeuserlogado == null)
             {
@@ -24,8 +25,6 @@ namespace PROJ_INTER_BC4S
                     carregarGrid(con_bd);
                 }
             }
-            btnSalvar.Enabled = false;
-            lblError.Text = String.Empty;
         }
 
         private void limpar_campos()
@@ -69,9 +68,13 @@ namespace PROJ_INTER_BC4S
             string tel_max = txtTelCliente.Text;
             string cpf_max = txtCpfCliente.Text;
             string nome = txtNomeCliente.Text;
-            if (!Regex.IsMatch(txtNomeCliente.Text, @"^[a\b-zA\b-Z\b]+$"))
+            if(gvCliente.SelectedValue == null)
             {
-                
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (!Regex.IsMatch(txtNomeCliente.Text, @"^[a\b-zA\b-Z\b]+$"))
+            {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Nome inválido!";
             }
@@ -155,7 +158,7 @@ namespace PROJ_INTER_BC4S
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
                     lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Dados alterados com sucesso!";
+                    lblError.Text = "Dados do cliente alterado com sucesso!";
                     limpar_campos();
                 }
             }
@@ -163,9 +166,13 @@ namespace PROJ_INTER_BC4S
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-            if (gvCliente.SelectedValue != null)
+            if (gvCliente.SelectedValue == null)
             {
-                btnSalvar.Enabled = true;
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvCliente.SelectedValue != null)
+            {
                 int ID = Convert.ToInt32(gvCliente.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
@@ -189,7 +196,12 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (gvCliente.SelectedValue != null)
+            if (gvCliente.SelectedValue == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvCliente.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {

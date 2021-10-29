@@ -76,7 +76,7 @@
                     <div class="uf">
                         UF:
 				<asp:DropDownList ID="DpUF" runat="server">
-                    <asp:ListItem Selected="True">Selecionar....</asp:ListItem>
+                    <asp:ListItem Selected="True">Selecionar...</asp:ListItem>
                     <asp:ListItem>AC</asp:ListItem>
                     <asp:ListItem>AL</asp:ListItem>
                     <asp:ListItem>AP</asp:ListItem>

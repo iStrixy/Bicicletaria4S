@@ -53,7 +53,7 @@ namespace PROJ_INTER_BC4S
                 string cpf_max = tb_cpf.Text;
                 string nome = tb_nome.Text;
 
-                if (!Regex.IsMatch(tb_nome.Text, @"^[a-zA-Z]+$"))
+                if (!Regex.IsMatch(tb_nome.Text, @"^[a-zA-Z- ]+$"))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Nome inválido!";
@@ -155,6 +155,11 @@ namespace PROJ_INTER_BC4S
         }
 
         protected void tb_email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void tb_nome_TextChanged(object sender, EventArgs e)
         {
 
         }
