@@ -73,7 +73,8 @@
                 <div class="campos_cad_fabr" id="cidade_fabr">
                     Cidade:
 				<asp:TextBox runat="server" type="text" name="cidade_fabr" class="input_cidade_fabr" required="" ID="txtCidadeFabricante" OnTextChanged="txtCidadeFabricante_TextChanged"></asp:TextBox>
-                    UF:
+                    <div class="uf">
+                        UF:
 				<asp:DropDownList ID="DpUF" runat="server" Height="26px" Width="94px">
                     <asp:ListItem Selected="True">Selecione...</asp:ListItem>
                     <asp:ListItem>AC</asp:ListItem>
@@ -104,6 +105,7 @@
                     <asp:ListItem>SP</asp:ListItem>
                     <asp:ListItem>SE</asp:ListItem>
                 </asp:DropDownList>
+                    </div>
                 </div>
                 <br />
                 <br />
