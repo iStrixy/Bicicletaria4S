@@ -24,7 +24,7 @@ namespace PROJ_INTER_BC4S
             txtNomeFabricante.Text = String.Empty;
             txtTelefoneFabricante.Text = String.Empty;
             txtCidadeFabricante.Text = String.Empty;
-            
+
         }
         protected void btnCadastrarFabricante_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace PROJ_INTER_BC4S
             {
                 double tel;
                 string tel_max = txtTelefoneFabricante.Text;
-                
+
                 if (!double.TryParse(txtTelefoneFabricante.Text, out tel))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
@@ -47,26 +47,26 @@ namespace PROJ_INTER_BC4S
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone inválido!";
-                }           
-                else if(txtNomeFabricante.Text == string.Empty)
+                }
+                else if (txtNomeFabricante.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Nome vazio!";
                 }
-                else if(txtTelefoneFabricante.Text == string.Empty)
+                else if (txtTelefoneFabricante.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone vazio!";
                 }
-                else if(txtCidadeFabricante.Text == string.Empty)
+                else if (txtCidadeFabricante.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Cidade vazio!";
                 }
-                else if(DpUF.SelectedValue.ToString() == null)
+                else if (DpUF.SelectedValue.ToString() == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo UF vazio!";
+                    lblError.Text = "Campo UF vazio!!";
                 }
                 else
                 {
@@ -84,21 +84,6 @@ namespace PROJ_INTER_BC4S
                     limpar_campos();
                 }
             }
-        }
-
-        protected void txtNomeFabricante_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtTelefoneFabricante_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void txtCidadeFabricante_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
