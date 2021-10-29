@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace PROJ_INTER_BC4S
 {
@@ -55,7 +56,7 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(gvFornecedor.SelectedValue != null)
+            if (gvFornecedor.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
@@ -79,7 +80,7 @@ namespace PROJ_INTER_BC4S
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     FORNECEDOR fornecedor = con_bd.FORNECEDOR.Where(linha => linha.ID == ID).FirstOrDefault();
-                    if(fornecedor != null)
+                    if (fornecedor != null)
                     {
                         txtNomeForn.Text = fornecedor.NOME;
                         txtTelForn.Text = fornecedor.TELEFONE.ToString();
@@ -98,7 +99,13 @@ namespace PROJ_INTER_BC4S
             double tel;
             string UF = txtUfForn.Text;
             string tel_max = txtTelForn.Text;
-            if (!double.TryParse(txtTelForn.Text, out tel))
+            string cidade = txtCidadeForn.Text;
+            if (!Regex.IsMatch(txtCidadeForn.Text, @"^[a-zA-Z]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Camopo Cidade inválido!";
+            }
+            else if (!double.TryParse(txtTelForn.Text, out tel))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Telefone inválido!";
@@ -154,7 +161,7 @@ namespace PROJ_INTER_BC4S
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
                     FORNECEDOR fornecedor = null;
-                    if(lblError.Text.Equals(string.Empty))
+                    if (lblError.Text.Equals(string.Empty))
                     {
                         int ID = Convert.ToInt32(lblID.Text);
                         fornecedor = con_bd.FORNECEDOR.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();

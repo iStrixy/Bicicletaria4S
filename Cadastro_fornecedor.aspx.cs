@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace PROJ_INTER_BC4S
 {
@@ -34,7 +35,14 @@ namespace PROJ_INTER_BC4S
             {
                 double tel;
                 string tel_max = txtTelefoneFornecedor.Text;
-                if (!double.TryParse(txtTelefoneFornecedor.Text, out tel))
+                string cidade = txtCidadeFornecedor.Text;
+
+                if (!Regex.IsMatch(txtCidadeFornecedor.Text, @"^[a-zA-Z]+$"))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Cidade inválido!";
+                }
+                else if (!double.TryParse(txtTelefoneFornecedor.Text, out tel))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone inválido!";
