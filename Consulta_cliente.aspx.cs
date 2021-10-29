@@ -23,6 +23,7 @@ namespace PROJ_INTER_BC4S
                     carregarGrid(con_bd);
                 }
             }
+             btnSalvar.Enabled = false;
                 lblError.Text = String.Empty;
         }
 
@@ -156,6 +157,7 @@ namespace PROJ_INTER_BC4S
         {
             if(gvCliente.SelectedValue != null)
             {
+                btnSalvar.Enabled = true;
                 int ID = Convert.ToInt32(gvCliente.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {

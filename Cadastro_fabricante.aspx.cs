@@ -24,7 +24,7 @@ namespace PROJ_INTER_BC4S
             txtNomeFabricante.Text = String.Empty;
             txtTelefoneFabricante.Text = String.Empty;
             txtCidadeFabricante.Text = String.Empty;
-            txtUfFabricante.Text = String.Empty;
+            
         }
         protected void btnCadastrarFabricante_Click(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace PROJ_INTER_BC4S
             {
                 double tel;
                 string tel_max = txtTelefoneFabricante.Text;
-                string uf_max = txtUfFabricante.Text;
+                
                 if (!double.TryParse(txtTelefoneFabricante.Text, out tel))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
@@ -47,17 +47,7 @@ namespace PROJ_INTER_BC4S
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone inválido!";
-                }
-                else if (uf_max.Length < 2)
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo UF inválido!";
-                }
-                else if (uf_max.Length > 2)
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo UF inválido!";
-                }
+                }           
                 else if(txtNomeFabricante.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
@@ -73,7 +63,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Cidade vazio!";
                 }
-                else if(txtUfFabricante.Text == string.Empty)
+                else if(DpUF.SelectedValue.ToString() == null)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo UF vazio!";
@@ -87,7 +77,7 @@ namespace PROJ_INTER_BC4S
                     cad_fabricante.NOME = txtNomeFabricante.Text;
                     cad_fabricante.TELEFONE = txtTelefoneFabricante.Text;
                     cad_fabricante.CIDADE = txtCidadeFabricante.Text;
-                    cad_fabricante.UF = txtUfFabricante.Text;
+                    cad_fabricante.UF = DpUF.SelectedValue.ToString();
 
                     con_bd.FABRICANTE.Add(cad_fabricante);
                     con_bd.SaveChanges();
@@ -117,9 +107,5 @@ namespace PROJ_INTER_BC4S
             Response.Redirect("TeladeLogin.aspx");
         }
 
-        protected void txtUfFabricante_TextChanged(object sender, EventArgs e)
-        {
-            txtUfFabricante.Text = txtUfFabricante.Text.ToUpper();
-        }
     }
 }

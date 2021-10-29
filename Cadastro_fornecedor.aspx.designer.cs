@@ -69,13 +69,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.TextBox txtCidadeFornecedor;
 
         /// <summary>
-        /// Controle txtUfFornecedor.
+        /// Controle DpUF.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUfFornecedor;
+        protected global::System.Web.UI.WebControls.DropDownList DpUF;
 
         /// <summary>
         /// Controle txtEmailFornecedor.

@@ -25,7 +25,7 @@ namespace PROJ_INTER_BC4S
             txtEmailFornecedor.Text = string.Empty;
             txtNomeFornecedor.Text = string.Empty;
             txtTelefoneFornecedor.Text = string.Empty;
-            txtUfFornecedor.Text = string.Empty;
+            
         }
 
         protected void btnCadastrarFornecedor_Click(object sender, EventArgs e)
@@ -33,7 +33,6 @@ namespace PROJ_INTER_BC4S
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
                 double tel;
-                string UF = txtUfFornecedor.Text;
                 string tel_max = txtTelefoneFornecedor.Text;
                 if (!double.TryParse(txtTelefoneFornecedor.Text, out tel))
                 {
@@ -50,37 +49,27 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone inválido!";
                 }
-                else if (UF.Length > 2)
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo UF inválido!";
-                }
-                else if (UF.Length < 2)
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo UF inválido!";
-                }
-                else if(txtNomeFornecedor.Text == string.Empty)
+                else if (txtNomeFornecedor.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Nome vazio!";
                 }
-                else if(txtTelefoneFornecedor.Text == string.Empty)
+                else if (txtTelefoneFornecedor.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone vazio!";
                 }
-                else if(txtCidadeFornecedor.Text == string.Empty)
+                else if (txtCidadeFornecedor.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Cidade vazio!";
                 }
-                else if(txtUfFornecedor.Text == string.Empty)
+                else if (DpUF.SelectedValue.ToString() == null)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo UF vazio!";
                 }
-                else if(txtEmailFornecedor.Text == string.Empty)
+                else if (txtEmailFornecedor.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo E-mail vazio!";
@@ -95,7 +84,7 @@ namespace PROJ_INTER_BC4S
                     cad_fornecedor.NOME = txtNomeFornecedor.Text;
                     cad_fornecedor.TELEFONE = txtTelefoneFornecedor.Text;
                     cad_fornecedor.CIDADE = txtCidadeFornecedor.Text;
-                    cad_fornecedor.UF = txtUfFornecedor.Text;
+                    cad_fornecedor.UF = DpUF.SelectedValue.ToString();
                     cad_fornecedor.EMAIL = txtEmailFornecedor.Text;
 
                     con_bd.FORNECEDOR.Add(cad_fornecedor);
@@ -131,9 +120,5 @@ namespace PROJ_INTER_BC4S
             Response.Redirect("TeladeLogin.aspx");
         }
 
-        protected void txtUfFornecedor_TextChanged(object sender, EventArgs e)
-        {
-            txtUfFornecedor.Text = txtUfFornecedor.Text.ToUpper();
-        }
     }
 }

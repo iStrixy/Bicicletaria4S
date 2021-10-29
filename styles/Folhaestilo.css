@@ -62,8 +62,8 @@ nav {
         width: auto;
     }
 
-#logout {
-    margin-left: 100px;
+#logout a {
+    margin-left: 120px;
 }
 
 ul.menu li {
@@ -103,8 +103,9 @@ ul.menu {
         border: 1px solid gray;
         padding: 1rem 2rem;
         color: white;
+       
     }
-
+ 
 li.has-submenu ul {
     margin-top: .95rem;
 }
@@ -518,6 +519,16 @@ a.trodape {
     width: 300px;
 }
 
+.campos_cad_fabr {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    
+}
+.uf{
+    margin-left: 10px;
+}
+
 .btn_cad_fabr {
     padding: 10px 15px;
     border: none;
@@ -702,6 +713,7 @@ a.menu_orc:hover {
     width: 200px;
     margin: 0;
     padding-top: 5%;
+    
 }
 
 .input_numero_cliente_consul {
@@ -746,4 +758,39 @@ a.menu_orc:hover {
     width: 150px;
     margin: 0;
     padding-top: 5%;
+}
+
+#btnSalvar {
+    background-color: white;
+    padding: 6px 12px;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight:bold;
+
+}
+#btnSalvar:disabled {
+    background-color: gray;
+    padding: 6px 12px;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#btnEditar {
+    background-color: white;
+    padding: 6px 12px;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+#btnExcluir {
+    background-color: white;
+    padding: 6px 12px;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight:bold;
 }
