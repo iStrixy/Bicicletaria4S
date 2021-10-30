@@ -68,6 +68,7 @@ namespace PROJ_INTER_BC4S
         protected void btnCadastrarProduto_Click(object sender, EventArgs e)
         {
             double vlr_unit;
+
             if (!double.TryParse(txtValorUniProduto.Text, out vlr_unit))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;

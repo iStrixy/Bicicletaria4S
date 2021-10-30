@@ -68,15 +68,11 @@ namespace PROJ_INTER_BC4S
             string tel_max = txtTelCliente.Text;
             string cpf_max = txtCpfCliente.Text;
             string nome = txtNomeCliente.Text;
+
             if(gvCliente.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
-            }
-            else if (!Regex.IsMatch(txtNomeCliente.Text, @"^[a\b-zA\b-Z\b]+$"))
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Nome inválido!";
             }
             else if (!int.TryParse(txtNumeroCliente.Text, out number))
             {

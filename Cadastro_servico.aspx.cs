@@ -27,6 +27,7 @@ namespace PROJ_INTER_BC4S
         protected void btnCadastrarServico_Click(object sender, EventArgs e)
         {
             double vlr_unit;
+
             if (!double.TryParse(txtValorServico.Text, out vlr_unit))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;

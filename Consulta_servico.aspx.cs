@@ -43,6 +43,7 @@ namespace PROJ_INTER_BC4S
         {
             lblError.Text = string.Empty;
             int vlr_unit;
+
             if (gvServico.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;

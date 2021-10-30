@@ -86,7 +86,36 @@
 				Cidade:
 				<asp:TextBox runat="server" type="text" name="cidade_fabr" class="input_cidade_fabr_consul" ID="txtCidadeFabr"></asp:TextBox>
 				UF:
-				<asp:TextBox runat="server" type="text" name="uf_fabr" class="input_uf_fabr_consul" ID="txtUfFabr" Columns="4" MaxLength="2" OnTextChanged="txtUfFabr_TextChanged"></asp:TextBox>
+				<asp:DropDownList ID="DpUF" runat="server" Height="26px" Width="94px">
+                    <asp:ListItem Selected="True">Selecionar...</asp:ListItem>
+                    <asp:ListItem>AC</asp:ListItem>
+                    <asp:ListItem>AL</asp:ListItem>
+                    <asp:ListItem>AP</asp:ListItem>
+                    <asp:ListItem>AM</asp:ListItem>
+                    <asp:ListItem>BA</asp:ListItem>
+                    <asp:ListItem>CE</asp:ListItem>
+                    <asp:ListItem>DF</asp:ListItem>
+                    <asp:ListItem>ES</asp:ListItem>
+                    <asp:ListItem>GO</asp:ListItem>
+                    <asp:ListItem>MA</asp:ListItem>
+                    <asp:ListItem>MT</asp:ListItem>
+                    <asp:ListItem>MS</asp:ListItem>
+                    <asp:ListItem>MG</asp:ListItem>
+                    <asp:ListItem>PA</asp:ListItem>
+                    <asp:ListItem>PB</asp:ListItem>
+                    <asp:ListItem>PR</asp:ListItem>
+                    <asp:ListItem>PE</asp:ListItem>
+                    <asp:ListItem>PI</asp:ListItem>
+                    <asp:ListItem>RJ</asp:ListItem>
+                    <asp:ListItem>RN</asp:ListItem>
+                    <asp:ListItem>TO</asp:ListItem>
+                    <asp:ListItem>RS</asp:ListItem>
+                    <asp:ListItem>RO</asp:ListItem>
+                    <asp:ListItem>RR</asp:ListItem>
+                    <asp:ListItem>SC</asp:ListItem>
+                    <asp:ListItem>SP</asp:ListItem>
+                    <asp:ListItem>SE</asp:ListItem>
+                </asp:DropDownList>
 			</div>
 			<br/><br/>
 			<asp:Button runat="server" class="btn_consul_salvar" Text="Salvar alterações" ID="btnSalvar" OnClick="btnSalvar_Click"></asp:Button>

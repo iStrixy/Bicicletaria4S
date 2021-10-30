@@ -74,7 +74,7 @@ namespace PROJ_INTER_BC4S
             
         }
 
-        protected void btnExcluir_Click(object sender, EventArgs e)
+        protected void BtnExcluir_Click(object sender, EventArgs e)
         {
             if(gvProduto.SelectedValue == null)
             {
@@ -97,7 +97,7 @@ namespace PROJ_INTER_BC4S
             }
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
+        protected void BtnEditar_Click(object sender, EventArgs e)
         {
             if (gvProduto.SelectedValue == null)
             {
@@ -122,9 +122,10 @@ namespace PROJ_INTER_BC4S
             }
         }
 
-        protected void btnSalvar_Click(object sender, EventArgs e)
+        protected void BtnSalvar_Click(object sender, EventArgs e)
         {
             double vlr_unit;
+
             if (gvProduto.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
@@ -186,7 +187,7 @@ namespace PROJ_INTER_BC4S
             }
         }
 
-        protected void gvProduto_SelectedIndexChanged(object sender, EventArgs e)
+        protected void GvProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

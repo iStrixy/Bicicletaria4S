@@ -37,12 +37,7 @@ namespace PROJ_INTER_BC4S
                 string tel_max = txtTelefoneFornecedor.Text;
                 string cidade = txtCidadeFornecedor.Text;
 
-                if (!Regex.IsMatch(txtCidadeFornecedor.Text, @"^[a-zA-Z]+$"))
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo Cidade inválido!";
-                }
-                else if (!double.TryParse(txtTelefoneFornecedor.Text, out tel))
+                if (!double.TryParse(txtTelefoneFornecedor.Text, out tel))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone inválido!";

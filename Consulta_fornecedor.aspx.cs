@@ -39,7 +39,7 @@ namespace PROJ_INTER_BC4S
             txtNomeForn.Text = string.Empty;
             txtTelForn.Text = string.Empty;
             txtCidadeForn.Text = string.Empty;
-            txtUfForn.Text = string.Empty;
+            DpUF.SelectedValue = "Selecionar...";
             txtEmailForn.Text = string.Empty;
         }
 
@@ -95,7 +95,7 @@ namespace PROJ_INTER_BC4S
                         txtNomeForn.Text = fornecedor.NOME;
                         txtTelForn.Text = fornecedor.TELEFONE.ToString();
                         txtCidadeForn.Text = fornecedor.CIDADE.ToString();
-                        txtUfForn.Text = fornecedor.UF.ToString();
+                        DpUF.SelectedValue = fornecedor.UF.ToString();
                         txtEmailForn.Text = fornecedor.EMAIL.ToString();
                         lblID.Text = fornecedor.ID.ToString();
                     }
@@ -107,7 +107,6 @@ namespace PROJ_INTER_BC4S
         {
             lblError.Text = string.Empty;
             double tel;
-            string UF = txtUfForn.Text;
             string tel_max = txtTelForn.Text;
             string cidade = txtCidadeForn.Text;
 
@@ -115,11 +114,6 @@ namespace PROJ_INTER_BC4S
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
-            }
-            else if (!Regex.IsMatch(txtCidadeForn.Text, @"^[a-zA-Z]+$"))
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Cidade inválido!";
             }
             else if (!double.TryParse(txtTelForn.Text, out tel))
             {
@@ -136,16 +130,6 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Telefone inválido!";
             }
-            else if (UF.Length > 2)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo UF inválido!";
-            }
-            else if (UF.Length < 2)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo UF inválido!";
-            }
             else if (txtNomeForn.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
@@ -161,7 +145,7 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Cidade vazio!";
             }
-            else if (txtUfForn.Text == string.Empty)
+            else if (DpUF.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo UF vazio!";
@@ -186,7 +170,7 @@ namespace PROJ_INTER_BC4S
                     fornecedor.NOME = txtNomeForn.Text;
                     fornecedor.TELEFONE = txtTelForn.Text;
                     fornecedor.CIDADE = txtCidadeForn.Text;
-                    fornecedor.UF = txtUfForn.Text;
+                    fornecedor.UF = DpUF.SelectedValue.ToString();
                     fornecedor.EMAIL = txtEmailForn.Text;
 
                     if (lblError.Text.Equals(string.Empty))
@@ -205,7 +189,7 @@ namespace PROJ_INTER_BC4S
 
         protected void txtUfForn_TextChanged(object sender, EventArgs e)
         {
-            txtUfForn.Text = txtUfForn.Text.ToUpper();
+            
         }
     }
 }

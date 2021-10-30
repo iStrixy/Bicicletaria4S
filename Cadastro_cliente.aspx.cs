@@ -53,12 +53,7 @@ namespace PROJ_INTER_BC4S
                 string cpf_max = tb_cpf.Text;
                 string nome = tb_nome.Text;
 
-                if (!Regex.IsMatch(tb_nome.Text, @"^[a-zA-Z- ]+$"))
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo Nome inválido!";
-                }
-                else if (!int.TryParse(tb_number.Text, out number))
+                if (!int.TryParse(tb_number.Text, out number))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Número inválido";
