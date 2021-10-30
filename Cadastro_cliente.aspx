@@ -61,7 +61,7 @@
         <div class="form_cadastramento">
             <div class="campos" id="nome">
                 Nome:
-                <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva"  ID="tb_nome" OnTextChanged="tb_nome_TextChanged"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva" ID="tb_nome" OnTextChanged="tb_nome_TextChanged"></asp:Textbox>
             </div>
             <div class="campos" id="rua" required="">
                 Rua:
@@ -79,15 +79,15 @@
             </div>
             <div class="campos" id="cep">
                 CEP:
-                <asp:Textbox runat="server" type="text" name="cep" class="inputcep" required="" ID="tb_cep"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="cep" class="inputcep" placeholder="xxxxx-xxx" required="" ID="tb_cep"></asp:Textbox>
             </div>
             <div class="campos" id="cpf">
                 CPF:
-                <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" required="" ID="tb_cpf" OnTextChanged="tb_cpf_TextChanged"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" placeholder="xxx.xxx.xxx-xx" required="" ID="tb_cpf" OnTextChanged="tb_cpf_TextChanged"></asp:Textbox>
             </div>
             <div class="campos" id="email">
                 E-mail:
-                <asp:Textbox runat="server" type="text" name="email" class="inputemail" placeholder="user@email.com" ID="tb_email" OnTextChanged="tb_email_TextChanged"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="email" class="inputemail" placeholder="user@gmail.com" ID="tb_email" OnTextChanged="tb_email_TextChanged"></asp:Textbox>
             </div>
             <div class="campos" id="tel">
                 Telefone:

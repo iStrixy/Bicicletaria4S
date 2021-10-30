@@ -71,7 +71,7 @@
             <br/>
 			<div class="campo_cad_prod" id="desc_prod">
 				Descrição: 
-				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_prod" required="" ID="txtDescricaoProduto" OnTextChanged="txtDescricaoProduto_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_prod" placeholder="Ex. Selim" required="" ID="txtDescricaoProduto" OnTextChanged="txtDescricaoProduto_TextChanged"></asp:TextBox>
 			</div><br/>
 			<div class="campo_cad_prod" id="valor_unit_prod">
 				Valor unitário: 

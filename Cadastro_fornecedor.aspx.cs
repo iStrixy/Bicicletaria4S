@@ -26,7 +26,7 @@ namespace PROJ_INTER_BC4S
             txtEmailFornecedor.Text = string.Empty;
             txtNomeFornecedor.Text = string.Empty;
             txtTelefoneFornecedor.Text = string.Empty;
-
+            DpUF.SelectedValue = "Selecionar...";
         }
 
         protected void btnCadastrarFornecedor_Click(object sender, EventArgs e)

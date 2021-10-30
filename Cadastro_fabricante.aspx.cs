@@ -25,7 +25,7 @@ namespace PROJ_INTER_BC4S
             txtNomeFabricante.Text = String.Empty;
             txtTelefoneFabricante.Text = String.Empty;
             txtCidadeFabricante.Text = String.Empty;
-
+            DpUF.SelectedValue = "Selecionar...";
         }
         protected void btnCadastrarFabricante_Click(object sender, EventArgs e)
         {
