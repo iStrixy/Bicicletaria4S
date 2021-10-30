@@ -126,7 +126,7 @@ namespace PROJ_INTER_BC4S
         {
             double vlr_unit;
 
-            if (gvProduto.SelectedValue == null)
+            if(gvProduto.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
@@ -183,6 +183,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Dados do produto alterado com sucesso!";
                     limpar_campos();
+                    gvProduto.SelectedIndex = -1;
                 }
             }
         }

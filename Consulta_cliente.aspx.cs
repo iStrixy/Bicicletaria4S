@@ -74,6 +74,11 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
             }
+            else if (!Regex.IsMatch(txtNomeCliente.Text, @"[^0-9]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome inválido!";
+            }
             else if (!int.TryParse(txtNumeroCliente.Text, out number))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
@@ -156,6 +161,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Dados do cliente alterado com sucesso!";
                     limpar_campos();
+                    gvCliente.SelectedIndex = -1;
                 }
             }
         }

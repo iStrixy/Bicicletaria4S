@@ -90,6 +90,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Dados do serviço alterado com sucesso!";
                     limpar_campos();
+                    gvServico.SelectedIndex = -1;
                 }
             }
         }

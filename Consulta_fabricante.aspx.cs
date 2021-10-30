@@ -174,6 +174,7 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Dados do fabricante alterado com sucesso!";
                     limpar_campos();
+                    gvFabricante.SelectedIndex = -1;
                 }
             }
         }

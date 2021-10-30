@@ -42,6 +42,11 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Telefone inválido!";
                 }
+                else if (!Regex.IsMatch(txtNomeFornecedor.Text, @"[^0-9]+$"))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Nome inválido!";
+                }
                 else if (tel_max.Length < 11)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
