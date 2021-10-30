@@ -42,7 +42,7 @@ namespace PROJ_INTER_BC4S
             ddlFabricante.DataTextField = "NOME";
             ddlFabricante.DataValueField = "ID";
             ddlFabricante.DataBind();
-            ddlFabricante.Items.Insert(0, "");
+            ddlFabricante.Items.Insert(0, "Selecionar...");
         }
 
         private void carregarFornecedor(BD_BICICLETARIA_4SEntities con_bd)
@@ -52,7 +52,7 @@ namespace PROJ_INTER_BC4S
             ddlFornecedor.DataTextField = "NOME";
             ddlFornecedor.DataValueField = "ID";
             ddlFornecedor.DataBind();
-            ddlFornecedor.Items.Insert(0, "");
+            ddlFornecedor.Items.Insert(0, "Selecionar...");
         }
 
         protected void txtDescricaoProduto_TextChanged(object sender, EventArgs e)

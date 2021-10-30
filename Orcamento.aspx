@@ -58,20 +58,26 @@
 		<div class="form_orcamento" autocomplete="off">
 			<div id="titulo_dados_orcamento">Dados cadastrais do cliente</div><br/>
 			<div class="campos_orcamento" id="nome_cliente_orcamento">
-				Nome do cliente: <select> </select>
+				Nome do cliente:
+				<asp:DropDownList ID="ddlPessoa" runat="server"></asp:DropDownList>
 			</div>
 			<div class="campos_orcamento" id="rua_cliente_orcamento">
-				Rua: <input type="text" name="endereco_cliente" class="input_endereco_cliente"/>
+				Rua:
+				<asp:TextBox runat="server" type="text" name="rua_cli" class="input_rua_cli_or" ID="txtRuaCli" Width="200px"></asp:TextBox>
 			</div>
 			<div class="campos_orcamento" id="endereco_cliente_orcamento">
-				Bairro: <input type="text" name="bairro_cliente" class="input_bairro_cliente"/>
-				Número: <input type="text" name="numero_cliente" class="input_numero_cliente"/>
+				Número:
+				<asp:TextBox runat="server" type="text" name="numero_cli" class="input_rua_cli_or" ID="txtNumeroCli" Width="30px"></asp:TextBox>
+				Bairro:
+				<asp:TextBox runat="server" type="text" name="bairro_cli" class="input_bairro_cli_or" ID="txtBairroCli" Width="150px"></asp:TextBox>
 			</div>
 			<div class="campos_orcamento" id="telefone_cliente_orcamento">
-				Celular: <input type="text" name="celular_cliente" class="input_telefone_cliente"/>
+				Telefone:
+				<asp:TextBox runat="server" type="text" name="tel_cli" class="input_tel_cli_or" ID="txtTelCli" Width="150px"></asp:TextBox>
 			</div>
 			<div class="campos_orcamento" id="cpf_cliente_orcamento">
-				CPF: <input type="text" name="cpf_cliente" class="input_cpf_cliente"/>
+				CPF:
+				<asp:TextBox runat="server" type="text" name="cpf_cli" class="input_cpf_cli_or" ID="txtCpfCli" Width="150px"></asp:TextBox>
 			</div>
 			<br/><br/>
 			<div id="titulo_dados_orcamento">Orçamento de produtos</div><br/>
