@@ -15,7 +15,6 @@
     width: 100%;
     height: 103px;
     background-color: gray;
-    position: fixed;
     right: 0;
     top: 0px;
 }
@@ -24,14 +23,12 @@ header {
     width: 100%;
     height: 103px;
     right: 0;
-    position: fixed;
     border-bottom-style: solid;
     border-width: 1px;
     border-color: #f2f2f2;
 }
 
 .logo a {
-    position: fixed;
     width: 200px;
     height: 103px;
 }
@@ -39,7 +36,6 @@ header {
 .logo img {
     width: 200px;
     height: 103px;
-    position: fixed;
 }
 
     .logo img:hover {
@@ -47,14 +43,13 @@ header {
     }
 
 nav {
-    position: fixed;
     top: 0;
     /*right: 50%;*/
     height: 103px;
 }
 
     nav .menu {
-        position: fixed;
+        position: absolute;
         text-align: center;
         left: 30%;
         height: auto;
@@ -103,9 +98,8 @@ ul.menu {
         border: 1px solid gray;
         padding: 1rem 2rem;
         color: white;
-       
     }
- 
+
 li.has-submenu ul {
     margin-top: .95rem;
 }
@@ -134,7 +128,8 @@ body {
 .corpo {
     /*text-align: left;*/
     width: 100vw;
-    height: 100vh;
+    height: auto;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -337,22 +332,26 @@ td #vunit_input {
     margin: 0;
     padding-top: 5%;
 }
+
 .inputcep {
     width: 150px;
     margin: 0;
     padding-top: 5%;
     outline: transparent;
 }
+
 .inputcpf {
     width: 150px;
     margin: 0;
     padding-top: 5%;
 }
+
 .inputemail {
     width: 150px;
     margin: 0;
     padding-top: 5%;
 }
+
 .inputphone {
     width: 150px;
     margin: 0;
@@ -364,10 +363,9 @@ td #vunit_input {
 input {
     /*border-bottom-style: 1px solid darkgray;*/
     background-color: transparent;
-    border:hidden;
+    border: hidden;
     border-bottom: 2px solid;
     border-color: rgb(82, 82, 82);
-    
 }
 
     input:focus {
@@ -519,12 +517,14 @@ a.trodape {
     align-items: center;
     justify-content: flex-start;
 }
+
 .campos_cad_forn {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.uf{
+
+.uf {
     margin-left: 10px;
 }
 
@@ -702,6 +702,67 @@ a.menu_orc:hover {
 
 /* Consulta_cliente */
 
+#titulo_consul_cliente{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+    font-weight:bolder;
+}
+.GridV{
+    max-height:auto;
+}
+.dados_cliente {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 600px;
+    height:auto;
+    padding: 12px 16px;
+    background-color: orange;
+}
+.btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content:space-between;
+    width: 400px;
+    padding: 30px 90px;
+}
+
+.consul_cliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+    #gvCliente th {
+        font-size: 19px;
+        padding: 10px;
+        background-color: white;
+        border: 2px solid black;
+
+    }
+
+    #gvCliente td {
+        font-size: 16px;
+        font-weight:600;
+        padding: 1px 3px;
+        background-color: orange;
+        text-decoration: none;
+        border: 2px solid black;
+    }
+
+    #gvCliente a {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        background-color: black;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px;
+    }
+
 .input_nome_cliente_consul {
     width: 200px;
     margin: 0;
@@ -712,7 +773,6 @@ a.menu_orc:hover {
     width: 200px;
     margin: 0;
     padding-top: 5%;
-    
 }
 
 .input_numero_cliente_consul {
@@ -765,17 +825,17 @@ a.menu_orc:hover {
     color: black;
     border-radius: 5px;
     font-size: 14px;
-    font-weight:bold;
-
-}
-#btnSalvar:disabled {
-    background-color: gray;
-    padding: 6px 12px;
-    color: black;
-    border-radius: 5px;
-    font-size: 14px;
     font-weight: bold;
 }
+
+    #btnSalvar:disabled {
+        background-color: gray;
+        padding: 6px 12px;
+        color: black;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+    }
 
 #btnEditar {
     background-color: white;
@@ -785,11 +845,12 @@ a.menu_orc:hover {
     font-weight: bold;
     border-radius: 5px;
 }
+
 #btnExcluir {
     background-color: white;
     padding: 6px 12px;
     color: black;
     border-radius: 5px;
     font-size: 14px;
-    font-weight:bold;
+    font-weight: bold;
 }
