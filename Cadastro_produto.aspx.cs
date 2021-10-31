@@ -84,12 +84,12 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Valor vazio!";
             }
-            else if (ddlFabricante.SelectedValue.ToString() == "")
+            else if (ddlFabricante.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione o Fabricante!";
             }
-            else if (ddlFornecedor.SelectedValue.ToString() == "")
+            else if (ddlFornecedor.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione o Fornecedor!";

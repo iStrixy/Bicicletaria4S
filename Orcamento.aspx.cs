@@ -37,7 +37,16 @@ namespace PROJ_INTER_BC4S
             ddlPessoa.DataValueField = "ID";
             ddlPessoa.DataBind();
             ddlPessoa.Items.Insert(0, "Selecionar...");
+        }
 
+        private void limpar_campos()
+        {
+            txtRuaCli.Text = string.Empty;
+            txtNumeroCli.Text = string.Empty;
+            txtBairroCli.Text = string.Empty;
+            txtTelCli.Text = string.Empty;
+            txtCpfCli.Text = string.Empty;
+            ddlPessoa.SelectedIndex = 0;
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
@@ -53,11 +62,7 @@ namespace PROJ_INTER_BC4S
 
                 if (ddlPessoa.SelectedValue.ToString() == "Selecionar...")
                 {
-                    txtRuaCli.Text = string.Empty;
-                    txtNumeroCli.Text = string.Empty;
-                    txtBairroCli.Text = string.Empty;
-                    txtTelCli.Text = string.Empty;
-                    txtCpfCli.Text = string.Empty;
+                    limpar_campos();
                 }
                 else if (ddlPessoa.SelectedIndex != 0)
                 {
@@ -75,6 +80,22 @@ namespace PROJ_INTER_BC4S
                         }
                     }
                 }
+            }
+        }
+
+        protected void btnConfirmOrc_Click(object sender, EventArgs e)
+        {
+            lblError.Text = string.Empty;
+            if(ddlPessoa.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Cliente!";
+            }
+            else
+            {
+                lblError.ForeColor = System.Drawing.Color.Green;
+                lblError.Text = "Orçamento cadastrado com sucesso!";
+                limpar_campos();
             }
         }
     }

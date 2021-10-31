@@ -54,7 +54,10 @@
 		<section id="titulo_orcamento">
 			<p>Formulário de orçamento</p>
 		</section>
-		<br/><br/>
+		<div>
+            <asp:Label runat="server" ID="lblError"></asp:Label>
+        </div>
+        <br/>
 		<div class="form_orcamento" autocomplete="off">
 			<div id="titulo_dados_orcamento">Dados cadastrais do cliente</div><br/>
 			<div class="campos_orcamento" id="nome_cliente_orcamento">
@@ -140,7 +143,7 @@
 			<div>Assinatura do cliente: </div>
 			<div>Assinatura do funcionário: </div>
 			<br/><br/>
-			<button class="enviar-orcamento">Confirmar orçamento</button>
+			<asp:Button runat="server" class="btn_cad_orc" Text="Confirmar orçamento" ID="btnConfirmOrc" OnClick="btnConfirmOrc_Click"></asp:Button>
 		</div>
 	</div>
 	<footer>

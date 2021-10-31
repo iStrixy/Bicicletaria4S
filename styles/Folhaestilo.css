@@ -207,7 +207,7 @@ body {
     font-size: 19px;
 }
 
-.enviar-orcamento {
+.btn_cad_orc {
     margin-left: 15%;
     width: 70%;
     font-size: 16px;
@@ -216,11 +216,12 @@ body {
     padding: 10px 15px;
     border: none;
     border-radius: 30px;
+    background-color: #d6d6d6;
 }
 
-    .enviar-orcamento:hover {
+    .btn_cad_orc:hover {
         cursor: pointer;
-        background-color: #d6d6d6;
+        background-color: #C0C0C0;
     }
 
 table tr, tbody, td {
@@ -719,10 +720,10 @@ a.menu_orc:hover {
     width: 600px;
     height: auto;
     padding: 20px 12px;
-    background-color: white;
+    background-color: #DCDCDC;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    border-color: #DCDCDC;
+    border-color: #C0C0C0;
 }
 
 .btn {
@@ -795,10 +796,10 @@ a.menu_orc:hover {
     width: 600px;
     height: auto;
     padding: 20px 12px;
-    background-color: white;
+    background-color: #DCDCDC;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    border-color: #DCDCDC;
+    border-color: #C0C0C0;
 }
 
 .btn {
@@ -874,10 +875,10 @@ a.menu_orc:hover {
     width: 600px;
     height: auto;
     padding: 20px 12px;
-    background-color: white;
+    background-color: #DCDCDC;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    border-color: #DCDCDC;
+    border-color: #C0C0C0;
 }
 
 .btn {
@@ -1084,7 +1085,7 @@ a.menu_orc:hover {
     font-weight: bold;
 }
 
- /* Consulta_Fabricante */
+ /* Consulta_fabricante */
 
 #titulo_consul_fabr {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -1104,10 +1105,10 @@ a.menu_orc:hover {
     width: 600px;
     height: auto;
     padding: 20px 12px;
-    background-color: white;
+    background-color: #DCDCDC;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
-    border-color: #DCDCDC;
+    border-color: #C0C0C0;
 }
 
 .btn {
