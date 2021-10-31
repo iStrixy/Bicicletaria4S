@@ -58,7 +58,6 @@
             <div>
                 <asp:Label runat="server" ID="lblError"></asp:Label>
             </div>
-            <br />
             <div class="consul_cliente">
                 <asp:GridView class="GridV" ID="gvCliente" runat="server" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID" Height="100px" Width="200px">
                     <Columns>
