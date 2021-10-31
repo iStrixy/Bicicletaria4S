@@ -42,20 +42,15 @@ header {
         opacity: 50%;
     }
 
-nav {
-    top: 0;
-    /*right: 50%;*/
-    height: 103px;
-}
 
-    nav .menu {
-        position: absolute;
-        text-align: center;
-        left: 30%;
-        height: auto;
-        display: flex;
-        width: auto;
-    }
+nav .menu {
+    position: absolute;
+    text-align: center;
+    left: 30%;
+    height: auto;
+    display: flex;
+    width: auto;
+}
 
 #logout a {
     margin-left: 120px;
@@ -130,6 +125,15 @@ body {
     width: 100vw;
     height: auto;
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.orc-container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -273,7 +277,7 @@ td #vunit_input {
     max-height: 100%;
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
-    height: 300px;
+    height: 350px;
 }
 
 #titulocadastramento {
@@ -366,6 +370,7 @@ input {
     border: hidden;
     border-bottom: 2px solid;
     border-color: rgb(82, 82, 82);
+    padding: 5px;
 }
 
     input:focus {
@@ -522,6 +527,7 @@ a.trodape {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding: 2px 0px 5px 2px;
 }
 
 .uf {
@@ -691,25 +697,245 @@ a.menu_orc:hover {
 
 /* Consulta_produto */
 
+#titulo_consul_prod {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.campos_consul_prod {
+    padding: 10px;
+}
+
+.GridV {
+    max-height: auto;
+}
+
+.dados_prod {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    padding: 20px 12px;
+    background-color: white;
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: #DCDCDC;
+}
+
+.btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 400px;
+    padding: 30px 90px;
+}
+
+#btnSalvar, #btnEditar, #btnExcluir {
+    cursor: pointer;
+}
+
+.consul_prod {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+#gvProduto th {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #FF8C00;
+    border: 2px solid black;
+}
+
+#gvProduto td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 3px;
+    background-color: orange;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+#gvProduto a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
+
 .input_vlr_uni_prod_consul {
     width: 55px;
 }
 
 /* Consulta_servico */
+
+#titulo_consul_serv{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.GridV {
+    max-height: auto;
+}
+
+.dados_serv {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    padding: 20px 12px;
+    background-color: white;
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: #DCDCDC;
+}
+
+.btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 400px;
+    padding: 30px 90px;
+}
+
+.consul_serv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+#gvServico th {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #FF8C00;
+    border: 2px solid black;
+}
+
+#gvServico td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 3px;
+    background-color: orange;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+.campo_consul_serv {
+    padding: 5px;
+}
+
+#gvServico a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
 .input_vlr_serv_consul {
     width: 55px;
 }
 
+/* Consulta_fornecedor */
+
+#titulo_consul_forn {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.campos_consul_prod {
+    padding: 10px;
+}
+
+.GridV {
+    max-height: auto;
+}
+
+.dados_fornecedor {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    padding: 20px 12px;
+    background-color: white;
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: #DCDCDC;
+}
+
+.btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 400px;
+    padding: 30px 90px;
+}
+
+.consul_forn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+#gvFornecedor th {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #FF8C00;
+    border: 2px solid black;
+}
+
+#gvFornecedor td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 3px;
+    background-color: orange;
+    text-decoration: none;
+    border: 2px solid black;
+}
+.campos_consul_fabr {
+    padding: 5px;
+}
+#gvFornecedor a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
+
 /* Consulta_cliente */
 
-#titulo_consul_cliente{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:large;
-    font-weight:bolder;
+#titulo_consul_cliente {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bolder;
 }
-.GridV{
-    max-height:auto;
+
+.GridV {
+    max-height: auto;
 }
+
 .dados_cliente {
     display: flex;
     align-items: flex-start;
@@ -723,10 +949,11 @@ a.menu_orc:hover {
     border-style: solid;
     border-color: #C0C0C0;
 }
+
 .btn {
     display: flex;
     align-items: flex-start;
-    justify-content:space-between;
+    justify-content: space-between;
     width: 400px;
     padding: 30px 90px;
 }
@@ -745,25 +972,25 @@ a.menu_orc:hover {
     border: 2px solid black;
 }
 
-    #gvCliente td {
-        font-size: 12px;
-        font-weight:600;
-        padding: 1px 3px;
-        background-color: orange;
-        text-decoration: none;
-        border: 2px solid black;
-    }
+#gvCliente td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 1px 3px;
+    background-color: orange;
+    text-decoration: none;
+    border: 2px solid black;
+}
 
-    #gvCliente a {
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        background-color: black;
-        border-radius: 5px;
-        font-size: 12px;
-        font-weight: bold;
-        padding: 5px;
-    }
+#gvCliente a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+}
 
 .input_nome_cliente_consul {
     width: 200px;
@@ -855,4 +1082,76 @@ a.menu_orc:hover {
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
+}
+
+ /* Consulta_Fabricante */
+
+#titulo_consul_fabr {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.GridV {
+    max-height: auto;
+}
+
+.dados_fabricante {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    padding: 20px 12px;
+    background-color: white;
+    border-width: 2px 2px 2px 2px;
+    border-style: solid;
+    border-color: #DCDCDC;
+}
+
+.btn {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 400px;
+    padding: 30px 90px;
+}
+
+.consul_fabr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+#gvFabricante th {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #FF8C00;
+    border: 2px solid black;
+}
+
+#gvFabricante td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 3px;
+    background-color: orange;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+.campo_consul_fabr {
+    padding: 5px;
+}
+
+#gvFabricante a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
 }
