@@ -37,36 +37,45 @@ namespace PROJ_INTER_BC4S
             ddlPessoa.DataValueField = "ID";
             ddlPessoa.DataBind();
             ddlPessoa.Items.Insert(0, "Selecionar...");
-            if(ddlPessoa.SelectedValue.ToString() == "Selecionar...")
-            {
-                txtRuaCli.Text = string.Empty;
-                txtNumeroCli.Text = string.Empty;
-                txtBairroCli.Text = string.Empty;
-                txtTelCli.Text = string.Empty;
-                txtCpfCli.Text = string.Empty;
-            }
-            else if (ddlPessoa.SelectedIndex != 0)
-            {
-                txtCpfCli.Text = "asd0";
-                int ID = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
-                {
-                    PESSOA pessoaselecionada = con_bd.PESSOA.Where(linha => linha.ID == ID).FirstOrDefault();
-                    if(pessoaselecionada != null)
-                    {
-                        txtRuaCli.Text = pessoaselecionada.LOGRADOURO;
-                        txtNumeroCli.Text = pessoaselecionada.NUM_LOGRADOURO.ToString();
-                        txtBairroCli.Text = pessoaselecionada.BAIRRO;
-                        txtTelCli.Text = pessoaselecionada.TELEFONE.ToString();
-                        txtCpfCli.Text = pessoaselecionada.CPF.ToString();
-                    }
-                }
-            }
+
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
         {
             Session.RemoveAll();
             Response.Redirect("TeladeLogin.aspx");
+        }
+
+        protected void ddlPessoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+            {
+
+                if (ddlPessoa.SelectedValue.ToString() == "Selecionar...")
+                {
+                    txtRuaCli.Text = string.Empty;
+                    txtNumeroCli.Text = string.Empty;
+                    txtBairroCli.Text = string.Empty;
+                    txtTelCli.Text = string.Empty;
+                    txtCpfCli.Text = string.Empty;
+                }
+                else if (ddlPessoa.SelectedIndex != 0)
+                {
+                    txtCpfCli.Text = "asd0";
+                    int ID = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
+                    {
+                        PESSOA pessoaselecionada = con_bd.PESSOA.Where(linha => linha.ID == ID).FirstOrDefault();
+                        if (pessoaselecionada != null)
+                        {
+                            txtRuaCli.Text = pessoaselecionada.LOGRADOURO;
+                            txtNumeroCli.Text = pessoaselecionada.NUM_LOGRADOURO.ToString();
+                            txtBairroCli.Text = pessoaselecionada.BAIRRO;
+                            txtTelCli.Text = pessoaselecionada.TELEFONE.ToString();
+                            txtCpfCli.Text = pessoaselecionada.CPF.ToString();
+                        }
+                    }
+                }
+            }
         }
     }
 }

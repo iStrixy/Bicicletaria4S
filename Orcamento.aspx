@@ -50,7 +50,7 @@
 			</nav>
 		</header>
 	</div>
-	<div class="corpo">
+	<div class="orc-container">
 		<section id="titulo_orcamento">
 			<p>Formulário de orçamento</p>
 		</section>
@@ -59,7 +59,7 @@
 			<div id="titulo_dados_orcamento">Dados cadastrais do cliente</div><br/>
 			<div class="campos_orcamento" id="nome_cliente_orcamento">
 				Nome do cliente:
-				<asp:DropDownList ID="ddlPessoa" runat="server"></asp:DropDownList>
+				<asp:DropDownList ID="ddlPessoa" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPessoa_SelectedIndexChanged"></asp:DropDownList>
 			</div>
 			<div class="campos_orcamento" id="rua_cliente_orcamento">
 				Rua:
