@@ -61,11 +61,11 @@
 		<div class="form_cad_serv">
 			<div class="campo_cad_serv" id="desc_serv">
 				Descrição:
-				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_serv" placeholder="Ex. Montar bicicleta" required="" ID="txtDescricaoServico" OnTextChanged="txtDescricaoServico_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_serv" placeholder="Ex. Montar bicicleta" ID="txtDescricaoServico" OnTextChanged="txtDescricaoServico_TextChanged"></asp:TextBox>
 			</div><br/>
 			<div class="campo_cad_serv" id="valor_serv">
 				Valor:
-				<asp:TextBox runat="server" type="number" name="vlr_serv" class="input_valor_serv" required="" ID="txtValorServico" OnTextChanged="txtValorServico_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="number" name="vlr_serv" class="input_valor_serv" ID="txtValorServico" OnTextChanged="txtValorServico_TextChanged"></asp:TextBox>
 			</div>
 			<br/><br/>
 			<asp:Button runat="server" class="btn_cad_serv" Text="Cadastrar produto" ID="btnCadastrarServico" OnClick="btnCadastrarServico_Click"></asp:Button>

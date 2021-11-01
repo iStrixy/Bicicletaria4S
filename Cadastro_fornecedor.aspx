@@ -58,21 +58,21 @@
             <div>
                 <asp:Label runat="server" ID="lblError"></asp:Label>
             </div>
-            <br />
+            <br/>
             <div class="form_cad_forn">
                 <div class="campos_cad_forn" id="nome_cad_forn">
                     Nome:
-				<asp:TextBox runat="server" type="text" name="nome_forn" class="input_nome_forn" placeholder="Ex. João Silva" required="" ID="txtNomeFornecedor" OnTextChanged="txtNomeFornecedor_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="nome_forn" class="input_nome_forn" placeholder="Ex. João Silva" ID="txtNomeFornecedor" OnTextChanged="txtNomeFornecedor_TextChanged"></asp:TextBox>
                 </div>
-                <br />
+                <br/>
                 <div class="campos_cad_forn" id="telefone_cad_forn">
                     Telefone:
-				<asp:TextBox runat="server" type="numer" name="tel_forn" class="input_tel_forn" placeholder="(xx) xxxxx-xxxx" required="" ID="txtTelefoneFornecedor" OnTextChanged="txtTelefoneFornecedor_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="numer" name="tel_forn" class="input_tel_forn" placeholder="(xx) xxxxx-xxxx" ID="txtTelefoneFornecedor" OnTextChanged="txtTelefoneFornecedor_TextChanged"></asp:TextBox>
                 </div>
-                <br />
+                <br/>
                 <div class="campos_cad_forn" id="cidade_forn">
                     Cidade:
-				<asp:TextBox runat="server" type="text" name="cidade_forn" class="input_cidade_forn" required="" ID="txtCidadeFornecedor" OnTextChanged="txtCidadeFornecedor_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="cidade_forn" class="input_cidade_forn" ID="txtCidadeFornecedor" OnTextChanged="txtCidadeFornecedor_TextChanged"></asp:TextBox>
                     <div class="uf">
                         UF:
 				<asp:DropDownList ID="DpUF" runat="server">
@@ -110,10 +110,10 @@
                 <br />
                 <div class="campos_cad_forn" id="email_cad_forn">
                     E-mail:
-				<asp:TextBox runat="server" type="text" name="email_forn" class="input_email_forn" placeholder="user@gmail.com" required="" ID="txtEmailFornecedor" OnTextChanged="txtEmailFornecedor_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="email_forn" class="input_email_forn" placeholder="user@gmail.com" ID="txtEmailFornecedor" OnTextChanged="txtEmailFornecedor_TextChanged"></asp:TextBox>
                 </div>
-                <br />
-                <br />
+                <br/>
+                <br/>
                 <asp:Button runat="server" class="btn_cad_forn" ID="btnCadastrarFornecedor" Text="Cadastrar" OnClick="btnCadastrarFornecedor_Click"></asp:Button>
             </div>
         </div>

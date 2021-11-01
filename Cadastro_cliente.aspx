@@ -63,9 +63,9 @@
                 Nome:
                 <asp:Textbox runat="server" type="text" name="nome" class="inputname" placeholder="Ex. João Silva" ID="tb_nome" OnTextChanged="tb_nome_TextChanged"></asp:Textbox>
             </div>
-            <div class="campos" id="rua" required="">
+            <div class="campos" id="rua">
                 Rua:
-                <asp:Textbox runat="server" type="text" name="rua" class="inputstreet"  ID="tb_rua"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="rua" class="inputstreet" ID="tb_rua"></asp:Textbox>
             </div>
             <div class="campos" id="endereco">
                 Número:
@@ -75,15 +75,15 @@
             </div>
             <div class="campos" id="complemento">
                 Complemento:
-                <asp:Textbox runat="server" type="text" name="complemento" class="inputcomplement" placeholder="Ex. Casa" required="" ID="tb_cmpt"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="complemento" class="inputcomplement" placeholder="Ex. Casa" ID="tb_cmpt"></asp:Textbox>
             </div>
             <div class="campos" id="cep">
                 CEP:
-                <asp:Textbox runat="server" type="text" name="cep" class="inputcep" placeholder="xxxxx-xxx" required="" ID="tb_cep"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="cep" class="inputcep" placeholder="xxxxx-xxx" ID="tb_cep"></asp:Textbox>
             </div>
             <div class="campos" id="cpf">
                 CPF:
-                <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" placeholder="xxx.xxx.xxx-xx" required="" ID="tb_cpf" OnTextChanged="tb_cpf_TextChanged"></asp:Textbox>
+                <asp:Textbox runat="server" type="text" name="cpf" class="inputcpf" placeholder="xxx.xxx.xxx-xx" ID="tb_cpf" OnTextChanged="tb_cpf_TextChanged"></asp:Textbox>
             </div>
             <div class="campos" id="email">
                 E-mail:

@@ -62,17 +62,17 @@
             <div class="form_cad_fabr">
                 <div class="campos_cad_fabr" id="nome_cad_fabr">
                     Nome:
-				<asp:TextBox runat="server" type="text" name="nome_fabr" class="input_nome_fabr" placeholder="Ex. New Bikes" required="" ID="txtNomeFabricante" OnTextChanged="txtNomeFabricante_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="nome_fabr" class="input_nome_fabr" placeholder="Ex. New Bikes" ID="txtNomeFabricante" OnTextChanged="txtNomeFabricante_TextChanged"></asp:TextBox>
                 </div>
                 <br />
                 <div class="campos_cad_fabr" id="telefone_cad_fabr">
                     Telefone:
-				<asp:TextBox runat="server" type="numer" name="tel_fabr" class="input_tel_fabr" placeholder="(xx) xxxxx-xxxx" required="" ID="txtTelefoneFabricante" OnTextChanged="txtTelefoneFabricante_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="numer" name="tel_fabr" class="input_tel_fabr" placeholder="(xx) xxxxx-xxxx" ID="txtTelefoneFabricante" OnTextChanged="txtTelefoneFabricante_TextChanged"></asp:TextBox>
                 </div>
                 <br />
                 <div class="campos_cad_fabr" id="cidade_fabr">
                     Cidade:
-				<asp:TextBox runat="server" type="text" name="cidade_fabr" class="input_cidade_fabr" required="" ID="txtCidadeFabricante" OnTextChanged="txtCidadeFabricante_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="cidade_fabr" class="input_cidade_fabr" ID="txtCidadeFabricante" OnTextChanged="txtCidadeFabricante_TextChanged"></asp:TextBox>
                     <div class="uf">
                         UF:
 				<asp:DropDownList ID="DpUF" runat="server" Height="26px" Width="94px">

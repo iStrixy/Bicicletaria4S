@@ -28,20 +28,22 @@ namespace PROJ_INTER_BC4S
         {
             double vlr_unit;
 
-            if (!double.TryParse(txtValorServico.Text, out vlr_unit))
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Valor inválido!";
-            }
-            else if(txtDescricaoServico.Text == string.Empty)
+            /* Descrição */
+            if (txtDescricaoServico.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Descrição vazio!";
             }
-            else if(txtValorServico.Text == string.Empty)
+            /* Valor */
+            else if (txtValorServico.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Valor vazio!";
+            }
+            else if (!double.TryParse(txtValorServico.Text, out vlr_unit))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Valor inválido!";
             }
             else
             {

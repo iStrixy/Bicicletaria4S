@@ -53,30 +53,99 @@ namespace PROJ_INTER_BC4S
                 string cpf_max = tb_cpf.Text;
                 string nome = tb_nome.Text;
 
-                if (!int.TryParse(tb_number.Text, out number))
+                /* Nome */
+                if (tb_nome.Text == string.Empty)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo Número inválido";
+                    lblError.Text = "Campo Nome vazio!";
                 }
                 else if (!Regex.IsMatch(tb_nome.Text, @"[^0-9]+$"))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo Nome inválido!";
                 }
+                /* Rua */
+                else if (tb_rua.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Rua vazio!";
+                }
+                /* Número casa */
+                else if (tb_number.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Número vazio!";
+                }
+                else if (!int.TryParse(tb_number.Text, out number))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Número inválido!";
+                }
+                /* Bairro */
+                else if (tb_bairro.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Bairro vazio!";
+                }
+                /* Complemento */
+                else if (tb_cmpt.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Complemento vazio!";
+                }
+                /* CEP */
+                else if (tb_cep.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CEP vazio!";
+                }
                 else if (!int.TryParse(tb_cep.Text, out cep))
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo CEP inválido";
+                    lblError.Text = "Campo CEP inválido!";
                 }
                 else if (cep_max.Length < 8)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo CEP inválido";
+                    lblError.Text = "Campo CEP inválido!";
                 }
                 else if (cep_max.Length > 8)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo CEP inválido";
+                    lblError.Text = "Campo CEP inválido!";
+                }
+                /* CPF */
+                else if (tb_cpf.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF vazio!";
+                }
+                else if (!double.TryParse(tb_cpf.Text, out cpf1))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF inválido!";
+                }
+                else if (cpf_max.Length > 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF inválido!";
+                }
+                else if (cpf_max.Length < 11)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo CPF inválido!";
+                }
+                /* E-mail */
+                else if (tb_email.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo E-mail vazio!";
+                }
+                /* Telefone */
+                else if (tb_tel.Text == string.Empty)
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo Telefone vazio!";
                 }
                 else if (!double.TryParse(tb_tel.Text, out tel))
                 {
@@ -86,27 +155,12 @@ namespace PROJ_INTER_BC4S
                 else if (tel_max.Length > 11)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo Telefone inválido";
+                    lblError.Text = "Campo Telefone inválido!";
                 }
                 else if (tel_max.Length < 11)
                 {
                     lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo Telefone inválido";
-                }
-                else if (!double.TryParse(tb_cpf.Text, out cpf1))
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo CPF inválido";
-                }
-                else if (cpf_max.Length > 11)
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo CPF inválido";
-                }
-                else if (cpf_max.Length < 11)
-                {
-                    lblError.ForeColor = System.Drawing.Color.Red;
-                    lblError.Text = "Campo CPF inválido";
+                    lblError.Text = "Campo Telefone inválido!";
                 }
                 else
                 {

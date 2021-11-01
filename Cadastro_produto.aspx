@@ -71,11 +71,11 @@
             <br/>
 			<div class="campo_cad_prod" id="desc_prod">
 				Descrição: 
-				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_prod" placeholder="Ex. Selim" required="" ID="txtDescricaoProduto" OnTextChanged="txtDescricaoProduto_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="text" name="descricao" class="input_desc_prod" placeholder="Ex. Selim" ID="txtDescricaoProduto" OnTextChanged="txtDescricaoProduto_TextChanged"></asp:TextBox>
 			</div><br/>
 			<div class="campo_cad_prod" id="valor_unit_prod">
 				Valor unitário: 
-				<asp:TextBox runat="server" type="number" name="vlr_uni_prod" class="input_valor_unit_prod" required="" ID="txtValorUniProduto" OnTextChanged="txtValorUniProduto_TextChanged"></asp:TextBox>
+				<asp:TextBox runat="server" type="number" name="vlr_uni_prod" class="input_valor_unit_prod" ID="txtValorUniProduto" OnTextChanged="txtValorUniProduto_TextChanged"></asp:TextBox>
 			</div>
 			<br/><br/>
 			<asp:Button runat="server" class="btn_cad_prod" Text="Cadastrar produto" ID="btnCadastrarProduto" OnClick="btnCadastrarProduto_Click"></asp:Button>
