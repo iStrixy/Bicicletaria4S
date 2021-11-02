@@ -171,7 +171,7 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo E-mail vazio!";
             }
-            else if (!Regex.IsMatch(txtEmailForn.Text, @"[\@]+$"))
+            else if (!Regex.IsMatch(txtEmailForn.Text, @"\@"))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo E-mail inválido!";
