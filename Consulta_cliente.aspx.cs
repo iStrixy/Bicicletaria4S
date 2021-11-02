@@ -69,20 +69,57 @@ namespace PROJ_INTER_BC4S
             string cpf_max = txtCpfCliente.Text;
             string nome = txtNomeCliente.Text;
 
+            /* GridView */
             if(gvCliente.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
+            }
+            /* Nome */
+            if (txtNomeCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome vazio!";
             }
             else if (!Regex.IsMatch(txtNomeCliente.Text, @"[^0-9]+$"))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Nome inválido!";
             }
+            /* Rua */
+            else if (txtRuaCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Rua vazio!";
+            }
+            /* Número casa */
+            else if (txtNumeroCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Número vazio!";
+            }
             else if (!int.TryParse(txtNumeroCliente.Text, out number))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Número inválido!";
+            }
+            /* Bairro */
+            else if (txtBairroCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Bairro vazio!";
+            }
+            /* Complemento */
+            else if (txtComplementoCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Complemento vazio!";
+            }
+            /* CEP */
+            else if (txtCepCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo CEP vazio!";
             }
             else if (!int.TryParse(txtCepCliente.Text, out cep))
             {
@@ -99,20 +136,11 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo CEP inválido!";
             }
-            else if (!double.TryParse(txtTelCliente.Text, out tel))
+            /* CPF */
+            else if (txtCpfCliente.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone inválido!";
-            }
-            else if (tel_max.Length > 11)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone inválido!";
-            }
-            else if (tel_max.Length < 11)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone inválido!";
+                lblError.Text = "Campo CPF vazio!";
             }
             else if (!double.TryParse(txtCpfCliente.Text, out cpf))
             {
@@ -128,6 +156,38 @@ namespace PROJ_INTER_BC4S
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo CPF inválido!";
+            }
+            /* E-mail */
+            else if (txtEmailCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo E-mail vazio!";
+            }
+            else if (!Regex.IsMatch(txtEmailCliente.Text, @"[\@]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo E-mail inválido!";
+            }
+            /* Telefone */
+            else if (txtTelCliente.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone vazio!";
+            }
+            else if (!double.TryParse(txtTelCliente.Text, out tel))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (tel_max.Length > 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
+            }
+            else if (tel_max.Length < 11)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone inválido!";
             }
             else
             {

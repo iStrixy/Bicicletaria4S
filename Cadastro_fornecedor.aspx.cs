@@ -94,20 +94,37 @@ namespace PROJ_INTER_BC4S
                 }
                 else
                 {
-                    lblError.ForeColor = System.Drawing.Color.Green;
-                    lblError.Text = "Fornecedor cadastrado com sucesso!";
+                    string email = txtEmailFornecedor.Text;
+                    string tel1 = txtTelefoneFornecedor.Text;
+                    FORNECEDOR clientemail = con_bd.FORNECEDOR.Where(linha => linha.EMAIL.Equals(email)).FirstOrDefault();
+                    FORNECEDOR clientetel = con_bd.FORNECEDOR.Where(linha => linha.TELEFONE.Equals(tel1)).FirstOrDefault();
+                    if (clientetel != null)
+                    {
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                        lblError.Text = "Telefone já cadastrado!";
+                    }
+                    else if (clientemail != null)
+                    {
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                        lblError.Text = "E-mail já cadastrado!";
+                    }
+                    else
+                    {
+                        lblError.ForeColor = System.Drawing.Color.Green;
+                        lblError.Text = "Fornecedor cadastrado com sucesso!";
 
-                    FORNECEDOR cad_fornecedor = new FORNECEDOR();
+                        FORNECEDOR cad_fornecedor = new FORNECEDOR();
 
-                    cad_fornecedor.NOME = txtNomeFornecedor.Text;
-                    cad_fornecedor.TELEFONE = txtTelefoneFornecedor.Text;
-                    cad_fornecedor.CIDADE = txtCidadeFornecedor.Text;
-                    cad_fornecedor.UF = DpUF.SelectedValue.ToString();
-                    cad_fornecedor.EMAIL = txtEmailFornecedor.Text;
+                        cad_fornecedor.NOME = txtNomeFornecedor.Text;
+                        cad_fornecedor.TELEFONE = txtTelefoneFornecedor.Text;
+                        cad_fornecedor.CIDADE = txtCidadeFornecedor.Text;
+                        cad_fornecedor.UF = DpUF.SelectedValue.ToString();
+                        cad_fornecedor.EMAIL = txtEmailFornecedor.Text;
 
-                    con_bd.FORNECEDOR.Add(cad_fornecedor);
-                    con_bd.SaveChanges();
-                    limpar_campos();
+                        con_bd.FORNECEDOR.Add(cad_fornecedor);
+                        con_bd.SaveChanges();
+                        limpar_campos();
+                    }
                 }
             }
         }

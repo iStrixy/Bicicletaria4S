@@ -141,6 +141,11 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Red;
                     lblError.Text = "Campo E-mail vazio!";
                 }
+                else if (!Regex.IsMatch(tb_email.Text, @"[\@]+$"))
+                {
+                    lblError.ForeColor = System.Drawing.Color.Red;
+                    lblError.Text = "Campo E-mail inválido!";
+                }
                 /* Telefone */
                 else if (tb_tel.Text == string.Empty)
                 {
@@ -166,8 +171,10 @@ namespace PROJ_INTER_BC4S
                 {
                     string cpf = tb_cpf.Text;
                     string email = tb_email.Text;
+                    string tel1 = tb_tel.Text;
                     PESSOA cliente = con_bd.PESSOA.Where(linha => linha.CPF.Equals(cpf)).FirstOrDefault();
                     PESSOA clientemail = con_bd.PESSOA.Where(linha => linha.EMAIL.Equals(email)).FirstOrDefault();
+                    PESSOA clientetel = con_bd.PESSOA.Where(linha => linha.TELEFONE.Equals(tel1)).FirstOrDefault();
                     if (cliente != null)
                     {
                         lblError.ForeColor = System.Drawing.Color.Red;
@@ -177,6 +184,11 @@ namespace PROJ_INTER_BC4S
                     {
                         lblError.ForeColor = System.Drawing.Color.Red;
                         lblError.Text = "E-mail já cadastrado!";
+                    }
+                    else if(clientetel != null)
+                    {
+                        lblError.ForeColor = System.Drawing.Color.Red;
+                        lblError.Text = "Telefone já cadastrado!";
                     }
                     else
                     {

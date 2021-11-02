@@ -42,27 +42,30 @@ namespace PROJ_INTER_BC4S
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
-            int vlr_unit;
+            double vlr_unit;
 
+            /* GridView */
             if (gvServico.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
             }
-            else if (!int.TryParse(txtValorServico.Text, out vlr_unit))
+            /* Descrição */
+            else if (txtDescricaoServico.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Descrição vazio!";
+            }
+            /* Valor */
+            else if (txtValorServico.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Valor vazio!";
+            }
+            else if (!double.TryParse(txtValorServico.Text, out vlr_unit))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Valor inválido!";
-            }
-            else if (txtDescricaoServico.Text == String.Empty)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Insira as informações no campo descrição!";
-            }
-            else if (txtValorServico.Text == String.Empty)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Insira as informações no campo valor!";
             }
             else
             {

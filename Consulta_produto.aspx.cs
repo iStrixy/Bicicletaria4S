@@ -126,35 +126,40 @@ namespace PROJ_INTER_BC4S
         {
             double vlr_unit;
 
+            /* GridView */
             if(gvProduto.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
             }
-            else if (!double.TryParse(txtVlrUni.Text, out vlr_unit))
+            /* Fabricante */
+            else if (ddlFabricante.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Valor inválido!";
+                lblError.Text = "Selecione o Fabricante!";
             }
+            /* Fornecedor */
+            else if (ddlFornecedor.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Fornecedor!";
+            }
+            /* Descrição */
             else if (txtDescProd.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Descrição vazio!";
             }
+            /* Valor unitário */
             else if (txtVlrUni.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Valor vazio!";
             }
-            else if (ddlFabricante.SelectedValue.ToString() == "")
+            else if (!double.TryParse(txtVlrUni.Text, out vlr_unit))
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Selecione o Fabricante!";
-            }
-            else if (ddlFornecedor.SelectedValue.ToString() == "")
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Selecione o Fornecedor!";
+                lblError.Text = "Valor inválido!";
             }
             else
             {

@@ -107,10 +107,28 @@ namespace PROJ_INTER_BC4S
             string tel_max = txtTelFabr.Text;
             string cidade = txtCidadeFabr.Text;
 
+            /* GridView */
             if (gvFabricante.SelectedValue == null)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione um dado!";
+            }
+            /* Nome */
+            else if (txtNomeFabr.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome vazio!";
+            }
+            else if (!Regex.IsMatch(txtNomeFabr.Text, @"[^0-9]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Nome inválido!";
+            }
+            /* Telefone */
+            else if (txtTelFabr.Text == string.Empty)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Telefone vazio!";
             }
             else if (!double.TryParse(txtTelFabr.Text, out tel))
             {
@@ -127,21 +145,18 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Telefone inválido!";
             }
-            else if (txtNomeFabr.Text == string.Empty)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Nome vazio!";
-            }
-            else if (txtTelFabr.Text == string.Empty)
-            {
-                lblError.ForeColor = System.Drawing.Color.Red;
-                lblError.Text = "Campo Telefone vazio!";
-            }
+            /* Cidade */
             else if (txtCidadeFabr.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Campo Cidade vazio!";
             }
+            else if (!Regex.IsMatch(txtCidadeFabr.Text, @"[^0-9]+$"))
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Campo Cidade inválido!";
+            }
+            /* UF */
             else if (DpUF.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
