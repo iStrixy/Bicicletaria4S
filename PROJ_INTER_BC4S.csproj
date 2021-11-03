@@ -281,15 +281,6 @@
     <Compile Include="Cadastro_cliente.aspx.designer.cs">
       <DependentUpon>Cadastro_cliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TELEFONE_FABRICANTE.cs">
-      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TELEFONE_FORNECEDOR.cs">
-      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TELEFONE_PESSOA.cs">
-      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="BICICLETARIA4S.edmx">

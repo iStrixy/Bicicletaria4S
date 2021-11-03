@@ -14,12 +14,6 @@ namespace PROJ_INTER_BC4S
     
     public partial class PESSOA
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PESSOA()
-        {
-            this.TELEFONE_PESSOA = new HashSet<TELEFONE_PESSOA>();
-        }
-    
         public int ID { get; set; }
         public string NOME { get; set; }
         public string LOGRADOURO { get; set; }
@@ -33,7 +27,5 @@ namespace PROJ_INTER_BC4S
     
         public virtual CLIENTE CLIENTE { get; set; }
         public virtual FUNCIONARIO FUNCIONARIO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TELEFONE_PESSOA> TELEFONE_PESSOA { get; set; }
     }
 }

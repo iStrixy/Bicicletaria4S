@@ -53,8 +53,11 @@ nav .menu {
 }
 
 #logout a {
-    margin-left: 120px;
+    margin-left: 150px;
+    border-radius: 10px;
+    background-color: #4a4848;
 }
+
 
 ul.menu li {
     color: #fff;

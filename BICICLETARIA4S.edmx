@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CLIENTE">
           <Key>
             <PropertyRef Name="ID" />
@@ -71,7 +71,7 @@
           <Property Name="CEP" Type="int" Nullable="false" />
           <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="TELEFONE" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -108,27 +108,6 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DESCRICAO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="VALOR" Type="float" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TELEFONE_FABRICANTE">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TELEFONE" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TELEFONE_FORNECEDOR">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TELEFONE" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="TELEFONE_PESSOA">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TELEFONE" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_CLIENTE_PESSOA">
           <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
@@ -250,42 +229,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TELEFONE_FABRICANTE_FABRICANTE">
-          <End Role="FABRICANTE" Type="Self.FABRICANTE" Multiplicity="1" />
-          <End Role="TELEFONE_FABRICANTE" Type="Self.TELEFONE_FABRICANTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FABRICANTE">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TELEFONE_FABRICANTE">
-              <PropertyRef Name="TELEFONE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR">
-          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
-          <End Role="TELEFONE_FORNECEDOR" Type="Self.TELEFONE_FORNECEDOR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FORNECEDOR">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TELEFONE_FORNECEDOR">
-              <PropertyRef Name="TELEFONE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TELEFONE_PESSOA_PESSOA">
-          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
-          <End Role="TELEFONE_PESSOA" Type="Self.TELEFONE_PESSOA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PESSOA">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TELEFONE_PESSOA">
-              <PropertyRef Name="TELEFONE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="BD_BICICLETARIA_4SModelStoreContainer">
           <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FABRICANTE" EntityType="Self.FABRICANTE" Schema="dbo" store:Type="Tables" />
@@ -298,9 +241,6 @@
           <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="REG_SERV_ORCAMENTO" EntityType="Self.REG_SERV_ORCAMENTO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICO" EntityType="Self.SERVICO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TELEFONE_FABRICANTE" EntityType="Self.TELEFONE_FABRICANTE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TELEFONE_FORNECEDOR" EntityType="Self.TELEFONE_FORNECEDOR" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TELEFONE_PESSOA" EntityType="Self.TELEFONE_PESSOA" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_CLIENTE_PESSOA" Association="Self.FK_CLIENTE_PESSOA">
             <End Role="PESSOA" EntitySet="PESSOA" />
             <End Role="CLIENTE" EntitySet="CLIENTE" />
@@ -341,20 +281,9 @@
             <End Role="SERVICO" EntitySet="SERVICO" />
             <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
           </AssociationSet>
-          <AssociationSet Name="FK_TELEFONE_FABRICANTE_FABRICANTE" Association="Self.FK_TELEFONE_FABRICANTE_FABRICANTE">
-            <End Role="FABRICANTE" EntitySet="FABRICANTE" />
-            <End Role="TELEFONE_FABRICANTE" EntitySet="TELEFONE_FABRICANTE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR" Association="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR">
-            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
-            <End Role="TELEFONE_FORNECEDOR" EntitySet="TELEFONE_FORNECEDOR" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TELEFONE_PESSOA_PESSOA" Association="Self.FK_TELEFONE_PESSOA_PESSOA">
-            <End Role="PESSOA" EntitySet="PESSOA" />
-            <End Role="TELEFONE_PESSOA" EntitySet="TELEFONE_PESSOA" />
-          </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_BICICLETARIA_4SModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -376,7 +305,6 @@
           <Property Name="UF" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PRODUTO_FABRICANTE" FromRole="FABRICANTE" ToRole="PRODUTO" />
-          <NavigationProperty Name="TELEFONE_FABRICANTE" Relationship="Self.FK_TELEFONE_FABRICANTE_FABRICANTE" FromRole="FABRICANTE" ToRole="TELEFONE_FABRICANTE" />
         </EntityType>
         <EntityType Name="FORNECEDOR">
           <Key>
@@ -389,7 +317,6 @@
           <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PRODUTO_FORNECEDOR" FromRole="FORNECEDOR" ToRole="PRODUTO" />
-          <NavigationProperty Name="TELEFONE_FORNECEDOR" Relationship="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR" FromRole="FORNECEDOR" ToRole="TELEFONE_FORNECEDOR" />
         </EntityType>
         <EntityType Name="FUNCIONARIO">
           <Key>
@@ -436,10 +363,9 @@
           <Property Name="CEP" Type="Int32" Nullable="false" />
           <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CLIENTE" Relationship="Self.FK_CLIENTE_PESSOA" FromRole="PESSOA" ToRole="CLIENTE" />
           <NavigationProperty Name="FUNCIONARIO" Relationship="Self.FK_FUNCIONARIO_PESSOA" FromRole="PESSOA" ToRole="FUNCIONARIO" />
-          <NavigationProperty Name="TELEFONE_PESSOA" Relationship="Self.FK_TELEFONE_PESSOA_PESSOA" FromRole="PESSOA" ToRole="TELEFONE_PESSOA" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -485,30 +411,6 @@
           <Property Name="VALOR" Type="Double" Nullable="false" />
           <NavigationProperty Name="REG_SERV_ORCAMENTO" Relationship="Self.FK_REG_SERV_ORCAMENTO_SERVICO" FromRole="SERVICO" ToRole="REG_SERV_ORCAMENTO" />
         </EntityType>
-        <EntityType Name="TELEFONE_FABRICANTE">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="FABRICANTE" Relationship="Self.FK_TELEFONE_FABRICANTE_FABRICANTE" FromRole="TELEFONE_FABRICANTE" ToRole="FABRICANTE" />
-        </EntityType>
-        <EntityType Name="TELEFONE_FORNECEDOR">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="FORNECEDOR" Relationship="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR" FromRole="TELEFONE_FORNECEDOR" ToRole="FORNECEDOR" />
-        </EntityType>
-        <EntityType Name="TELEFONE_PESSOA">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TELEFONE" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="PESSOA" Relationship="Self.FK_TELEFONE_PESSOA_PESSOA" FromRole="TELEFONE_PESSOA" ToRole="PESSOA" />
-        </EntityType>
         <Association Name="FK_CLIENTE_PESSOA">
           <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
           <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
@@ -545,18 +447,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TELEFONE_FABRICANTE_FABRICANTE">
-          <End Role="FABRICANTE" Type="Self.FABRICANTE" Multiplicity="1" />
-          <End Role="TELEFONE_FABRICANTE" Type="Self.TELEFONE_FABRICANTE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FABRICANTE">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TELEFONE_FABRICANTE">
-              <PropertyRef Name="TELEFONE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PRODUTO_FORNECEDOR">
           <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
           <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="*" />
@@ -566,18 +456,6 @@
             </Principal>
             <Dependent Role="PRODUTO">
               <PropertyRef Name="ID_FORNECEDOR" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR">
-          <End Role="FORNECEDOR" Type="Self.FORNECEDOR" Multiplicity="1" />
-          <End Role="TELEFONE_FORNECEDOR" Type="Self.TELEFONE_FORNECEDOR" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FORNECEDOR">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TELEFONE_FORNECEDOR">
-              <PropertyRef Name="TELEFONE" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -629,18 +507,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TELEFONE_PESSOA_PESSOA">
-          <End Role="PESSOA" Type="Self.PESSOA" Multiplicity="1" />
-          <End Role="TELEFONE_PESSOA" Type="Self.TELEFONE_PESSOA" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PESSOA">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="TELEFONE_PESSOA">
-              <PropertyRef Name="TELEFONE" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_PROD_ORCAMENTO_PRODUTO">
           <End Role="PRODUTO" Type="Self.PRODUTO" Multiplicity="1" />
           <End Role="PROD_ORCAMENTO" Type="Self.PROD_ORCAMENTO" Multiplicity="*" />
@@ -677,9 +543,6 @@
           <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" />
           <EntitySet Name="REG_SERV_ORCAMENTO" EntityType="Self.REG_SERV_ORCAMENTO" />
           <EntitySet Name="SERVICO" EntityType="Self.SERVICO" />
-          <EntitySet Name="TELEFONE_FABRICANTE" EntityType="Self.TELEFONE_FABRICANTE" />
-          <EntitySet Name="TELEFONE_FORNECEDOR" EntityType="Self.TELEFONE_FORNECEDOR" />
-          <EntitySet Name="TELEFONE_PESSOA" EntityType="Self.TELEFONE_PESSOA" />
           <AssociationSet Name="FK_CLIENTE_PESSOA" Association="Self.FK_CLIENTE_PESSOA">
             <End Role="PESSOA" EntitySet="PESSOA" />
             <End Role="CLIENTE" EntitySet="CLIENTE" />
@@ -692,17 +555,9 @@
             <End Role="FABRICANTE" EntitySet="FABRICANTE" />
             <End Role="PRODUTO" EntitySet="PRODUTO" />
           </AssociationSet>
-          <AssociationSet Name="FK_TELEFONE_FABRICANTE_FABRICANTE" Association="Self.FK_TELEFONE_FABRICANTE_FABRICANTE">
-            <End Role="FABRICANTE" EntitySet="FABRICANTE" />
-            <End Role="TELEFONE_FABRICANTE" EntitySet="TELEFONE_FABRICANTE" />
-          </AssociationSet>
           <AssociationSet Name="FK_PRODUTO_FORNECEDOR" Association="Self.FK_PRODUTO_FORNECEDOR">
             <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
             <End Role="PRODUTO" EntitySet="PRODUTO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TELEFONE_FORNECEDOR_FORNECEDOR" Association="Self.FK_TELEFONE_FORNECEDOR_FORNECEDOR">
-            <End Role="FORNECEDOR" EntitySet="FORNECEDOR" />
-            <End Role="TELEFONE_FORNECEDOR" EntitySet="TELEFONE_FORNECEDOR" />
           </AssociationSet>
           <AssociationSet Name="FK_FUNCIONARIO_PESSOA" Association="Self.FK_FUNCIONARIO_PESSOA">
             <End Role="PESSOA" EntitySet="PESSOA" />
@@ -719,10 +574,6 @@
           <AssociationSet Name="FK_REG_SERV_ORCAMENTO_ORCAMENTO" Association="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO">
             <End Role="ORCAMENTO" EntitySet="ORCAMENTO" />
             <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TELEFONE_PESSOA_PESSOA" Association="Self.FK_TELEFONE_PESSOA_PESSOA">
-            <End Role="PESSOA" EntitySet="PESSOA" />
-            <End Role="TELEFONE_PESSOA" EntitySet="TELEFONE_PESSOA" />
           </AssociationSet>
           <AssociationSet Name="FK_PROD_ORCAMENTO_PRODUTO" Association="Self.FK_PROD_ORCAMENTO_PRODUTO">
             <End Role="PRODUTO" EntitySet="PRODUTO" />
@@ -851,30 +702,6 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="DESCRICAO" ColumnName="DESCRICAO" />
                 <ScalarProperty Name="VALOR" ColumnName="VALOR" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TELEFONE_FABRICANTE">
-            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.TELEFONE_FABRICANTE">
-              <MappingFragment StoreEntitySet="TELEFONE_FABRICANTE">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TELEFONE_FORNECEDOR">
-            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.TELEFONE_FORNECEDOR">
-              <MappingFragment StoreEntitySet="TELEFONE_FORNECEDOR">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TELEFONE_PESSOA">
-            <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.TELEFONE_PESSOA">
-              <MappingFragment StoreEntitySet="TELEFONE_PESSOA">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

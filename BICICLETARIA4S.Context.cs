@@ -36,8 +36,5 @@ namespace PROJ_INTER_BC4S
         public virtual DbSet<PRODUTO> PRODUTO { get; set; }
         public virtual DbSet<REG_SERV_ORCAMENTO> REG_SERV_ORCAMENTO { get; set; }
         public virtual DbSet<SERVICO> SERVICO { get; set; }
-        public virtual DbSet<TELEFONE_FABRICANTE> TELEFONE_FABRICANTE { get; set; }
-        public virtual DbSet<TELEFONE_FORNECEDOR> TELEFONE_FORNECEDOR { get; set; }
-        public virtual DbSet<TELEFONE_PESSOA> TELEFONE_PESSOA { get; set; }
     }
 }

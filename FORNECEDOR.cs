@@ -18,7 +18,6 @@ namespace PROJ_INTER_BC4S
         public FORNECEDOR()
         {
             this.PRODUTO = new HashSet<PRODUTO>();
-            this.TELEFONE_FORNECEDOR = new HashSet<TELEFONE_FORNECEDOR>();
         }
     
         public int ID { get; set; }
@@ -30,7 +29,5 @@ namespace PROJ_INTER_BC4S
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUTO> PRODUTO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TELEFONE_FORNECEDOR> TELEFONE_FORNECEDOR { get; set; }
     }
 }
