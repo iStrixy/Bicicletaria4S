@@ -158,8 +158,13 @@ namespace PROJ_INTER_BC4S
                         PRODUTO produtoselecionado = con_bd.PRODUTO.Where(linha1 => linha1.ID == ID).FirstOrDefault();
                         if (produtoselecionado != null)
                         {
+                            double quantidade, vlrunit, subtotal;
+                            quantidade = Convert.ToDouble(txtQuantidadeProduto.Text);
+                            vlrunit = Convert.ToDouble(produtoselecionado.VALOR.ToString());
+                            subtotal = (vlrunit * quantidade);
                             lblIDProduto.Text = produtoselecionado.ID.ToString();
                             lblVlrUni.Text = "R$"+produtoselecionado.VALOR.ToString()+",00";
+                            lblSubtPd.Text = "R$"+Convert.ToString(subtotal)+",00";
                         }
                     }
                 }
