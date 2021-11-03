@@ -153,11 +153,14 @@ namespace PROJ_INTER_BC4S
                 }
                 else if(ddlProduto.SelectedIndex != 0)
                 {
+                    
                     int ID = Convert.ToInt32(ddlProduto.SelectedValue.ToString());
+                    
                     {
                         PRODUTO produtoselecionado = con_bd.PRODUTO.Where(linha1 => linha1.ID == ID).FirstOrDefault();
                         if (produtoselecionado != null)
                         {
+                            
                             double quantidade, vlrunit, subtotal;
                             quantidade = Convert.ToDouble(txtQuantidadeProduto.Text);
                             vlrunit = Convert.ToDouble(produtoselecionado.VALOR.ToString());
@@ -181,6 +184,7 @@ namespace PROJ_INTER_BC4S
                 }
                 if(ddlServico.SelectedIndex != 0)
                 {
+                    
                     int ID = Convert.ToInt32(ddlServico.SelectedValue.ToString());
                     {
                         SERVICO servicoselecionado = con_bd.SERVICO.Where(linha => linha.ID == ID).FirstOrDefault();
