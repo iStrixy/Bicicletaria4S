@@ -73,18 +73,18 @@ namespace PROJ_INTER_BC4S
 
         private void limpar_campos_produto()
         {
-            lblIDProduto.Text = string.Empty;
+            //lblIDProduto.Text = string.Empty;
             ddlProduto.SelectedIndex = 0;
-            txtQuantidadeProduto.Text = string.Empty;
-            lblVlrUni.Text = string.Empty;
-            lblSubtPd.Text = string.Empty;
+            //txtQuantidadeProduto.Text = string.Empty;
+            //lblVlrUni.Text = string.Empty;
+            //lblSubtPd.Text = string.Empty;
         }
 
         private void limpar_campos_servico()
         {
-            lblIDServico.Text = string.Empty;
+            //lblIDServico.Text = string.Empty;
             ddlServico.SelectedIndex = 0;
-            lblSubtSv.Text = string.Empty;
+            //lblSubtSv.Text = string.Empty;
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
@@ -158,13 +158,13 @@ namespace PROJ_INTER_BC4S
                         PRODUTO produtoselecionado = con_bd.PRODUTO.Where(linha1 => linha1.ID == ID).FirstOrDefault();
                         if (produtoselecionado != null)
                         {
-                            double quantidade, vlrunit, subtotal;
-                            quantidade = Convert.ToDouble(txtQuantidadeProduto.Text);
-                            vlrunit = Convert.ToDouble(produtoselecionado.VALOR.ToString());
-                            subtotal = (vlrunit * quantidade);
-                            lblIDProduto.Text = produtoselecionado.ID.ToString();
-                            lblVlrUni.Text = "R$"+produtoselecionado.VALOR.ToString()+",00";
-                            lblSubtPd.Text = "R$"+Convert.ToString(subtotal)+",00";
+                            //double quantidade, vlrunit, subtotal;
+                            //quantidade = Convert.ToDouble(txtQuantidadeProduto.Text);
+                            //vlrunit = Convert.ToDouble(produtoselecionado.VALOR.ToString());
+                            //subtotal = (vlrunit * quantidade);
+                            //lblIDProduto.Text = produtoselecionado.ID.ToString();
+                            //lblVlrUni.Text = "R$"+produtoselecionado.VALOR.ToString()+",00";
+                            //lblSubtPd.Text = "R$"+Convert.ToString(subtotal)+",00";
                         }
                     }
                 }
@@ -186,8 +186,8 @@ namespace PROJ_INTER_BC4S
                         SERVICO servicoselecionado = con_bd.SERVICO.Where(linha => linha.ID == ID).FirstOrDefault();
                         if(servicoselecionado != null)
                         {
-                            lblIDServico.Text = servicoselecionado.ID.ToString();
-                            lblSubtSv.Text = "R$"+servicoselecionado.VALOR.ToString()+",00";
+                            //lblIDServico.Text = servicoselecionado.ID.ToString();
+                           //lblSubtSv.Text = "R$"+servicoselecionado.VALOR.ToString()+",00";
                         }
                     }
                 }
