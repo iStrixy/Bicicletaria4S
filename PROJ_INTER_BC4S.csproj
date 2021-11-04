@@ -92,9 +92,7 @@
     <Content Include="Consulta_produto.aspx" />
     <Content Include="Consulta_servico.aspx" />
     <Content Include="Imagens\Logotipo.png" />
-    <Content Include="Imagens\plus.png" />
     <Content Include="Index.aspx" />
-    <Content Include="LinhaTabela.js" />
     <Content Include="Menu_cadastro.aspx" />
     <Content Include="Menu_consulta.aspx" />
     <Content Include="Menu_orcamento.aspx" />

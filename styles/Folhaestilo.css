@@ -205,42 +205,6 @@ body {
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
-.dpProd {
-    padding: 12px 9px;
-}
-
-#btnAdd {
-    margin-top: 2px;
-    text-align: center;
-    padding: 0px 5px;
-    background: none;
-    border: 2px solid gray;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-#btnRemove {
-    margin-top: 2px;
-    text-align: center;
-    padding: 0px 7px;
-    background: none;
-    border: 2px solid gray;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-    #btnAdd:hover {
-        border: 2px solid green;
-        cursor: pointer;
-        transition: .5s;
-    }
-
-    #btnRemove:hover {
-        border: 2px solid red;
-        cursor: pointer;
-        transition: .5s;
-    }
-
 #valor_total {
     padding-left: 400px;
     font-size: 19px;
@@ -292,10 +256,6 @@ td #qtd_input {
 
 td #subt_input {
     width: 100%;
-}
-
-#txtQuantidadeProduto {
-    text-align: center;
 }
 
 td #vunit_input {
@@ -821,7 +781,7 @@ a.menu_orc:hover {
 
 /* Consulta_servico */
 
-#titulo_consul_serv {
+#titulo_consul_serv{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
     font-weight: bolder;
@@ -890,7 +850,6 @@ a.menu_orc:hover {
     font-weight: bold;
     padding: 1px;
 }
-
 .input_vlr_serv_consul {
     width: 55px;
 }
@@ -955,11 +914,9 @@ a.menu_orc:hover {
     text-decoration: none;
     border: 2px solid black;
 }
-
 .campos_consul_fabr {
     padding: 5px;
 }
-
 #gvFornecedor a {
     color: white;
     text-align: center;
@@ -1131,7 +1088,7 @@ a.menu_orc:hover {
     font-weight: bold;
 }
 
-/* Consulta_fabricante */
+ /* Consulta_fabricante */
 
 #titulo_consul_fabr {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
