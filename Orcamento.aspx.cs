@@ -212,6 +212,9 @@ namespace PROJ_INTER_BC4S
 
         protected void btnCadastrarProduto_Click(object sender, EventArgs e)
         {
+            List<REG_SERV_ORCAMENTO> servico = new List<REG_SERV_ORCAMENTO>();
+            List<PROD_ORCAMENTO> orcamento = new List<PROD_ORCAMENTO>();
+
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
                 int ID = Convert.ToInt32(ddlProduto.SelectedValue.ToString());
