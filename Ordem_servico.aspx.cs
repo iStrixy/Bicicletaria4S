@@ -16,6 +16,20 @@ namespace PROJ_INTER_BC4S
             {
                 Response.Redirect("TeladeLogin.aspx");
             }
+            else if (!IsPostBack)
+            {
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    carregarGrid(con_bd);
+                }
+            }
+        }
+
+        private void carregarGrid(BD_BICICLETARIA_4SEntities con_bd)
+        {
+            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
+            gvOrdemServico.DataSource = orcamento;
+            gvOrdemServico.DataBind();
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)

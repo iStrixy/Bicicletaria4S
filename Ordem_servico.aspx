@@ -55,7 +55,15 @@
 			<p>Ordem de serviço</p>
 		</section>
 		<div class="consul_ordem_serv">
-			<asp:GridView ID="gvOrdemServico" runat="server"></asp:GridView>
+			<asp:GridView class="GridV" ID="gvOrdemServico" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
+                <Columns>
+                    <asp:BoundField DataField="ID" HeaderText="Orçamento" />
+                    <asp:BoundField DataField="PESSOA.NOME" HeaderText="Nome do cliente" />
+                    <asp:BoundField DataField="LOGIN.NOME_FUNCIONARIO" HeaderText="Nome do funcionário" />
+                    <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total" />
+                    <asp:CommandField ShowSelectButton="True" />
+                </Columns>
+            </asp:GridView>
 		</div>
 	</div>
 	<footer>
