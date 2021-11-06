@@ -96,13 +96,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.TextBox txtCpfCli;
 
         /// <summary>
-        /// Controle lblIDProduto.
+        /// Controle ddlFuncionario.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIDProduto;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFuncionario;
 
         /// <summary>
         /// Controle ddlProduto.
@@ -123,6 +123,60 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.TextBox txtQuantidadeProduto;
 
         /// <summary>
+        /// Controle btnCadastrarProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrarProduto;
+
+        /// <summary>
+        /// Controle ddlServico.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlServico;
+
+        /// <summary>
+        /// Controle lblCadastrarServico.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button lblCadastrarServico;
+
+        /// <summary>
+        /// Controle lblIDProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIDProduto;
+
+        /// <summary>
+        /// Controle lblNomeProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNomeProduto;
+
+        /// <summary>
+        /// Controle lblQtdProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblQtdProduto;
+
+        /// <summary>
         /// Controle lblVlrUni.
         /// </summary>
         /// <remarks>
@@ -141,13 +195,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.Label lblSubtPd;
 
         /// <summary>
-        /// Controle gvOrcProd.
+        /// Controle gvProduto.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOrcProd;
+        protected global::System.Web.UI.WebControls.GridView gvProduto;
 
         /// <summary>
         /// Controle lblIDServico.
@@ -159,13 +213,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.Label lblIDServico;
 
         /// <summary>
-        /// Controle ddlServico.
+        /// Controle lblDescSv.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlServico;
+        protected global::System.Web.UI.WebControls.Label lblDescSv;
 
         /// <summary>
         /// Controle lblSubtSv.
@@ -175,6 +229,42 @@ namespace PROJ_INTER_BC4S
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSubtSv;
+
+        /// <summary>
+        /// Controle gvServico.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvServico;
+
+        /// <summary>
+        /// Controle Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Controle lblValorTotal.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValorTotal;
+
+        /// <summary>
+        /// Controle lblIDOrc.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblIDOrc;
 
         /// <summary>
         /// Controle btnConfirmOrc.

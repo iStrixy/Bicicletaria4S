@@ -28,8 +28,11 @@ namespace PROJ_INTER_BC4S
                     carregarPessoa(con_bd);
                     carregarProduto(con_bd);
                     carregarServico(con_bd);
+                    carregarFuncionario(con_bd);
+
                 }
             }
+            //databind();
         }
         private void carregarPessoa(BD_BICICLETARIA_4SEntities con_bd)
         {
@@ -61,6 +64,16 @@ namespace PROJ_INTER_BC4S
             ddlServico.Items.Insert(0, "Selecionar...");
         }
 
+        private void carregarFuncionario(BD_BICICLETARIA_4SEntities con_bd)
+        {
+            List<LOGIN> funcionario = con_bd.LOGIN.OrderBy(linha => linha.NOME_FUNCIONARIO).ToList();
+            ddlFuncionario.DataSource = funcionario;
+            ddlFuncionario.DataTextField = "NOME_FUNCIONARIO";
+            ddlFuncionario.DataValueField = "ID";
+            ddlFuncionario.DataBind();
+            ddlFuncionario.Items.Insert(0, "Selecionar...");
+        }
+
         private void limpar_campos_pessoa()
         {
             txtRuaCli.Text = string.Empty;
@@ -73,18 +86,26 @@ namespace PROJ_INTER_BC4S
 
         private void limpar_campos_produto()
         {
-            //lblIDProduto.Text = string.Empty;
+            lblIDProduto.Text = string.Empty;
             ddlProduto.SelectedIndex = 0;
-            //txtQuantidadeProduto.Text = string.Empty;
-            //lblVlrUni.Text = string.Empty;
-            //lblSubtPd.Text = string.Empty;
+            txtQuantidadeProduto.Text = string.Empty;
+            lblVlrUni.Text = string.Empty;
+            lblSubtPd.Text = string.Empty;
+            lblNomeProduto.Text = string.Empty;
+            lblQtdProduto.Text = string.Empty;
         }
 
         private void limpar_campos_servico()
         {
-            //lblIDServico.Text = string.Empty;
+            lblIDServico.Text = string.Empty;
             ddlServico.SelectedIndex = 0;
-            //lblSubtSv.Text = string.Empty;
+            lblSubtSv.Text = string.Empty;
+            lblDescSv.Text = string.Empty;
+        }
+
+        private void limpar_campos_funcionario()
+        {
+            ddlFuncionario.SelectedIndex = 0;
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
@@ -128,12 +149,137 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione o Cliente!";
             }
+            else if (ddlFuncionario.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Funcionário!";
+            }
+            else if (ddlProduto.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Produto!";
+            }
+            else if (ddlServico.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Serviço!";
+            }
             else
             {
-              
+                lblError.ForeColor = System.Drawing.Color.Green;
+                lblError.Text = "Orçamento cadastrado com sucesso!";
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    PRODUTO produto = new PRODUTO();
+                    lblIDProduto.Text = produto.ID.ToString();
+
+                    SERVICO servico = new SERVICO();
+                    lblIDServico.Text = servico.ID.ToString();
+
+                    ORCAMENTO cad_orcamento = new ORCAMENTO();
+                    cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
+                    cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
+                    cad_orcamento.VALOR_TOTAL = Convert.ToDouble(lblValorTotal.Text);
+
+                    con_bd.ORCAMENTO.Add(cad_orcamento);
+                    con_bd.SaveChanges();
+
+                    lblIDOrc.Text = cad_orcamento.ID.ToString();
+
+                    PROD_ORCAMENTO cad_prod_orc = new PROD_ORCAMENTO();
+                    cad_prod_orc.ID_ORCAMENTO = Convert.ToInt32(lblIDOrc.Text);
+                    cad_prod_orc.ID_PRODUTO = Convert.ToInt32(ddlProduto.SelectedValue.ToString());
+                    cad_prod_orc.SUB_TOTAL = Convert.ToDouble(lblSubtPd.Text);
+
+                    con_bd.PROD_ORCAMENTO.Add(cad_prod_orc);
+                    con_bd.SaveChanges();
+
+                    REG_SERV_ORCAMENTO cad_sev_orc = new REG_SERV_ORCAMENTO();
+                    cad_sev_orc.ID_ORCAMENTO = Convert.ToInt32(lblIDOrc.Text);
+                    cad_sev_orc.ID_SERVICO = Convert.ToInt32(ddlServico.SelectedValue.ToString());
+                    cad_sev_orc.SUB_TOTAL = Convert.ToDouble(lblSubtSv.Text);
+
+                    con_bd.REG_SERV_ORCAMENTO.Add(cad_sev_orc);
+                    con_bd.SaveChanges();
+                    limpar_campos_pessoa();
+                    limpar_campos_funcionario();
+                    limpar_campos_produto();
+                    limpar_campos_servico();
+                    lblValorTotal.Text = string.Empty;
+                }
             }
         }
 
-    }
+        protected void btnCadastrarProduto_Click(object sender, EventArgs e)
+        {
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+            {
+                int ID = Convert.ToInt32(ddlProduto.SelectedValue.ToString());
+                {
+                    PRODUTO produtoselecionado = con_bd.PRODUTO.Where(linha1 => linha1.ID == ID).FirstOrDefault();
 
+                    double quantidade, vlrunit, subtotal;
+                    quantidade = Convert.ToDouble(txtQuantidadeProduto.Text);
+                    vlrunit = Convert.ToDouble(produtoselecionado.VALOR.ToString());
+                    subtotal = (vlrunit * quantidade);
+
+                    if (produtoselecionado != null)
+                    {
+                        lblIDProduto.Text = produtoselecionado.ID.ToString();
+                        lblNomeProduto.Text = produtoselecionado.DESCRICAO;
+                        lblQtdProduto.Text = txtQuantidadeProduto.Text.ToString();
+                        lblVlrUni.Text = produtoselecionado.VALOR.ToString();
+                        lblSubtPd.Text = Convert.ToString(subtotal);
+                    }
+                }
+            }
+        }
+
+        protected void lblCadastrarServico_Click(object sender, EventArgs e)
+        {
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+            {
+                int ID = Convert.ToInt32(ddlServico.SelectedValue.ToString());
+                {
+                    SERVICO servicoselecionado = con_bd.SERVICO.Where(linha2 => linha2.ID == ID).FirstOrDefault();
+
+                    if(servicoselecionado != null)
+                    {
+                        lblIDServico.Text = servicoselecionado.ID.ToString();
+                        lblDescSv.Text = servicoselecionado.DESCRICAO;
+                        lblSubtSv.Text = servicoselecionado.VALOR.ToString();
+                    }
+                }
+            }
+
+            double subtotalpd, subtotalsv, total;
+            subtotalpd = Convert.ToDouble(lblSubtPd.Text);
+            subtotalsv = Convert.ToDouble(lblSubtSv.Text);
+            total = (subtotalpd + subtotalsv);
+            lblValorTotal.Text = Convert.ToString(total);
+        }
+
+        protected void gvProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void databind()
+        //{
+            //if (Session["table"] == null)
+            //{
+                //System.Data.DataTable table = new System.Data.DataTable();
+                //table.Columns.Add("Descrição");
+                //table.Columns.Add("Quantidade");
+                //table.Columns.Add("Valor unitário");
+                //table.Columns.Add("Subtotal");
+                //Session["table"] = table;
+                //this.gvProduto.DataSource = table;
+            //}
+            //else 
+            //{ 
+                //this.gvProduto.DataSource = (System.Data.DataTable)Session["table"]; 
+            //}
+            //gvProduto.DataBind();
+    }
 }

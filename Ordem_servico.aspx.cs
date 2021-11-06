@@ -23,5 +23,10 @@ namespace PROJ_INTER_BC4S
             Session.RemoveAll();
             Response.Redirect("TeladeLogin.aspx");
         }
+
+        protected void gvOrdemServico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
