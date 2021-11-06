@@ -196,7 +196,12 @@ body {
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
     width: 45vw;
 }
-
+.cad_prod_orc button TextBox{
+   display:inline-flex;
+   align-items:center;
+   justify-content:space-between;
+   padding: 10px 12px 20px;
+}
 #titulo_orcamento {
     padding: -5px;
     font-weight: bold;

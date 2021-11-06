@@ -123,75 +123,17 @@ namespace PROJ_INTER_BC4S
         protected void btnConfirmOrc_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
-            if(ddlPessoa.SelectedValue.ToString() == "Selecionar...")
+            if (ddlPessoa.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione o Cliente!";
             }
             else
             {
-                lblError.ForeColor = System.Drawing.Color.Green;
-                lblError.Text = "Orçamento cadastrado com sucesso!";
-                limpar_campos_pessoa();
-                limpar_campos_produto();
-                limpar_campos_servico();
+              
             }
         }
 
-        protected void txtQuantidadeProduto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ddlProduto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
-            {
-                if (ddlProduto.SelectedValue.ToString() == "Selecionar...")
-                {
-                    limpar_campos_produto();
-                }
-                else if(ddlProduto.SelectedIndex != 0)
-                {
-                    int ID = Convert.ToInt32(ddlProduto.SelectedValue.ToString());
-                    {
-                        PRODUTO produtoselecionado = con_bd.PRODUTO.Where(linha1 => linha1.ID == ID).FirstOrDefault();
-                        if (produtoselecionado != null)
-                        {
-                            //double quantidade, vlrunit, subtotal;
-                            //quantidade = Convert.ToDouble(txtQuantidadeProduto.Text);
-                            //vlrunit = Convert.ToDouble(produtoselecionado.VALOR.ToString());
-                            //subtotal = (vlrunit * quantidade);
-                            //lblIDProduto.Text = produtoselecionado.ID.ToString();
-                            //lblVlrUni.Text = "R$"+produtoselecionado.VALOR.ToString()+",00";
-                            //lblSubtPd.Text = "R$"+Convert.ToString(subtotal)+",00";
-                        }
-                    }
-                }
-            }
-        }
-
-        protected void ddlServico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
-            {
-                if (ddlServico.SelectedValue.ToString() == "Selecionar...")
-                {
-                    limpar_campos_servico();
-                }
-                if(ddlServico.SelectedIndex != 0)
-                {
-                    int ID = Convert.ToInt32(ddlServico.SelectedValue.ToString());
-                    {
-                        SERVICO servicoselecionado = con_bd.SERVICO.Where(linha => linha.ID == ID).FirstOrDefault();
-                        if(servicoselecionado != null)
-                        {
-                            //lblIDServico.Text = servicoselecionado.ID.ToString();
-                           //lblSubtSv.Text = "R$"+servicoselecionado.VALOR.ToString()+",00";
-                        }
-                    }
-                }
-            }
-        }
     }
+
 }

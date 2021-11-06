@@ -83,29 +83,46 @@
 				<asp:TextBox runat="server" type="text" name="cpf_cli" class="input_cpf_cli_or" ID="txtCpfCli" Width="150px"></asp:TextBox>
 			</div>
 			<br/>
-			<div id="titulo_dados_orcamento">Pedidos</div><br/>
-			<div>
-				Produto:
-				<asp:DropDownList ID="ddlProduto" runat="server" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-				Quantidade:
-				<asp:TextBox runat="server" type="number" name="quantidade_produto" class="input_qntd_prod_orc" ID="txtQuantidadeProduto" Width="54px"></asp:TextBox>
-				<asp:Button runat="server" class="btn_cad_prod_orc" Text="Cadastrar produto" ID="btnCadastrarProduto"></asp:Button>
-			</div>
-			<div>
-				Serviço:
-				<asp:DropDownList ID="ddlServico" runat="server" OnSelectedIndexChanged="ddlServico_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
-				<asp:Button runat="server" class="btn_cad_serv_orc" Text="Cadastrar serviço" ID="lblCadastrarServico"></asp:Button>
-			</div>
-			<br/>
-			<div id="titulo_dados_orcamento">Orçamento de produtos</div><br/>
-			<div class="campos_orcamento_produto" id="descricao_orcamento_produto">
-			    <asp:GridView ID="gvOrcProd" runat="server"></asp:GridView>
-			</div>
-			<br/><br/>
-			<div id="titulo_dados_orcamento">Orçamento de serviços</div><br/>
-			<div class="campos_orcamento_servicos" id="descricao_orcamento_servico">
-				<asp:GridView ID="gvOrcServ" runat="server"></asp:GridView>
-			</div>
+            <div id="titulo_dados_orcamento">Orçamento de produtos</div><br/>
+            <div class="campos_orcamento_produto" id="descricao_orcamento_produto">
+                <table>
+                    <tr>
+                        <td id="t_head" class="tb_head">Item</td>
+                        <td class="tb_head">Descrição</td>
+                        <td class="tb_head">Quantidade</td>
+                        <td class="tb_head">Valor Unitário</td>
+                        <td class="tb_head">Subtotal</td>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td><input class="inpt_orc" id="cod_input" type="text"/><asp:Label runat="server" ID="lblIDProduto"></asp:Label></td>
+                            <td><input class="inpt_orc" id="desc_input" type="text"/><asp:DropDownList ID="ddlProduto" runat="server"  AutoPostBack="True"></asp:DropDownList></td>
+                            <td><input class="inpt_orc" id="qtd_input" type="text"/><asp:TextBox runat="server" type="number" name="quantidade" class="input_qtd_prod_orc" ID="txtQuantidadeProduto"  Width="54px"></asp:TextBox></td>
+                            <td><input class="inpt_orc" id="vunit_input" type="text"/><asp:Label runat="server" ID="lblVlrUni"></asp:Label></td>
+                            <td><input class="inpt_orc" id="subt_input" type="text"/><asp:Label runat="server" ID="lblSubtPd"></asp:Label></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <asp:GridView ID="gvOrcProd" runat="server"></asp:GridView>
+            </div>
+            <br/><br/>
+			<<div id="titulo_dados_orcamento">Orçamento de serviços</div><br/>
+            <div class="campos_orcamento_servicos" id="descricao_orcamento_servico">
+                <table>
+                    <tr>
+                        <td id="t_head" class="tb_head">Item</td>
+                        <td class="tb_head">Descrição</td>
+                        <td class="tb_head">Subtotal</td>
+                    </tr>
+                    <tbody>
+                        <tr>
+                            <td><input class="inpt_orc" id="cod_input" type="text"/><asp:Label runat="server" ID="lblIDServico"></asp:Label></td>
+                            <td><input class="inpt_orc" id="desc_input" type="text"/><asp:DropDownList ID="ddlServico" runat="server"  AutoPostBack="True"></asp:DropDownList></td>
+                            <td><input class="inpt_orc" id="subt_input" type="text"/><asp:Label runat="server" ID="lblSubtSv"></asp:Label></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 			<br/>
 			<div id="valor_total">Valor total: R$ 50,00</div>
 			<br/><br/>

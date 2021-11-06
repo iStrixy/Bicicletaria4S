@@ -12,15 +12,12 @@ namespace PROJ_INTER_BC4S
     using System;
     using System.Collections.Generic;
     
-    public partial class REG_SERV_ORCAMENTO
+    public partial class sysdiagrams
     {
-        public int ID { get; set; }
-        public System.DateTime DATA_SERV { get; set; }
-        public int ID_ORCAMENTO { get; set; }
-        public int ID_SERVICO { get; set; }
-        public double SUB_TOTAL { get; set; }
-    
-        public virtual ORCAMENTO ORCAMENTO { get; set; }
-        public virtual SERVICO SERVICO { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

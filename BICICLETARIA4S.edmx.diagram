@@ -4,24 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="35caa69a8eff469a8f295269b9b41e4f" Name="Diagram1">
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.CLIENTE" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FABRICANTE" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FORNECEDOR" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FUNCIONARIO" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.LOGIN" Width="1.5" PointX="7.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.ORCAMENTO" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PESSOA" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PRODUTO" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.REG_SERV_ORCAMENTO" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.SERVICO" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_CLIENTE_PESSOA" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_ORCAMENTO_CLIENTE" ManuallyRouted="false" />
+      <Diagram DiagramId="b27eb0408cff40ff8c08d9f7853facf2" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FABRICANTE" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.FORNECEDOR" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.LOGIN" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.ORCAMENTO" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PESSOA" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.PRODUTO" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.REG_SERV_ORCAMENTO" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.SERVICO" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_BICICLETARIA_4SModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="7.5" IsExpanded="true" />
         <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_PRODUTO_FABRICANTE" ManuallyRouted="false" />
         <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_PRODUTO_FORNECEDOR" ManuallyRouted="false" />
-        <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_FUNCIONARIO_PESSOA" ManuallyRouted="false" />
         <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_ORCAMENTO_FUNCIONARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_ORCAMENTO_CLIENTE" ManuallyRouted="false" />
         <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_PROD_ORCAMENTO_ORCAMENTO" ManuallyRouted="false" />
         <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_REG_SERV_ORCAMENTO_ORCAMENTO" ManuallyRouted="false" />
         <AssociationConnector Association="BD_BICICLETARIA_4SModel.FK_PROD_ORCAMENTO_PRODUTO" ManuallyRouted="false" />

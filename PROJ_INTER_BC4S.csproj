@@ -149,9 +149,6 @@
     <Compile Include="Cadastro_servico.aspx.designer.cs">
       <DependentUpon>Cadastro_servico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CLIENTE.cs">
-      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
-    </Compile>
     <Compile Include="Consulta_cliente.aspx.cs">
       <DependentUpon>Consulta_cliente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,9 +188,6 @@
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="FORNECEDOR.cs">
-      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FUNCIONARIO.cs">
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
@@ -265,6 +259,9 @@
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="SERVICO.cs">
+      <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>BICICLETARIA4S.tt</DependentUpon>
     </Compile>
     <Compile Include="TeladeLogin.aspx.cs">

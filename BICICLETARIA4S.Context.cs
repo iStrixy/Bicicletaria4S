@@ -25,10 +25,8 @@ namespace PROJ_INTER_BC4S
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CLIENTE> CLIENTE { get; set; }
         public virtual DbSet<FABRICANTE> FABRICANTE { get; set; }
         public virtual DbSet<FORNECEDOR> FORNECEDOR { get; set; }
-        public virtual DbSet<FUNCIONARIO> FUNCIONARIO { get; set; }
         public virtual DbSet<LOGIN> LOGIN { get; set; }
         public virtual DbSet<ORCAMENTO> ORCAMENTO { get; set; }
         public virtual DbSet<PESSOA> PESSOA { get; set; }
@@ -36,5 +34,6 @@ namespace PROJ_INTER_BC4S
         public virtual DbSet<PRODUTO> PRODUTO { get; set; }
         public virtual DbSet<REG_SERV_ORCAMENTO> REG_SERV_ORCAMENTO { get; set; }
         public virtual DbSet<SERVICO> SERVICO { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

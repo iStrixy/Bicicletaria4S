@@ -14,6 +14,12 @@ namespace PROJ_INTER_BC4S
     
     public partial class PESSOA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PESSOA()
+        {
+            this.ORCAMENTO = new HashSet<ORCAMENTO>();
+        }
+    
         public int ID { get; set; }
         public string NOME { get; set; }
         public string LOGRADOURO { get; set; }
@@ -25,7 +31,7 @@ namespace PROJ_INTER_BC4S
         public string EMAIL { get; set; }
         public string TELEFONE { get; set; }
     
-        public virtual CLIENTE CLIENTE { get; set; }
-        public virtual FUNCIONARIO FUNCIONARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORCAMENTO> ORCAMENTO { get; set; }
     }
 }

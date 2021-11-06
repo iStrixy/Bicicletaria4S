@@ -24,12 +24,10 @@ namespace PROJ_INTER_BC4S
         public int ID { get; set; }
         public int ID_FUNCIONARIO { get; set; }
         public int ID_CLIENTE { get; set; }
-        public string DESCRICAO_PRODUTOS { get; set; }
-        public double VALOR_UNIT { get; set; }
-        public int QTD { get; set; }
+        public double VALOR_TOTAL { get; set; }
     
-        public virtual CLIENTE CLIENTE { get; set; }
-        public virtual FUNCIONARIO FUNCIONARIO { get; set; }
+        public virtual LOGIN LOGIN { get; set; }
+        public virtual PESSOA PESSOA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROD_ORCAMENTO> PROD_ORCAMENTO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

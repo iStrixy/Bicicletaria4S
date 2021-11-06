@@ -14,9 +14,18 @@ namespace PROJ_INTER_BC4S
     
     public partial class LOGIN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public LOGIN()
+        {
+            this.ORCAMENTO = new HashSet<ORCAMENTO>();
+        }
+    
         public int ID { get; set; }
         public string NOME_FUNCIONARIO { get; set; }
         public string LOGIN1 { get; set; }
         public string SENHA { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORCAMENTO> ORCAMENTO { get; set; }
     }
 }
