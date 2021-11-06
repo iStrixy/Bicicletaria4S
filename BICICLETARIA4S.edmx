@@ -64,7 +64,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DATA_ORCAMENTO" Type="date" Nullable="false" />
           <Property Name="ID_ORCAMENTO" Type="int" Nullable="false" />
           <Property Name="ID_PRODUTO" Type="int" Nullable="false" />
           <Property Name="SUB_TOTAL" Type="float" Nullable="false" />
@@ -84,7 +83,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DATA_SERV" Type="date" Nullable="false" />
           <Property Name="ID_ORCAMENTO" Type="int" Nullable="false" />
           <Property Name="ID_SERVICO" Type="int" Nullable="false" />
           <Property Name="SUB_TOTAL" Type="float" Nullable="false" />
@@ -319,7 +317,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DATA_ORCAMENTO" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ID_ORCAMENTO" Type="Int32" Nullable="false" />
           <Property Name="ID_PRODUTO" Type="Int32" Nullable="false" />
           <Property Name="SUB_TOTAL" Type="Double" Nullable="false" />
@@ -344,7 +341,6 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DATA_SERV" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ID_ORCAMENTO" Type="Int32" Nullable="false" />
           <Property Name="ID_SERVICO" Type="Int32" Nullable="false" />
           <Property Name="SUB_TOTAL" Type="Double" Nullable="false" />
@@ -579,7 +575,6 @@
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO">
               <MappingFragment StoreEntitySet="PROD_ORCAMENTO">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DATA_ORCAMENTO" ColumnName="DATA_ORCAMENTO" />
                 <ScalarProperty Name="ID_ORCAMENTO" ColumnName="ID_ORCAMENTO" />
                 <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />
                 <ScalarProperty Name="SUB_TOTAL" ColumnName="SUB_TOTAL" />
@@ -601,7 +596,6 @@
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.REG_SERV_ORCAMENTO">
               <MappingFragment StoreEntitySet="REG_SERV_ORCAMENTO">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DATA_SERV" ColumnName="DATA_SERV" />
                 <ScalarProperty Name="ID_ORCAMENTO" ColumnName="ID_ORCAMENTO" />
                 <ScalarProperty Name="ID_SERVICO" ColumnName="ID_SERVICO" />
                 <ScalarProperty Name="SUB_TOTAL" ColumnName="SUB_TOTAL" />

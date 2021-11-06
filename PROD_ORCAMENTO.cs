@@ -15,7 +15,6 @@ namespace PROJ_INTER_BC4S
     public partial class PROD_ORCAMENTO
     {
         public int ID { get; set; }
-        public System.DateTime DATA_ORCAMENTO { get; set; }
         public int ID_ORCAMENTO { get; set; }
         public int ID_PRODUTO { get; set; }
         public double SUB_TOTAL { get; set; }

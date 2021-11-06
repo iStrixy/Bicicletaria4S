@@ -15,7 +15,6 @@ namespace PROJ_INTER_BC4S
     public partial class REG_SERV_ORCAMENTO
     {
         public int ID { get; set; }
-        public System.DateTime DATA_SERV { get; set; }
         public int ID_ORCAMENTO { get; set; }
         public int ID_SERVICO { get; set; }
         public double SUB_TOTAL { get; set; }
