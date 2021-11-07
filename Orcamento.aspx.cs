@@ -29,7 +29,6 @@ namespace PROJ_INTER_BC4S
                     carregarProduto(con_bd);
                     carregarServico(con_bd);
                     carregarFuncionario(con_bd);
-
                 }
             }
             //databind();
@@ -153,18 +152,25 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione o Funcionário!";
             }
+
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
                 ORCAMENTO cad_orcamento = new ORCAMENTO();
                 cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
                 cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
-                //cad_orcamento.VALOR_TOTAL = Convert.ToDouble(lblValorTotal.Text);
+                cad_orcamento.VALOR_TOTAL = Convert.ToDouble("0");
+
+                //Teste de ID
+
+                //lblIDOrc.Text = Convert.ToString("24");
+                //lblIDOrc.Text = cad_orcamento.ID.ToString();
+
+                //-----------
+
+                //cad_orcamento.ID = Convert.ToInt32(lblIDOrc.Text);
 
                 con_bd.ORCAMENTO.Add(cad_orcamento);
                 con_bd.SaveChanges();
-
-                lblIDOrc.Text = cad_orcamento.ID.ToString();
-
             }
         }
         protected void btnConfirmOrc_Click(object sender, EventArgs e)
@@ -196,9 +202,19 @@ namespace PROJ_INTER_BC4S
                 lblError.Text = "Orçamento cadastrado com sucesso!";
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    int ID = Convert.ToInt32(lblIDOrc.ToString());
+                    //int ID = Convert.ToInt32(lblIDOrc.ToString());
 
-                    ORCAMENTO lastID = con_bd.ORCAMENTO.Where(linha => linha.ID == ID).LastOrDefault();
+                    //ORCAMENTO lastID = con_bd.ORCAMENTO.Where(linha => linha.ID == ID).LastOrDefault();
+
+                    ORCAMENTO cad_orcamento = new ORCAMENTO();
+                    cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
+                    cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
+                    cad_orcamento.VALOR_TOTAL = Convert.ToDouble(lblValorTotal.Text);
+
+                    con_bd.ORCAMENTO.Add(cad_orcamento);
+                    con_bd.SaveChanges();
+
+                    lblIDOrc.Text = cad_orcamento.ID.ToString();
 
                     List<REG_SERV_ORCAMENTO> servico = new List<REG_SERV_ORCAMENTO>();
                     {
@@ -271,18 +287,22 @@ namespace PROJ_INTER_BC4S
                         lblSubtPd.Text = Convert.ToString(subtotal);
                     }
 
-                    List<PROD_ORCAMENTO> produto = new List<PROD_ORCAMENTO>();
-                    {
-                        PROD_ORCAMENTO cad_prod_orc = new PROD_ORCAMENTO();
-                        lblIDProduto.Text = cad_prod_orc.ID.ToString();
-                        ddlProduto.SelectedIndex = cad_prod_orc.ID_PRODUTO;
-                        lblSubtPd.Text = cad_prod_orc.SUB_TOTAL.ToString();
+                    //List<PROD_ORCAMENTO> produto = new List<PROD_ORCAMENTO>();
+                    //{
+                    //    PROD_ORCAMENTO cad_prod_orc = new PROD_ORCAMENTO();
+                    //    lblIDProduto.Text = cad_prod_orc.ID.ToString();
+                    //    ddlProduto.SelectedIndex = cad_prod_orc.ID_PRODUTO;
+                    //    lblSubtPd.Text = cad_prod_orc.SUB_TOTAL.ToString();
+                    //    lblIDOrc.Text = cad_prod_orc.ID_ORCAMENTO.ToString();
 
-                        for (int i = 0; i < produto.Count; i++)
-                        {
-                            produto.Add(cad_prod_orc);
-                        }
-                    }
+                    //    produto.Add(cad_prod_orc);
+
+                    //    for (int i = 0; i < produto.Count; i++)
+                    //    {
+                    //        con_bd.PROD_ORCAMENTO.Add(cad_prod_orc);
+                    //        con_bd.SaveChanges();
+                    //    }
+                    //}
                 }
             }
         }
@@ -302,7 +322,6 @@ namespace PROJ_INTER_BC4S
                         lblSubtSv.Text = servicoselecionado.VALOR.ToString();
                     }
                 }
-
             }
 
             double subtotalpd, subtotalsv, total;
@@ -316,8 +335,6 @@ namespace PROJ_INTER_BC4S
         {
 
         }
-
-
 
         //private void databind()
         //{
@@ -338,5 +355,3 @@ namespace PROJ_INTER_BC4S
         //gvProduto.DataBind();
     }
 }
-
-

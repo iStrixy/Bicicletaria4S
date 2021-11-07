@@ -42,5 +42,32 @@ namespace PROJ_INTER_BC4S
         {
 
         }
+
+        protected void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (gvOrdemServico == null)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um dado!";
+            }
+            else if (gvOrdemServico != null)
+            {
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    //string ID = gvOrdemServico.SelectedValue.ToString();
+                    //ORCAMENTO orcamentoselecionado = con_bd.ORCAMENTO.Where(linha => linha.ID.ToString().Equals(ID)).FirstOrDefault();
+                }
+            }
+        }
+
+        protected void btnConcluido_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

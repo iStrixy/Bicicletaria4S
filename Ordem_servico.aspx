@@ -54,16 +54,30 @@
 		<section id="titulo_consul_ordem_serv">
 			<p>Ordem de serviço</p>
 		</section>
+		<div>
+			<asp:Label runat="server" ID="lblError"></asp:Label>
+        </div>
 		<div class="consul_ordem_serv">
 			<asp:GridView class="GridV" ID="gvOrdemServico" runat="server" AutoGenerateColumns="False" DataKeyNames="ID">
                 <Columns>
-                    <asp:BoundField DataField="ID" HeaderText="Orçamento" />
-                    <asp:BoundField DataField="PESSOA.NOME" HeaderText="Nome do cliente" />
-                    <asp:BoundField DataField="LOGIN.NOME_FUNCIONARIO" HeaderText="Nome do funcionário" />
-                    <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total" />
-                    <asp:CommandField ShowSelectButton="True" />
+                    <asp:BoundField DataField="ID" HeaderText="Orçamento"/>
+                    <asp:BoundField DataField="PESSOA.NOME" HeaderText="Nome do cliente"/>
+                    <asp:BoundField DataField="LOGIN.NOME_FUNCIONARIO" HeaderText="Nome do funcionário"/>	
+                    <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total"/>
+                    <asp:CommandField ShowSelectButton="True"/>
                 </Columns>
             </asp:GridView>
+		</div>
+		<br/>
+		<div class="dados_ordem_servico" runat="server">
+			<div>
+				<asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
+            </div>
+			<div class="btn">
+				<asp:Button runat="server" class="btn_consul_imprimir" Text="Imprimir orçamento" ID="btnImprimir" OnClick="btnImprimir_Click"></asp:Button>
+                <asp:Button runat="server" class="btn_consul_excluir" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
+                <asp:Button runat="server" class="btn_consul_concluido" Text="Concluido" ID="btnConcluido" OnClick="btnConcluido_Click"></asp:Button>
+			</div>
 		</div>
 	</div>
 	<footer>
