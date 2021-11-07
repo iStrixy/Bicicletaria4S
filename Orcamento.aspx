@@ -87,19 +87,20 @@
 			<div>
 				Funcionário:
 				<asp:DropDownList ID="ddlFuncionario" runat="server" AutoPostBack="True"></asp:DropDownList>
+			&nbsp;<asp:Button ID="btnNewOrc" runat="server" OnClick="btnNewOrc_Click" Text="Novo Orçamento" />
 			</div>
 			<br/><br/>
 			<div id="titulo_dados_orcamento">Pedidos</div><br/>
 			<div>
 				Produto:
-				<asp:DropDownList ID="ddlProduto" runat="server" AutoPostBack="True"></asp:DropDownList>
+				<asp:DropDownList ID="ddlProduto" runat="server"></asp:DropDownList>
 				Quantidade:
 				<asp:TextBox runat="server" type="number" name="quantidade_produto" class="input_qntd_prod_orc" ID="txtQuantidadeProduto" Width="54px"></asp:TextBox>
 				<asp:Button runat="server" class="btn_cad_prod_orc" Text="Cadastrar produto" ID="btnCadastrarProduto" OnClick="btnCadastrarProduto_Click"></asp:Button>
 			</div>
 			<div>
 				Serviço:
-				<asp:DropDownList ID="ddlServico" runat="server" AutoPostBack="True"></asp:DropDownList>
+				<asp:DropDownList ID="ddlServico" runat="server"></asp:DropDownList>
 				<asp:Button runat="server" class="btn_cad_serv_orc" Text="Cadastrar serviço" ID="lblCadastrarServico" OnClick="lblCadastrarServico_Click"></asp:Button>
 			</div>
 			<br/><br/>

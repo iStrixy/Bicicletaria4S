@@ -140,7 +140,33 @@ namespace PROJ_INTER_BC4S
                 }
             }
         }
+        protected void btnNewOrc_Click(object sender, EventArgs e)
+        {
+            lblError.Text = string.Empty;
+            if (ddlPessoa.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Cliente!";
+            }
+            else if (ddlFuncionario.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione o Funcionário!";
+            }
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+            {
+                ORCAMENTO cad_orcamento = new ORCAMENTO();
+                cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
+                cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
+                //cad_orcamento.VALOR_TOTAL = Convert.ToDouble(lblValorTotal.Text);
 
+                con_bd.ORCAMENTO.Add(cad_orcamento);
+                con_bd.SaveChanges();
+
+                lblIDOrc.Text = cad_orcamento.ID.ToString();
+
+            }
+        }
         protected void btnConfirmOrc_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
@@ -170,15 +196,9 @@ namespace PROJ_INTER_BC4S
                 lblError.Text = "Orçamento cadastrado com sucesso!";
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    ORCAMENTO cad_orcamento = new ORCAMENTO();
-                    cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
-                    cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
-                    cad_orcamento.VALOR_TOTAL = Convert.ToDouble(lblValorTotal.Text);
+                    int ID = Convert.ToInt32(lblIDOrc.ToString());
 
-                    con_bd.ORCAMENTO.Add(cad_orcamento);
-                    con_bd.SaveChanges();
-
-                    lblIDOrc.Text = cad_orcamento.ID.ToString();
+                    ORCAMENTO lastID = con_bd.ORCAMENTO.Where(linha => linha.ID == ID).LastOrDefault();
 
                     List<REG_SERV_ORCAMENTO> servico = new List<REG_SERV_ORCAMENTO>();
                     {
@@ -189,7 +209,7 @@ namespace PROJ_INTER_BC4S
 
                         servico.Add(cad_sev_orc);
 
-                        for(int i = 0; i < servico.Count; i++)
+                        for (int i = 0; i < servico.Count; i++)
                         {
                             con_bd.REG_SERV_ORCAMENTO.Add(cad_sev_orc);
                             con_bd.SaveChanges();
@@ -275,7 +295,7 @@ namespace PROJ_INTER_BC4S
                 {
                     SERVICO servicoselecionado = con_bd.SERVICO.Where(linha2 => linha2.ID == ID).FirstOrDefault();
 
-                    if(servicoselecionado != null)
+                    if (servicoselecionado != null)
                     {
                         lblIDServico.Text = servicoselecionado.ID.ToString();
                         lblDescSv.Text = servicoselecionado.DESCRICAO;
@@ -297,22 +317,26 @@ namespace PROJ_INTER_BC4S
 
         }
 
+
+
         //private void databind()
         //{
-            //if (Session["table"] == null)
-            //{
-                //System.Data.DataTable table = new System.Data.DataTable();
-                //table.Columns.Add("Descrição");
-                //table.Columns.Add("Quantidade");
-                //table.Columns.Add("Valor unitário");
-                //table.Columns.Add("Subtotal");
-                //Session["table"] = table;
-                //this.gvProduto.DataSource = table;
-            //}
-            //else 
-            //{ 
-                //this.gvProduto.DataSource = (System.Data.DataTable)Session["table"]; 
-            //}
-            //gvProduto.DataBind();
+        //if (Session["table"] == null)
+        //{
+        //System.Data.DataTable table = new System.Data.DataTable();
+        //table.Columns.Add("Descrição");
+        //table.Columns.Add("Quantidade");
+        //table.Columns.Add("Valor unitário");
+        //table.Columns.Add("Subtotal");
+        //Session["table"] = table;
+        //this.gvProduto.DataSource = table;
+        //}
+        //else 
+        //{ 
+        //this.gvProduto.DataSource = (System.Data.DataTable)Session["table"]; 
+        //}
+        //gvProduto.DataBind();
     }
 }
+
+
