@@ -39,6 +39,7 @@ namespace PROJ_INTER_BC4S
         private void carregarGrid(BD_BICICLETARIA_4SEntities con_bd)
         {
             List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
+            //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.);
             gvOrdemServico.DataSource = orcamento;
             gvOrdemServico.DataBind();
             //List<PROD_ORCAMENTO> prod_orcamento = con_bd.PROD_ORCAMENTO.ToList();
@@ -63,7 +64,7 @@ namespace PROJ_INTER_BC4S
         protected void btnImprimir_Click(object sender, EventArgs e)
         {
 
-            string nomeArquivo = @"D:\orcamento.pdf";
+            string nomeArquivo = @"D:\Orçamento.pdf";
             FileStream arquivoPDF = new FileStream(nomeArquivo, FileMode.Create);
             Document doc = new Document(PageSize.A4);
             PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
@@ -74,7 +75,8 @@ namespace PROJ_INTER_BC4S
             Paragraph paragrafo = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold));
 
             paragrafo.Alignment = Element.ALIGN_CENTER;
-            paragrafo.Add("ORÇAMENTOS\n");
+            paragrafo.Add("ORÇAMENTO\n");
+            paragrafo.Add("\n");
 
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
@@ -86,11 +88,11 @@ namespace PROJ_INTER_BC4S
                 lblValor.Text = orc.VALOR_TOTAL.ToString("C");
                 lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
 
-                List<REG_SERV_ORCAMENTO> listserv = new List<REG_SERV_ORCAMENTO>();
-                {
-                    REG_SERV_ORCAMENTO reg_sv_null = null;
-                    int IDS = Convert.ToInt32(lblIDc.Text);
-                    reg_sv_null = con_bd.REG_SERV_ORCAMENTO.Where(linha1 => linha1.ID_ORCAMENTO.Equals(IDS)).FirstOrDefault();
+                //List<REG_SERV_ORCAMENTO> listserv = new List<REG_SERV_ORCAMENTO>();
+                //{
+                //    REG_SERV_ORCAMENTO reg_sv_null = null;
+                //    int IDS = Convert.ToInt32(lblIDc.Text);
+                //    reg_sv_null = con_bd.REG_SERV_ORCAMENTO.Where(linha1 => linha1.ID_ORCAMENTO.Equals(IDS)).FirstOrDefault();
 
                     //lblServico.Text = lblIDc.Text;
 
@@ -101,44 +103,61 @@ namespace PROJ_INTER_BC4S
                     //sv_null.DESCRICAO = lblServico.Text;
                     //lblServico.Text = sv_null1.DESCRICAO;
 
-                    lblServico.Text = reg_sv_null.ID_SERVICO.ToString();
+                //    lblServico.Text = reg_sv_null.ID_SERVICO.ToString();
 
-                    listserv.Add(reg_sv_null);
+                //    listserv.Add(reg_sv_null);
 
-                    for (int i = 0; i < listserv.Count; i++)
-                    {
-                        lblServico.Text = reg_sv_null.ID_SERVICO.ToString();
-                    }
-                }
+                //    for (int i = 0; i < listserv.Count; i++)
+                //    {
+                //        lblServico.Text = reg_sv_null.ID_SERVICO.ToString();
+                //    }
+                //}
 
-                List<PROD_ORCAMENTO> listprod = new List<PROD_ORCAMENTO>();
+                
+                int IDP = Convert.ToInt32(lblIDc.Text);
+                var prods = con_bd.PROD_ORCAMENTO.Where(linha2 => linha2.ID_ORCAMENTO.Equals(IDP)).ToList();
+                string items_string = string.Empty;
+
+                foreach(PROD_ORCAMENTO po in prods)
                 {
-                    PROD_ORCAMENTO prod_orc_null = null;
-                    int IDP = Convert.ToInt32(lblIDc.Text);
-                    prod_orc_null = con_bd.PROD_ORCAMENTO.Where(linha2 => linha2.ID_ORCAMENTO.Equals(IDP)).FirstOrDefault();
-
-                    //lblProduto.Text = prod_orc_null.ID_PRODUTO.ToString();
-
-                    listprod.Add(prod_orc_null);
-
-                    for (int i = 0; i < listprod.Count; i++)
-                    {
-                        lblProduto.Text = prod_orc_null.ID_PRODUTO.ToString();
-                    }
-
+                    items_string += po.PRODUTO.DESCRICAO + ";" + "\n";
                 }
+
+                //List<PROD_ORCAMENTO> listprod = new List<PROD_ORCAMENTO>();
+                //{
+                //PROD_ORCAMENTO prod_orc_null = null;
+                //int IDP = Convert.ToInt32(lblIDc.Text);
+                //prod_orc_null = con_bd.PROD_ORCAMENTO.Where(linha2 => linha2.ID_ORCAMENTO.Equals(IDP)).FirstOrDefault();
+
+                //lblProduto.Text = prod_orc_null.ID_PRODUTO.ToString();
+
+                //listprod.Add(prod_orc_null);
+
+                //for (int i = 0; i < listprod.Count; i++)
+                //{
+                //lblProduto.Text = prod_orc_null.ID_PRODUTO.ToString();
+                //}
+
+                //}
 
                 paragrafo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold);
                 paragrafo.Alignment = Element.ALIGN_LEFT;
-                paragrafo.Add("ID ORÇAMENTO: " + lblIDc.Text + "\n");
-                paragrafo.Add("NOME CLIENTE: " + lblNome.Text + "\n");
-                paragrafo.Add("NOME FUNCIONÁRIO: " + lblFunc.Text + "\n");
+                paragrafo.Add("Nº do orçamento: " + lblIDc.Text + "\n");
+                paragrafo.Add("Cliente: " + lblNome.Text + "\n");
+                paragrafo.Add("Funcionário: " + lblFunc.Text + "\n");
+                paragrafo.Add("\n");
+                paragrafo.Add("Pedidos\n");
+                paragrafo.Add("\n");
+                paragrafo.Add("Produto(s) nº: " + items_string + "\n");
+                //paragrafo.Add("Serviço(s) nº: " + lblServico.Text + "\n");
                 paragrafo.Add("VALOR: " + lblValor.Text + "\n");
-                paragrafo.Add("ID SERVICO: " + lblServico.Text + "\n");
-                paragrafo.Add("ID PRODUTO: " + lblProduto.Text + "\n");
+                paragrafo.Add("\n");
+                paragrafo.Add("Assinatura do funcionário\n");
+                paragrafo.Add("_________________________\n");
+                paragrafo.Add("Assinatura do cliente\n");
+                paragrafo.Add("_________________________\n");
             }
                
-
             //string texto = "teste mano ";
             //paragrafo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold);
             //paragrafo.Alignment = Element.ALIGN_CENTER;
@@ -147,7 +166,6 @@ namespace PROJ_INTER_BC4S
             doc.Open();
             doc.Add(paragrafo);
             doc.Close();
-
 
         }
 

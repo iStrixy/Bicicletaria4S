@@ -150,9 +150,7 @@
 			<br/><br/>
 			<div id="titulo_dados_orcamento">Informações adicionais</div><br/>
 			<div>Orçamento nº: <asp:Label runat="server" ID="lblIDOrc"></asp:Label></div>
-			<div>Data: </div>
-			<div>Assinatura do cliente: </div>
-			<div>Assinatura do funcionário: </div>
+			<div>Data: <asp:Label runat="server" ID="lblDataAtual"></asp:Label></div>
 			<br/><br/>
 			<asp:Button runat="server" class="btn_cad_orc" Text="Confirmar orçamento" ID="btnConfirmOrc" OnClick="btnConfirmOrc_Click"></asp:Button>
 		</div>
