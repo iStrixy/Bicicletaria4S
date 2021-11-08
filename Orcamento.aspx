@@ -149,8 +149,8 @@
 			<div id="valor_total"><asp:Label runat="server" ID="Label1" Text="Valor total:"></asp:Label><asp:Label runat="server" ID="lblValorTotal"></asp:Label></div>
 			<br/><br/>
 			<div id="titulo_dados_orcamento">Informações adicionais</div><br/>
-			<div>Orçamento nº:<asp:Label runat="server" ID="lblIDOrc"></asp:Label></div>
-			<div>Data:</div>
+			<div>Orçamento nº: <asp:Label runat="server" ID="lblIDOrc"></asp:Label></div>
+			<div>Data: </div>
 			<div>Assinatura do cliente: </div>
 			<div>Assinatura do funcionário: </div>
 			<br/><br/>

@@ -52,6 +52,8 @@
                     <asp:Label ID="lblFunc" runat="server"></asp:Label>
                     <asp:Label ID="lblValor" runat="server"></asp:Label>
                     <asp:Label ID="lblIDc" runat="server"></asp:Label>
+                    <asp:Label ID="lblServico" runat="server"></asp:Label>
+                    <asp:Label ID="lblProduto" runat="server"></asp:Label>
                 </nav>
             </header>
         </div>
@@ -69,7 +71,6 @@
                         <asp:BoundField DataField="PESSOA.NOME" HeaderText="Nome do cliente" />
                         <asp:BoundField DataField="LOGIN.NOME_FUNCIONARIO" HeaderText="Nome do funcionário" />
                         <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total" />
-                        <asp:BoundField DataField="PROD_ORCAMENTO.SUB_TOTAL" HeaderText="Valor TotalS" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
                 </asp:GridView>

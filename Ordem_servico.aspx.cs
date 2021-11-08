@@ -86,6 +86,47 @@ namespace PROJ_INTER_BC4S
                 lblValor.Text = orc.VALOR_TOTAL.ToString("C");
                 lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
 
+                List<REG_SERV_ORCAMENTO> listserv = new List<REG_SERV_ORCAMENTO>();
+                {
+                    REG_SERV_ORCAMENTO reg_sv_null = null;
+                    int IDS = Convert.ToInt32(lblIDc.Text);
+                    reg_sv_null = con_bd.REG_SERV_ORCAMENTO.Where(linha1 => linha1.ID_ORCAMENTO.Equals(IDS)).FirstOrDefault();
+
+                    //lblServico.Text = lblIDc.Text;
+
+                    //SERVICO sv_null = null;
+                    //int IDSS = Convert.ToInt32(lblServico.Text);
+                    //SERVICO sv_null1 = con_bd.SERVICO.Where(linha3 => linha3.ID.Equals(IDSS)).FirstOrDefault();
+
+                    //sv_null.DESCRICAO = lblServico.Text;
+                    //lblServico.Text = sv_null1.DESCRICAO;
+
+                    lblServico.Text = reg_sv_null.ID_SERVICO.ToString();
+
+                    listserv.Add(reg_sv_null);
+
+                    for (int i = 0; i < listserv.Count; i++)
+                    {
+                        lblServico.Text = reg_sv_null.ID_SERVICO.ToString();
+                    }
+                }
+
+                List<PROD_ORCAMENTO> listprod = new List<PROD_ORCAMENTO>();
+                {
+                    PROD_ORCAMENTO prod_orc_null = null;
+                    int IDP = Convert.ToInt32(lblIDc.Text);
+                    prod_orc_null = con_bd.PROD_ORCAMENTO.Where(linha2 => linha2.ID_ORCAMENTO.Equals(IDP)).FirstOrDefault();
+
+                    //lblProduto.Text = prod_orc_null.ID_PRODUTO.ToString();
+
+                    listprod.Add(prod_orc_null);
+
+                    for (int i = 0; i < listprod.Count; i++)
+                    {
+                        lblProduto.Text = prod_orc_null.ID_PRODUTO.ToString();
+                    }
+
+                }
 
                 paragrafo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold);
                 paragrafo.Alignment = Element.ALIGN_LEFT;
@@ -93,6 +134,8 @@ namespace PROJ_INTER_BC4S
                 paragrafo.Add("NOME CLIENTE: " + lblNome.Text + "\n");
                 paragrafo.Add("NOME FUNCIONÁRIO: " + lblFunc.Text + "\n");
                 paragrafo.Add("VALOR: " + lblValor.Text + "\n");
+                paragrafo.Add("ID SERVICO: " + lblServico.Text + "\n");
+                paragrafo.Add("ID PRODUTO: " + lblProduto.Text + "\n");
             }
                
 
@@ -119,8 +162,29 @@ namespace PROJ_INTER_BC4S
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    //string ID = gvOrdemServico.SelectedValue.ToString();
-                    //ORCAMENTO orcamentoselecionado = con_bd.ORCAMENTO.Where(linha => linha.ID.ToString().Equals(ID)).FirstOrDefault();
+                    string ID = gvOrdemServico.SelectedValue.ToString();
+                    lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
+                    ORCAMENTO orcamento = con_bd.ORCAMENTO.Where(linha5 => linha5.ID.ToString().Equals(ID)).FirstOrDefault();
+                    REG_SERV_ORCAMENTO servico = con_bd.REG_SERV_ORCAMENTO.Where(linha8 => linha8.ID_ORCAMENTO.ToString().Equals(lblIDc.Text)).FirstOrDefault();
+                    PROD_ORCAMENTO produto = con_bd.PROD_ORCAMENTO.Where(linha9 => linha9.ID_ORCAMENTO.ToString().Equals(lblIDc.Text)).FirstOrDefault();
+                    con_bd.REG_SERV_ORCAMENTO.Remove(servico);
+                    con_bd.PROD_ORCAMENTO.Remove(produto);
+                    con_bd.ORCAMENTO.Remove(orcamento);
+
+                    //REG_SERV_ORCAMENTO reg_sv_null;
+                    //int IDS = Convert.ToInt32(lblIDc.Text);
+                    //reg_sv_null = con_bd.REG_SERV_ORCAMENTO.Where(linha6 => linha6.ID_ORCAMENTO.Equals(IDS)).FirstOrDefault();
+                    //con_bd.REG_SERV_ORCAMENTO.Remove(reg_sv_null);
+
+                    //PROD_ORCAMENTO reg_pd_null;
+                    //int IDP = Convert.ToInt32(lblIDc.Text);
+                    //reg_pd_null = con_bd.PROD_ORCAMENTO.Where(linha7 => linha7.ID_ORCAMENTO.Equals(IDP)).FirstOrDefault();
+                    //con_bd.PROD_ORCAMENTO.Remove(reg_pd_null);
+
+                    con_bd.SaveChanges();
+                    carregarGrid(con_bd);
+                    lblError.ForeColor = System.Drawing.Color.Green;
+                    lblError.Text = "Orçamento excluído com sucesso!";
                 }
             }
         }
