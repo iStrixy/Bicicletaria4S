@@ -41,6 +41,12 @@ namespace PROJ_INTER_BC4S
             List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
             gvOrdemServico.DataSource = orcamento;
             gvOrdemServico.DataBind();
+            //List<PROD_ORCAMENTO> prod_orcamento = con_bd.PROD_ORCAMENTO.ToList();
+            //gvOrdemServico.DataSource = prod_orcamento;
+            //gvOrdemServico.DataBind();
+            //List<REG_SERV_ORCAMENTO> serv_orcamento = con_bd.REG_SERV_ORCAMENTO.ToList();
+            //gvOrdemServico.DataSource = serv_orcamento;
+            //gvOrdemServico.DataBind();
         }
 
         protected void lb_sair_Click(object sender, EventArgs e)
@@ -87,7 +93,6 @@ namespace PROJ_INTER_BC4S
                 paragrafo.Add("NOME CLIENTE: " + lblNome.Text + "\n");
                 paragrafo.Add("NOME FUNCIONÁRIO: " + lblFunc.Text + "\n");
                 paragrafo.Add("VALOR: " + lblValor.Text + "\n");
-                
             }
                
 

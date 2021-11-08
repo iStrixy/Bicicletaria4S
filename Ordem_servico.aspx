@@ -69,6 +69,7 @@
                         <asp:BoundField DataField="PESSOA.NOME" HeaderText="Nome do cliente" />
                         <asp:BoundField DataField="LOGIN.NOME_FUNCIONARIO" HeaderText="Nome do funcionário" />
                         <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total" />
+                        <asp:BoundField DataField="PROD_ORCAMENTO.SUB_TOTAL" HeaderText="Valor TotalS" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
                 </asp:GridView>
