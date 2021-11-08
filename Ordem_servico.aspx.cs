@@ -1,16 +1,27 @@
 ﻿using System;
+using System.Text;
+using System.IO;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using iTextSharp.text;
+using iTextSharp;
+using iTextSharp.text.pdf;
+
+
 
 namespace PROJ_INTER_BC4S
 {
+
+
     public partial class Ordem_servico : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             String nomeuserlogado = (String)Session["userlogado"];
             if (nomeuserlogado == null)
             {
@@ -45,6 +56,50 @@ namespace PROJ_INTER_BC4S
 
         protected void btnImprimir_Click(object sender, EventArgs e)
         {
+
+            string nomeArquivo = @"D:\orcamento.pdf";
+            FileStream arquivoPDF = new FileStream(nomeArquivo, FileMode.Create);
+            Document doc = new Document(PageSize.A4);
+            PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
+
+            doc.Open();
+            string dados = "";
+
+            Paragraph paragrafo = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold));
+
+            paragrafo.Alignment = Element.ALIGN_CENTER;
+            paragrafo.Add("ORÇAMENTOS\n");
+
+            using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+            {
+                int ID = Convert.ToInt32(gvOrdemServico.SelectedValue.ToString());
+                ORCAMENTO orc = con_bd.ORCAMENTO.Where(linha => linha.ID == ID).FirstOrDefault();
+
+                lblNome.Text = orc.PESSOA.NOME.ToString();
+                lblFunc.Text = orc.LOGIN.NOME_FUNCIONARIO.ToString();
+                lblValor.Text = orc.VALOR_TOTAL.ToString("C");
+                lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
+
+
+                paragrafo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold);
+                paragrafo.Alignment = Element.ALIGN_LEFT;
+                paragrafo.Add("ID ORÇAMENTO: " + lblIDc.Text + "\n");
+                paragrafo.Add("NOME CLIENTE: " + lblNome.Text + "\n");
+                paragrafo.Add("NOME FUNCIONÁRIO: " + lblFunc.Text + "\n");
+                paragrafo.Add("VALOR: " + lblValor.Text + "\n");
+                
+            }
+               
+
+            //string texto = "teste mano ";
+            //paragrafo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold);
+            //paragrafo.Alignment = Element.ALIGN_CENTER;
+            //paragrafo.Add(texto + "\n");
+
+            doc.Open();
+            doc.Add(paragrafo);
+            doc.Close();
+
 
         }
 

@@ -155,19 +155,18 @@ namespace PROJ_INTER_BC4S
 
             using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
             {
+               
                 ORCAMENTO cad_orcamento = new ORCAMENTO();
                 cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
                 cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
                 cad_orcamento.VALOR_TOTAL = Convert.ToDouble("0");
 
-                //Teste de ID
+                lblIDOrc.Text = Convert.ToString("30");
+                cad_orcamento.ID = Convert.ToInt32(lblIDOrc.Text);
 
-                //lblIDOrc.Text = Convert.ToString("24");
-                //lblIDOrc.Text = cad_orcamento.ID.ToString();
+                
 
-                //-----------
-
-                //cad_orcamento.ID = Convert.ToInt32(lblIDOrc.Text);
+              
 
                 con_bd.ORCAMENTO.Add(cad_orcamento);
                 con_bd.SaveChanges();
