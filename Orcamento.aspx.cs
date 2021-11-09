@@ -174,6 +174,9 @@ namespace PROJ_INTER_BC4S
                     cad_orcamento.ID_CLIENTE = Convert.ToInt32(ddlPessoa.SelectedValue.ToString());
                     cad_orcamento.ID_FUNCIONARIO = Convert.ToInt32(ddlFuncionario.SelectedValue.ToString());
                     cad_orcamento.VALOR_TOTAL = Convert.ToDouble("0");
+                    DateTime dataatual = DateTime.Now;
+                    cad_orcamento.DATA_ORC = dataatual;
+                    cad_orcamento.STATUS = Convert.ToString("Em andamento...");
 
                     con_bd.ORCAMENTO.Add(cad_orcamento);
                     con_bd.SaveChanges();
@@ -181,7 +184,6 @@ namespace PROJ_INTER_BC4S
                     lblIDOrc.Text = cad_orcamento.ID.ToString();
                     lblValorTotal.Text = cad_orcamento.VALOR_TOTAL.ToString();
                     btnNewOrc.Enabled = false;
-                    DateTime dataatual = DateTime.Now;
                     lblDataAtual.Text = dataatual.ToString("dd/MM/yyyy");
                 }
             }
@@ -217,6 +219,7 @@ namespace PROJ_INTER_BC4S
                     lblValorTotal.Text = Convert.ToString(st);
 
                     orcamento.VALOR_TOTAL = st;
+                    orcamento.STATUS = Convert.ToString("Concluído");
 
                     if (lblError.Text.Equals(string.Empty))
                     {
@@ -289,6 +292,7 @@ namespace PROJ_INTER_BC4S
                         cad_prod_orc.ID_ORCAMENTO = Convert.ToInt32(lblIDOrc.Text);
                         cad_prod_orc.ID_PRODUTO = Convert.ToInt32(lblIDProduto.Text);
                         cad_prod_orc.SUB_TOTAL = Convert.ToDouble(lblSubtPd.Text);
+                        cad_prod_orc.QUANTIDADE = Convert.ToInt32(lblQtdProduto.Text);
 
                         con_bd.PROD_ORCAMENTO.Add(cad_prod_orc);
                         con_bd.SaveChanges();

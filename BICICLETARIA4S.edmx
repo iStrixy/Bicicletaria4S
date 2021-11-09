@@ -43,6 +43,8 @@
           <Property Name="ID_FUNCIONARIO" Type="int" Nullable="false" />
           <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
           <Property Name="VALOR_TOTAL" Type="float" Nullable="false" />
+          <Property Name="DATA_ORC" Type="date" />
+          <Property Name="STATUS" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="PESSOA">
           <Key>
@@ -67,6 +69,7 @@
           <Property Name="ID_ORCAMENTO" Type="int" Nullable="false" />
           <Property Name="ID_PRODUTO" Type="int" Nullable="false" />
           <Property Name="SUB_TOTAL" Type="float" Nullable="false" />
+          <Property Name="QUANTIDADE" Type="int" />
         </EntityType>
         <EntityType Name="PRODUTO">
           <Key>
@@ -294,6 +297,8 @@
           <NavigationProperty Name="PESSOA" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="ORCAMENTO" ToRole="PESSOA" />
           <NavigationProperty Name="PROD_ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_ORCAMENTO" FromRole="ORCAMENTO" ToRole="PROD_ORCAMENTO" />
           <NavigationProperty Name="REG_SERV_ORCAMENTO" Relationship="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO" FromRole="ORCAMENTO" ToRole="REG_SERV_ORCAMENTO" />
+          <Property Name="DATA_ORC" Type="DateTime" Precision="0" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="PESSOA">
           <Key>
@@ -321,6 +326,7 @@
           <Property Name="SUB_TOTAL" Type="Double" Nullable="false" />
           <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_ORCAMENTO" FromRole="PROD_ORCAMENTO" ToRole="ORCAMENTO" />
           <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PROD_ORCAMENTO_PRODUTO" FromRole="PROD_ORCAMENTO" ToRole="PRODUTO" />
+          <Property Name="QUANTIDADE" Type="Int32" />
         </EntityType>
         <EntityType Name="PRODUTO">
           <Key>
@@ -547,6 +553,8 @@
           <EntitySetMapping Name="ORCAMENTO">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.ORCAMENTO">
               <MappingFragment StoreEntitySet="ORCAMENTO">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DATA_ORC" ColumnName="DATA_ORC" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_FUNCIONARIO" ColumnName="ID_FUNCIONARIO" />
                 <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
@@ -573,6 +581,7 @@
           <EntitySetMapping Name="PROD_ORCAMENTO">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO">
               <MappingFragment StoreEntitySet="PROD_ORCAMENTO">
+                <ScalarProperty Name="QUANTIDADE" ColumnName="QUANTIDADE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_ORCAMENTO" ColumnName="ID_ORCAMENTO" />
                 <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />

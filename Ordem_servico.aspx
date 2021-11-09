@@ -73,6 +73,7 @@
                         <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
+                    <SelectedRowStyle Font-Bold="True" ForeColor="#525252"/>
                 </asp:GridView>
             </div>
             <br />

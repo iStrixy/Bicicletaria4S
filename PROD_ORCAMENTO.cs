@@ -18,6 +18,7 @@ namespace PROJ_INTER_BC4S
         public int ID_ORCAMENTO { get; set; }
         public int ID_PRODUTO { get; set; }
         public double SUB_TOTAL { get; set; }
+        public Nullable<int> QUANTIDADE { get; set; }
     
         public virtual ORCAMENTO ORCAMENTO { get; set; }
         public virtual PRODUTO PRODUTO { get; set; }

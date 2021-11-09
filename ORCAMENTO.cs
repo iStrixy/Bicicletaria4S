@@ -25,6 +25,8 @@ namespace PROJ_INTER_BC4S
         public int ID_FUNCIONARIO { get; set; }
         public int ID_CLIENTE { get; set; }
         public double VALOR_TOTAL { get; set; }
+        public Nullable<System.DateTime> DATA_ORC { get; set; }
+        public string STATUS { get; set; }
     
         public virtual LOGIN LOGIN { get; set; }
         public virtual PESSOA PESSOA { get; set; }

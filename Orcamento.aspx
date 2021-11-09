@@ -112,8 +112,10 @@
 						<asp:BoundField DataField="ID_PRODUTO" HeaderText="Item" />
 						<asp:BoundField DataField="PRODUTO.DESCRICAO" HeaderText="Descrição" />
 						<asp:BoundField DataField="PRODUTO.VALOR" HeaderText="Valor unitário" />
+						<asp:BoundField DataField="QUANTIDADE" HeaderText="Quantidade" />
 						<asp:BoundField DataField="SUB_TOTAL" HeaderText="Subtotal" />
 					</Columns>
+					<SelectedRowStyle Font-Bold="True" ForeColor="#525252"/>
                 </asp:GridView>
             </div>
 			<div id="valor_total"><asp:Label runat="server" ID="Label2" Text="Subtotal: "></asp:Label><asp:Label runat="server" ID="lblSubtotalPd"></asp:Label></div>
@@ -127,6 +129,7 @@
 						<asp:BoundField DataField="SERVICO.DESCRICAO" HeaderText="Descrição" />
 						<asp:BoundField DataField="SUB_TOTAL" HeaderText="Valor" />
 					</Columns>
+					<SelectedRowStyle Font-Bold="True" ForeColor="#525252"/>
                 </asp:GridView>
             </div>
 			<div id="valor_total"><asp:Label runat="server" ID="Label3" Text="Subtotal: "></asp:Label><asp:Label runat="server" ID="lblSubtotalSv"></asp:Label></div>

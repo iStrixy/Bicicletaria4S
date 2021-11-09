@@ -68,6 +68,7 @@
                         <asp:BoundField DataField="EMAIL" HeaderText="E-mail" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
+                    <SelectedRowStyle Font-Bold="True" ForeColor="#525252"/>
                 </asp:GridView>
             </div>
             <br />

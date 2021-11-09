@@ -37,7 +37,7 @@ namespace PROJ_INTER_BC4S
 
         private void carregarGrid(BD_BICICLETARIA_4SEntities con_bd)
         {
-            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
+            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...")).ToList();
             //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.);
             gvOrdemServico.DataSource = orcamento;
             gvOrdemServico.DataBind();
@@ -88,7 +88,7 @@ namespace PROJ_INTER_BC4S
 
                 foreach(PROD_ORCAMENTO po in prods)
                 {
-                    items_string += po.ID_PRODUTO + " - " + po.PRODUTO.DESCRICAO + ";" + "\n";
+                    items_string += po.PRODUTO.DESCRICAO + "(Quantidade: " + po.QUANTIDADE + ")" + "\n";
                 }
 
                 PROD_ORCAMENTO prod_orc_null = null;
@@ -103,7 +103,7 @@ namespace PROJ_INTER_BC4S
 
                 foreach(REG_SERV_ORCAMENTO sv in servs)
                 {
-                    items_serv += sv.ID_SERVICO + " - " + sv.SERVICO.DESCRICAO + ";" + "\n";
+                    items_serv += sv.SERVICO.DESCRICAO + ";" + "\n";
                 }
 
                 paragrafo.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold);
