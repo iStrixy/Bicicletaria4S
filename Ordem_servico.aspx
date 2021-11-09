@@ -81,10 +81,8 @@
                     <asp:Label runat="server" ID="lblID" Visible="false"></asp:Label>
                 </div>
                 <div class="btn">
-                    <button onclick="window.print()">Print this page</button>
                     <asp:Button runat="server" class="btn_consul_imprimir" Text="Imprimir orçamento" ID="btnImprimir" OnClick="btnImprimir_Click"></asp:Button>
                     <asp:Button runat="server" class="btn_consul_excluir" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
-                    <asp:Button runat="server" class="btn_consul_concluido" Text="Concluido" ID="btnConcluido" OnClick="btnConcluido_Click"></asp:Button>
                 </div>
             </div>
         </div>

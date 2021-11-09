@@ -106,46 +106,31 @@
 			<br/><br/>
             <div id="titulo_dados_orcamento">Orçamento de produtos</div><br/>
             <div class="campos_orcamento_produto" id="descricao_orcamento_produto">
-                <table>
-                    <tr>
-                        <td id="t_head" class="tb_head">Item</td>
-                        <td class="tb_head">Descrição</td>
-                        <td class="tb_head">Quantidade</td>
-                        <td class="tb_head">Valor Unitário</td>
-                        <td class="tb_head">Subtotal</td>
-                    </tr>
-                    <tbody>
-                        <tr>
-                            <td><input class="inpt_orc" id="cod_input" type="text"/><asp:Label runat="server" ID="lblIDProduto"></asp:Label></td>
-                            <td><input class="inpt_orc" id="desc_input" type="text"/><asp:Label runat="server" ID="lblNomeProduto"></asp:Label></td>
-                            <td><input class="inpt_orc" id="qtd_input" type="text"/><asp:Label runat="server" ID="lblQtdProduto"></asp:Label></td>
-                            <td><input class="inpt_orc" id="vunit_input" type="text"/><asp:Label runat="server" ID="lblVlrUni"></asp:Label></td>
-                            <td><input class="inpt_orc" id="subt_input" type="text"/><asp:Label runat="server" ID="lblSubtPd"></asp:Label></td>
-							<asp:GridView runat="server" ID="gvProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged"></asp:GridView>
-                        </tr>
-                    </tbody>
-                </table>
+				<asp:Label runat="server" ID="lblIDProduto" Visible="false"></asp:Label><asp:Label runat="server" ID="lblNomeProduto" Visible="false"></asp:Label><asp:Label runat="server" ID="lblQtdProduto" Visible="false"></asp:Label><asp:Label runat="server" ID="lblVlrUni" Visible="false"></asp:Label><asp:Label runat="server" ID="lblSubtPd" Visible="false"></asp:Label>
+				<asp:GridView runat="server" ID="gvProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
+					<Columns>
+						<asp:BoundField DataField="ID_PRODUTO" HeaderText="Item" />
+						<asp:BoundField DataField="PRODUTO.DESCRICAO" HeaderText="Descrição" />
+						<asp:BoundField DataField="PRODUTO.VALOR" HeaderText="Valor unitário" />
+						<asp:BoundField DataField="SUB_TOTAL" HeaderText="Subtotal" />
+					</Columns>
+                </asp:GridView>
             </div>
+			<div id="valor_total"><asp:Label runat="server" ID="Label2" Text="Subtotal: "></asp:Label><asp:Label runat="server" ID="lblSubtotalPd"></asp:Label></div>
             <br/><br/>
 			<div id="titulo_dados_orcamento">Orçamento de serviços</div><br/>
             <div class="campos_orcamento_servicos" id="descricao_orcamento_servico">
-                <table>
-                    <tr>
-                        <td id="t_head" class="tb_head">Item</td>
-                        <td class="tb_head">Descrição</td>
-                        <td class="tb_head">Subtotal</td>
-                    </tr>
-                    <tbody>
-                        <tr>
-                            <td><input class="inpt_orc" id="cod_input" type="text"/><asp:Label runat="server" ID="lblIDServico"></asp:Label></td>
-                            <td><input class="inpt_orc" id="desc_input" type="text"/><asp:Label runat="server" ID="lblDescSv"></asp:Label></td>
-                            <td><input class="inpt_orc" id="subt_input" type="text"/><asp:Label runat="server" ID="lblSubtSv"></asp:Label></td>
-							<asp:GridView runat="server" ID="gvServico"></asp:GridView>
-                        </tr>
-                    </tbody>
-                </table>
+                <asp:Label runat="server" ID="lblIDServico" Visible="false"></asp:Label><asp:Label runat="server" ID="lblDescSv" Visible="false"></asp:Label><asp:Label runat="server" ID="lblSubtSv" Visible="false"></asp:Label>
+				<asp:GridView runat="server" ID="gvServico" AutoGenerateColumns="False" DataKeyNames="ID">
+					<Columns>
+						<asp:BoundField DataField="ID_SERVICO" HeaderText="Item" />
+						<asp:BoundField DataField="SERVICO.DESCRICAO" HeaderText="Descrição" />
+						<asp:BoundField DataField="SUB_TOTAL" HeaderText="Valor" />
+					</Columns>
+                </asp:GridView>
             </div>
-			<br/>
+			<div id="valor_total"><asp:Label runat="server" ID="Label3" Text="Subtotal: "></asp:Label><asp:Label runat="server" ID="lblSubtotalSv"></asp:Label></div>
+			<br/><br/>
 			<div id="valor_total"><asp:Label runat="server" ID="Label1" Text="Valor total:"></asp:Label><asp:Label runat="server" ID="lblValorTotal"></asp:Label></div>
 			<br/><br/>
 			<div id="titulo_dados_orcamento">Informações adicionais</div><br/>

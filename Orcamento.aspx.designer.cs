@@ -213,6 +213,24 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.GridView gvProduto;
 
         /// <summary>
+        /// Controle Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// Controle lblSubtotalPd.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubtotalPd;
+
+        /// <summary>
         /// Controle lblIDServico.
         /// </summary>
         /// <remarks>
@@ -247,6 +265,24 @@ namespace PROJ_INTER_BC4S
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvServico;
+
+        /// <summary>
+        /// Controle Label3.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+
+        /// <summary>
+        /// Controle lblSubtotalSv.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubtotalSv;
 
         /// <summary>
         /// Controle Label1.
