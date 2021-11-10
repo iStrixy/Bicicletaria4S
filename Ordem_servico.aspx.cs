@@ -37,8 +37,8 @@ namespace PROJ_INTER_BC4S
 
         private void carregarGrid(BD_BICICLETARIA_4SEntities con_bd)
         {
-            //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...")).ToList();
-            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
+            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...")).ToList();
+            //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
             gvOrdemServico.DataSource = orcamento;
             gvOrdemServico.DataBind();
         }
@@ -80,6 +80,10 @@ namespace PROJ_INTER_BC4S
                 lblFunc.Text = orc.LOGIN.NOME_FUNCIONARIO.ToString();
                 lblValor.Text = orc.VALOR_TOTAL.ToString("C");
                 lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
+                lblData.Text = orc.DATA_ORC.ToString();
+                //var data = orc.DATA_ORC.ToString();
+                //lblData.Text = Convert.ToString(data.ToString("dd/MM/yyyy");
+                //lblData.Text = convert.(data.ToString("dd/MM/yyyy"));
 
                 int IDP = Convert.ToInt32(lblIDc.Text);
                 var prods = con_bd.PROD_ORCAMENTO.Where(linha2 => linha2.ID_ORCAMENTO.Equals(IDP)).ToList();
@@ -122,12 +126,15 @@ namespace PROJ_INTER_BC4S
                 paragrafo.Add("_________________________\n");
                 paragrafo.Add("Assinatura do cliente\n");
                 paragrafo.Add("_________________________\n");
+                paragrafo.Add("\n");
+                paragrafo.Add("Data: " + lblData.Text + "\n");
             }
 
             doc.Open();
             doc.Add(paragrafo);
             doc.Close();
             System.Diagnostics.Process.Start(@"D:\Orçamento.pdf");
+            gvOrdemServico.SelectedIndex = -1;
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
@@ -139,22 +146,50 @@ namespace PROJ_INTER_BC4S
             }
             else if (gvOrdemServico != null)
             {
+                lblError.Text = string.Empty;
+                int IDGV = Convert.ToInt32(gvOrdemServico.SelectedValue.ToString());
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    string ID = gvOrdemServico.SelectedValue.ToString();
-                    lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
-                    ORCAMENTO orcamento = con_bd.ORCAMENTO.Where(linha5 => linha5.ID.ToString().Equals(ID)).FirstOrDefault();
-                    REG_SERV_ORCAMENTO servico = con_bd.REG_SERV_ORCAMENTO.Where(linha8 => linha8.ID_ORCAMENTO.ToString().Equals(lblIDc.Text)).FirstOrDefault();
-                    PROD_ORCAMENTO produto = con_bd.PROD_ORCAMENTO.Where(linha9 => linha9.ID_ORCAMENTO.ToString().Equals(lblIDc.Text)).FirstOrDefault();
-                    con_bd.REG_SERV_ORCAMENTO.Remove(servico);
-                    con_bd.PROD_ORCAMENTO.Remove(produto);
-                    con_bd.ORCAMENTO.Remove(orcamento);
+                    ORCAMENTO orcgv = con_bd.ORCAMENTO.Where(linha => linha.ID == IDGV).FirstOrDefault();
+                    if(orcgv != null)
+                    {
+                        lblID.Text = orcgv.ID.ToString();
+                    }
+
+                    ORCAMENTO orcamento = null;
+                    if (lblError.Text.Equals(string.Empty))
+                    {
+                        int ID = Convert.ToInt32(lblID.Text);
+                        orcamento = con_bd.ORCAMENTO.Where(linha => linha.ID.Equals(ID)).FirstOrDefault();
+                    }
+
+                    orcamento.STATUS = Convert.ToString("Excluído");
+
+                    if (lblError.Text.Equals(string.Empty))
+                    {
+                        con_bd.Entry(orcamento);
+                    }
 
                     con_bd.SaveChanges();
                     carregarGrid(con_bd);
-
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Orçamento excluído com sucesso!";
+                    gvOrdemServico.SelectedIndex = -1;
+
+                    //string ID = gvOrdemServico.SelectedValue.ToString();
+                    //lblIDc.Text = gvOrdemServico.SelectedValue.ToString();
+                    //ORCAMENTO orcamento = con_bd.ORCAMENTO.Where(linha5 => linha5.ID.ToString().Equals(ID)).FirstOrDefault();
+
+                    //orcamento.STATUS = Convert.ToString("Excluído");
+
+                    //con_bd.Entry(orcamento);
+
+                    //con_bd.SaveChanges();
+                    //carregarGrid(con_bd);
+
+                    //lblError.ForeColor = System.Drawing.Color.Green;
+                    //lblError.Text = "Orçamento excluído com sucesso!";
+                    //gvOrdemServico.SelectedIndex = -1;
                 }
             }
         }

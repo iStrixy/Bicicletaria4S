@@ -48,12 +48,13 @@
                         <li id="logout">
                             <asp:LinkButton ID="lb_sair" runat="server" OnClick="lb_sair_Click">Sair</asp:LinkButton></li>
                     </ul>
-                    <asp:Label ID="lblNome" runat="server"></asp:Label>
-                    <asp:Label ID="lblFunc" runat="server"></asp:Label>
-                    <asp:Label ID="lblValor" runat="server"></asp:Label>
-                    <asp:Label ID="lblIDc" runat="server"></asp:Label>
-                    <asp:Label ID="lblServico" runat="server"></asp:Label>
-                    <asp:Label ID="lblProduto" runat="server"></asp:Label>
+                    <asp:Label ID="lblNome" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblFunc" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblValor" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblIDc" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblServico" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblProduto" runat="server" Visible="false"></asp:Label>
+                    <asp:Label ID="lblData" runat="server" Visible="false"></asp:Label>
                 </nav>
             </header>
         </div>
@@ -70,6 +71,7 @@
                         <asp:BoundField DataField="ID" HeaderText="Orçamento" />
                         <asp:BoundField DataField="PESSOA.NOME" HeaderText="Nome do cliente" />
                         <asp:BoundField DataField="LOGIN.NOME_FUNCIONARIO" HeaderText="Nome do funcionário" />
+                        <asp:BoundField DataField="DATA_ORC" HeaderText="Data" />
                         <asp:BoundField DataField="VALOR_TOTAL" HeaderText="Valor Total" />
                         <asp:CommandField ShowSelectButton="True" />
                     </Columns>
