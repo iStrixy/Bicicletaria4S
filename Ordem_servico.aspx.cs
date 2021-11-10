@@ -39,7 +39,7 @@ namespace PROJ_INTER_BC4S
         {
             string e = "Em andamento...";
             string c = "Concluído";
-            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...")).ToList();
+            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...") || linha.STATUS.Equals("Concluído")).ToList();
             //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
             gvOrdemServico.DataSource = orcamento;
             gvOrdemServico.DataBind();

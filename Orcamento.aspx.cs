@@ -225,19 +225,22 @@ namespace PROJ_INTER_BC4S
                     lblError.ForeColor = System.Drawing.Color.Green;
                     lblError.Text = "Orçamento cadastrado com sucesso!";
 
+                    /* Limpar campos */
                     limpar_campos_pessoa();
                     limpar_campos_funcionario();
                     limpar_campos_produto();
                     limpar_campos_servico();
-                    gvProduto.DataSource = null;
-                    gvProduto.DataBind();
-                    gvServico.DataSource = null;
-                    gvServico.DataBind();
                     lblValorTotal.Text = string.Empty;
                     lblSubtotalPd.Text = string.Empty;
                     lblSubtotalSv.Text = string.Empty;
                     lblDataAtual.Text = string.Empty;
                     lblIDOrc.Text = string.Empty;
+                    /* Limpar Grid's */
+                    gvProduto.DataSource = null;
+                    gvProduto.DataBind();
+                    gvServico.DataSource = null;
+                    gvServico.DataBind();
+                    /* Habilitar botões */
                     btnNewOrc.Enabled = true;
                     ddlPessoa.Enabled = true;
                     ddlFuncionario.Enabled = true;
