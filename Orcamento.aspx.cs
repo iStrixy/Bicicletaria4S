@@ -156,11 +156,14 @@ namespace PROJ_INTER_BC4S
         protected void btnNewOrc_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
+
+            /* Cliente */
             if (ddlPessoa.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Selecione o Cliente!";
             }
+            /* Funcionário */
             else if (ddlFuncionario.SelectedValue.ToString() == "Selecionar...")
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
@@ -185,6 +188,8 @@ namespace PROJ_INTER_BC4S
                     lblValorTotal.Text = cad_orcamento.VALOR_TOTAL.ToString();
                     btnNewOrc.Enabled = false;
                     lblDataAtual.Text = dataatual.ToString("dd/MM/yyyy");
+                    ddlPessoa.Enabled = false;
+                    ddlFuncionario.Enabled = false;
                 }
             }
         }
@@ -209,16 +214,6 @@ namespace PROJ_INTER_BC4S
                         orcamento = con_bd.ORCAMENTO.Where(linha7 => linha7.ID.Equals(ID)).FirstOrDefault();
                     }
 
-                    double s1;
-                    double s2;
-                    double st;
-                    s1 = Convert.ToDouble(lblSubtotalPd.Text);
-                    s2 = Convert.ToDouble(lblSubtotalSv.Text);
-                    st = s1 + s2;
-
-                    lblValorTotal.Text = Convert.ToString(st);
-
-                    orcamento.VALOR_TOTAL = st;
                     orcamento.STATUS = Convert.ToString("Concluído");
 
                     if (lblError.Text.Equals(string.Empty))
@@ -244,6 +239,8 @@ namespace PROJ_INTER_BC4S
                     lblDataAtual.Text = string.Empty;
                     lblIDOrc.Text = string.Empty;
                     btnNewOrc.Enabled = true;
+                    ddlPessoa.Enabled = true;
+                    ddlFuncionario.Enabled = true;
                 }
             }
         }
@@ -251,11 +248,20 @@ namespace PROJ_INTER_BC4S
         protected void btnCadastrarProduto_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
+
+            /* Orçamento */
             if (lblIDOrc.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Registro de novo orçamento não realizado, aperte o botão 'Novo orçamento'";
             }
+            /* Produto */
+            else if (ddlProduto.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um produto!";
+            }
+            /* Quantidade */
             else if (txtQuantidadeProduto.Text.ToString() == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
@@ -300,17 +306,27 @@ namespace PROJ_INTER_BC4S
                         carregarGridProduto(con_bd);
 
                         var items = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
-                        double total = 0;
+                        double totalpd = 0;
                         foreach(PROD_ORCAMENTO pd in items)
                         {
-                            total += pd.SUB_TOTAL;
+                            totalpd += pd.SUB_TOTAL;
+                        }
+
+                        var itemss = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
+                        double totalsv = 0;
+                        foreach (REG_SERV_ORCAMENTO sv in itemss)
+                        {
+                            totalsv += sv.SUB_TOTAL;
                         }
 
                         ORCAMENTO orc = con_bd.ORCAMENTO.First(linha => linha.ID.ToString().Equals(lblIDOrc.Text));
-                        orc.VALOR_TOTAL = total;
+                        orc.VALOR_TOTAL = (totalpd + totalsv);
                         con_bd.Entry(orc);
                         con_bd.SaveChanges();
-                        lblSubtotalPd.Text = Convert.ToString(total);
+                        lblSubtotalPd.Text = Convert.ToString(totalpd);
+                        lblValorTotal.Text = Convert.ToString(totalpd + totalsv);
+                        ddlProduto.SelectedIndex = 0;
+                        txtQuantidadeProduto.Text = string.Empty;
                     }
                 }
             }
@@ -319,10 +335,18 @@ namespace PROJ_INTER_BC4S
         protected void lblCadastrarServico_Click(object sender, EventArgs e)
         {
             lblError.Text = string.Empty;
+
+            /* Orçamento */
             if (lblIDOrc.Text == string.Empty)
             {
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Registro de novo orçamento não realizado, aperte o botão 'Novo orçamento'";
+            }
+            /* Serviço */
+            else if (ddlServico.SelectedValue.ToString() == "Selecionar...")
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Selecione um serviço!";
             }
             else
             {
@@ -356,12 +380,21 @@ namespace PROJ_INTER_BC4S
                             totalsv += sv.SUB_TOTAL;
                         }
 
+                        var itemsp = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
+                        double totalpd = 0;
+                        foreach(PROD_ORCAMENTO pd in itemsp)
+                        {
+                            totalpd += pd.SUB_TOTAL;
+                        }
+
                         ORCAMENTO orc = con_bd.ORCAMENTO.First(linha => linha.ID.ToString().Equals(lblIDOrc.Text));
-                        orc.VALOR_TOTAL = totalsv;
+                        orc.VALOR_TOTAL = (totalsv + totalpd);
                         con_bd.Entry(orc);
                         con_bd.SaveChanges();
 
                         lblSubtotalSv.Text = Convert.ToString(totalsv);
+                        lblValorTotal.Text = Convert.ToString(totalsv + totalpd);
+                        ddlServico.SelectedIndex = 0;
                     }
                 }
             }
@@ -372,5 +405,96 @@ namespace PROJ_INTER_BC4S
 
         }
 
+        protected void btnExcluirProd_Click(object sender, EventArgs e)
+        {
+            if(gvProduto.SelectedValue == null)
+            {
+                lblErrorProduto.ForeColor = System.Drawing.Color.Red;
+                lblErrorProduto.Text = "Selecione um produto!";
+            }
+            else if (gvProduto.SelectedValue != null)
+            {
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    string ID = gvProduto.SelectedValue.ToString();
+                    PROD_ORCAMENTO prod_orcamento = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID.ToString().Equals(ID)).FirstOrDefault();
+                    con_bd.PROD_ORCAMENTO.Remove(prod_orcamento);
+                    con_bd.SaveChanges();
+                    carregarGridProduto(con_bd);
+                    lblErrorProduto.ForeColor = System.Drawing.Color.Green;
+                    lblErrorProduto.Text = "Produto excluído com sucesso!";
+
+                    var items = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
+                    double totalpd = 0;
+                    foreach (PROD_ORCAMENTO pd in items)
+                    {
+                        totalpd += pd.SUB_TOTAL;
+                    }
+
+                    lblSubtotalPd.Text = Convert.ToString(totalpd);
+                    gvProduto.SelectedIndex = -1;
+
+                    var itemss = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
+                    double totalsv = 0;
+                    foreach (REG_SERV_ORCAMENTO sv in itemss)
+                    {
+                        totalsv += sv.SUB_TOTAL;
+                    }
+
+                    lblValorTotal.Text = Convert.ToString(totalsv + totalpd);
+
+                    ORCAMENTO orc = con_bd.ORCAMENTO.First(linha => linha.ID.ToString().Equals(lblIDOrc.Text));
+                    orc.VALOR_TOTAL = (totalsv + totalpd);
+                    con_bd.Entry(orc);
+                    con_bd.SaveChanges();
+                }
+            }
+        }
+
+        protected void btnExcluirServ_Click(object sender, EventArgs e)
+        {
+            if (gvServico.SelectedValue == null)
+            {
+                lblErrorServico.ForeColor = System.Drawing.Color.Red;
+                lblErrorServico.Text = "Selecione um servico!";
+            }
+            else if (gvServico.SelectedValue != null)
+            {
+                using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
+                {
+                    string ID = gvServico.SelectedValue.ToString();
+                    REG_SERV_ORCAMENTO reg_serv_orcamento = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID.ToString().Equals(ID)).FirstOrDefault();
+                    con_bd.REG_SERV_ORCAMENTO.Remove(reg_serv_orcamento);
+                    con_bd.SaveChanges();
+                    carregarGridServico(con_bd);
+                    lblErrorServico.ForeColor = System.Drawing.Color.Green;
+                    lblErrorServico.Text = "Serviço excluído com sucesso!";
+
+                    var items = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
+                    double totalsv = 0;
+                    foreach (REG_SERV_ORCAMENTO sv in items)
+                    {
+                        totalsv += sv.SUB_TOTAL;
+                    }
+
+                    lblSubtotalSv.Text = Convert.ToString(totalsv);
+                    gvServico.SelectedIndex = -1;
+
+                    var itemsp = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
+                    double totalpd = 0;
+                    foreach (PROD_ORCAMENTO pd in itemsp)
+                    {
+                        totalpd += pd.SUB_TOTAL;
+                    }
+
+                    lblValorTotal.Text = Convert.ToString(totalsv + totalpd);
+
+                    ORCAMENTO orc = con_bd.ORCAMENTO.First(linha => linha.ID.ToString().Equals(lblIDOrc.Text));
+                    orc.VALOR_TOTAL = (totalsv + totalpd);
+                    con_bd.Entry(orc);
+                    con_bd.SaveChanges();
+                }
+            }
+        }
     }
 }

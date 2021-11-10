@@ -98,6 +98,11 @@ namespace PROJ_INTER_BC4S
                 lblError.ForeColor = System.Drawing.Color.Red;
                 lblError.Text = "Valor inválido!";
             }
+            else if (Convert.ToInt32(txtValorUniProduto.Text) <= 0)
+            {
+                lblError.ForeColor = System.Drawing.Color.Red;
+                lblError.Text = "Valor inválido!";
+            }
             else
             {
                 lblError.ForeColor = System.Drawing.Color.Green;

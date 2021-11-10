@@ -117,6 +117,9 @@
                 <br />
                 <div class="campos_orcamento_produto" id="descricao_orcamento_produto">
                     <asp:Label runat="server" ID="lblIDProduto" Visible="false"></asp:Label><asp:Label runat="server" ID="lblNomeProduto" Visible="false"></asp:Label><asp:Label runat="server" ID="lblQtdProduto" Visible="false"></asp:Label><asp:Label runat="server" ID="lblVlrUni" Visible="false"></asp:Label><asp:Label runat="server" ID="lblSubtPd" Visible="false"></asp:Label>
+                    <div>
+                        <asp:Label runat="server" ID="lblErrorProduto"></asp:Label>
+                    </div>
                     <asp:GridView runat="server" ID="gvProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
                         <Columns>
                             <asp:BoundField DataField="ID_PRODUTO" HeaderText="Item" />
@@ -124,9 +127,13 @@
                             <asp:BoundField DataField="PRODUTO.VALOR" HeaderText="Valor unitário" />
                             <asp:BoundField DataField="QUANTIDADE" HeaderText="Quantidade" />
                             <asp:BoundField DataField="SUB_TOTAL" HeaderText="Subtotal" />
+                            <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                         <SelectedRowStyle Font-Bold="True" ForeColor="#525252" />
                     </asp:GridView>
+                </div>
+                <div>
+                    <asp:Button runat="server" class="btn_orc_remover_prod" Text="Excluir" ID="btnExcluirProd" OnClick="btnExcluirProd_Click"></asp:Button>
                 </div>
                 <div id="valor_total">
                     <asp:Label runat="server" ID="Label2" Text="Subtotal: "></asp:Label><asp:Label runat="server" ID="lblSubtotalPd"></asp:Label>
@@ -137,22 +144,31 @@
                 <br />
                 <div class="campos_orcamento_servicos" id="descricao_orcamento_servico">
                     <asp:Label runat="server" ID="lblIDServico" Visible="false"></asp:Label><asp:Label runat="server" ID="lblDescSv" Visible="false"></asp:Label><asp:Label runat="server" ID="lblSubtSv" Visible="false"></asp:Label>
+                    <div>
+                        <asp:Label runat="server" ID="lblErrorServico"></asp:Label>
+                    </div>
                     <asp:GridView runat="server" ID="gvServico" AutoGenerateColumns="False" DataKeyNames="ID">
                         <Columns>
                             <asp:BoundField DataField="ID_SERVICO" HeaderText="Item" />
                             <asp:BoundField DataField="SERVICO.DESCRICAO" HeaderText="Descrição" />
                             <asp:BoundField DataField="SUB_TOTAL" HeaderText="Valor" />
+                            <asp:CommandField ShowSelectButton="True" />
                         </Columns>
                         <SelectedRowStyle Font-Bold="True" ForeColor="#525252" />
                     </asp:GridView>
+                </div>
+                <div>
+                    <asp:Button runat="server" class="btn_orc_remover_serv" Text="Excluir" ID="btnExcluirServ" OnClick="btnExcluirServ_Click"></asp:Button>
                 </div>
                 <div id="valor_total">
                     <asp:Label runat="server" ID="Label3" Text="Subtotal: "></asp:Label><asp:Label runat="server" ID="lblSubtotalSv"></asp:Label>
                 </div>
                 <br />
                 <br />
+                <div id="titulo_dados_orcamento">Valor do orçamento</div>
+                <br/>
                 <div id="valor_total">
-                    <asp:Label runat="server" ID="Label1" Text="Valor total:"></asp:Label><asp:Label runat="server" ID="lblValorTotal"></asp:Label>
+                    <asp:Label runat="server" ID="Label1" Text="Total: "></asp:Label><asp:Label runat="server" ID="lblValorTotal"></asp:Label>
                 </div>
                 <br />
                 <br />

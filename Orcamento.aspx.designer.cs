@@ -204,6 +204,15 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.Label lblSubtPd;
 
         /// <summary>
+        /// Controle lblErrorProduto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorProduto;
+
+        /// <summary>
         /// Controle gvProduto.
         /// </summary>
         /// <remarks>
@@ -211,6 +220,15 @@ namespace PROJ_INTER_BC4S
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvProduto;
+
+        /// <summary>
+        /// Controle btnExcluirProd.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExcluirProd;
 
         /// <summary>
         /// Controle Label2.
@@ -258,6 +276,15 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.Label lblSubtSv;
 
         /// <summary>
+        /// Controle lblErrorServico.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorServico;
+
+        /// <summary>
         /// Controle gvServico.
         /// </summary>
         /// <remarks>
@@ -265,6 +292,15 @@ namespace PROJ_INTER_BC4S
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvServico;
+
+        /// <summary>
+        /// Controle btnExcluirServ.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExcluirServ;
 
         /// <summary>
         /// Controle Label3.
