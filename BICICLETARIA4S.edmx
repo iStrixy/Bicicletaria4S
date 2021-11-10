@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="FABRICANTE">
           <Key>
             <PropertyRef Name="ID" />
@@ -59,7 +59,7 @@
           <Property Name="CEP" Type="int" Nullable="false" />
           <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="TELEFONE" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="11" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -248,7 +248,8 @@
             <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_BICICLETARIA_4SModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -293,12 +294,12 @@
           <Property Name="ID_FUNCIONARIO" Type="Int32" Nullable="false" />
           <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
           <Property Name="VALOR_TOTAL" Type="Double" Nullable="false" />
+          <Property Name="DATA_ORC" Type="DateTime" Precision="0" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="LOGIN" Relationship="Self.FK_ORCAMENTO_FUNCIONARIO" FromRole="ORCAMENTO" ToRole="LOGIN" />
           <NavigationProperty Name="PESSOA" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="ORCAMENTO" ToRole="PESSOA" />
           <NavigationProperty Name="PROD_ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_ORCAMENTO" FromRole="ORCAMENTO" ToRole="PROD_ORCAMENTO" />
           <NavigationProperty Name="REG_SERV_ORCAMENTO" Relationship="Self.FK_REG_SERV_ORCAMENTO_ORCAMENTO" FromRole="ORCAMENTO" ToRole="REG_SERV_ORCAMENTO" />
-          <Property Name="DATA_ORC" Type="DateTime" Precision="0" />
-          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="PESSOA">
           <Key>
@@ -313,7 +314,7 @@
           <Property Name="CEP" Type="Int32" Nullable="false" />
           <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="PESSOA" ToRole="ORCAMENTO" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
@@ -324,9 +325,9 @@
           <Property Name="ID_ORCAMENTO" Type="Int32" Nullable="false" />
           <Property Name="ID_PRODUTO" Type="Int32" Nullable="false" />
           <Property Name="SUB_TOTAL" Type="Double" Nullable="false" />
+          <Property Name="QUANTIDADE" Type="Int32" />
           <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_PROD_ORCAMENTO_ORCAMENTO" FromRole="PROD_ORCAMENTO" ToRole="ORCAMENTO" />
           <NavigationProperty Name="PRODUTO" Relationship="Self.FK_PROD_ORCAMENTO_PRODUTO" FromRole="PROD_ORCAMENTO" ToRole="PRODUTO" />
-          <Property Name="QUANTIDADE" Type="Int32" />
         </EntityType>
         <EntityType Name="PRODUTO">
           <Key>
@@ -553,12 +554,12 @@
           <EntitySetMapping Name="ORCAMENTO">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.ORCAMENTO">
               <MappingFragment StoreEntitySet="ORCAMENTO">
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-                <ScalarProperty Name="DATA_ORC" ColumnName="DATA_ORC" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_FUNCIONARIO" ColumnName="ID_FUNCIONARIO" />
                 <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
                 <ScalarProperty Name="VALOR_TOTAL" ColumnName="VALOR_TOTAL" />
+                <ScalarProperty Name="DATA_ORC" ColumnName="DATA_ORC" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -581,11 +582,11 @@
           <EntitySetMapping Name="PROD_ORCAMENTO">
             <EntityTypeMapping TypeName="BD_BICICLETARIA_4SModel.PROD_ORCAMENTO">
               <MappingFragment StoreEntitySet="PROD_ORCAMENTO">
-                <ScalarProperty Name="QUANTIDADE" ColumnName="QUANTIDADE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ID_ORCAMENTO" ColumnName="ID_ORCAMENTO" />
                 <ScalarProperty Name="ID_PRODUTO" ColumnName="ID_PRODUTO" />
                 <ScalarProperty Name="SUB_TOTAL" ColumnName="SUB_TOTAL" />
+                <ScalarProperty Name="QUANTIDADE" ColumnName="QUANTIDADE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

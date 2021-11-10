@@ -37,8 +37,8 @@ namespace PROJ_INTER_BC4S
 
         private void carregarGrid(BD_BICICLETARIA_4SEntities con_bd)
         {
-            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...")).ToList();
-            //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.);
+            //List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.Where(linha => linha.STATUS.Equals("Em andamento...")).ToList();
+            List<ORCAMENTO> orcamento = con_bd.ORCAMENTO.ToList();
             gvOrdemServico.DataSource = orcamento;
             gvOrdemServico.DataBind();
         }
@@ -127,6 +127,7 @@ namespace PROJ_INTER_BC4S
             doc.Open();
             doc.Add(paragrafo);
             doc.Close();
+            System.Diagnostics.Process.Start(@"D:\Orçamento.pdf");
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)

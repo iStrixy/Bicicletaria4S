@@ -105,7 +105,6 @@
     <Content Include="Menu_orcamento.aspx" />
     <Content Include="Orcamento.aspx" />
     <Content Include="Ordem_servico.aspx" />
-    <Content Include="PrintPage.js" />
     <Content Include="Quem_somos.aspx" />
     <Content Include="styles\Folhaestilo.css" />
     <Content Include="styles\telalogin.css" />
