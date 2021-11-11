@@ -103,7 +103,7 @@
 				<asp:DropDownList ID="ddlProduto" runat="server"></asp:DropDownList>
                         <label id="qtd">Quantidade:</label>
 				<asp:TextBox runat="server" type="number" name="quantidade_produto" class="input_qntd_prod_orc" ID="txtQuantidadeProduto" Width="54px"></asp:TextBox>
-                        <asp:Button runat="server" class="btn_cad_prod_orc" Text="Cadastrar produto" ID="btnCadastrarProduto" OnClick="btnCadastrarProduto_Click"></asp:Button>
+                        <asp:Button runat="server" class="btn_cad_prod_orc" Text="Cadastrar produto" ID="btnCadProduto" OnClick="btnCadastrarProduto_Click"></asp:Button>
                     </div>
                     <div class="serv_pedidos">
                         Serviço:

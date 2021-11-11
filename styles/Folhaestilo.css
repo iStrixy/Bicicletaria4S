@@ -282,13 +282,14 @@ vtotal {
 
     .func #btnNewOrc {
         text-transform: uppercase;
-        padding: 8px 12px;
+        padding: 4px 4px;
         background-color: white;
         border-bottom: hidden;
         border-bottom: 2px solid;
         border-color: rgb(82, 82, 82);
         border-radius: 10px;
-        width: 170px;
+        width: 150px;
+        font-size: 14px;
         font-weight: 600;
         margin-left: 200px;
         cursor: pointer;
@@ -335,16 +336,18 @@ vtotal {
     text-align:center;
    
 }
-#btnCadastrarProduto {
+#btnCadProduto {
     text-transform: uppercase;
-    padding: 8px 12px;
+    padding: 4px 4px;
     background-color: white;
     border-bottom: hidden;
     border-bottom: 2px solid;
     border-color: rgb(82, 82, 82);
     border-radius: 10px;
     font-weight: 600;
-    margin-left: 60px;
+    width:170px;
+    font-size: 14px;
+    margin-left: 45px;
     cursor: pointer;
     transition: .3s;
 }
@@ -355,15 +358,16 @@ vtotal {
 
 #lblCadastrarServico {
     text-transform: uppercase;
-    padding: 8px 12px;
+    padding: 4px 4px;
     background-color: white;
     border-bottom: hidden;
     border-bottom: 2px solid;
     border-color: rgb(82, 82, 82);
     border-radius: 10px;
     font-weight: 600;
-    width: 180px;
-    margin-left: 230px;
+    font-size: 14px;
+    width: 165px;
+    margin-left: 220px;
     cursor: pointer;
     transition: .3s;
 }
@@ -374,10 +378,11 @@ vtotal {
 
 #btnExcluirProd {
     text-transform: uppercase;
-    padding: 8px;
+    padding: 4px;
     background-color: white;
     border-bottom: hidden;
     border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
     width: 100px;
     margin-top: 10px;
@@ -390,13 +395,14 @@ vtotal {
 
 #btnExcluirServ {
     text-transform: uppercase;
-    padding: 8px;
+    padding: 4px;
     background-color: white;
     border-bottom: hidden;
     border-radius: 10px;
     border-bottom: 2px solid;
     border-color: rgb(82, 82, 82);
     font-weight: 600;
+    font-size: 14px;
     width: 100px;
     margin-top: 10px;
     margin-left: 20px;
@@ -651,9 +657,10 @@ a.trodape {
     padding: 10px 15px;
     border: none;
     border-radius: 30px;
-    margin-left: 15px;
+    margin-top: 10%;
+    margin-left: 15%;
     width: 70%;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
     background-color: #d6d6d6;

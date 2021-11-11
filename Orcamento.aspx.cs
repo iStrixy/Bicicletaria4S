@@ -490,7 +490,7 @@ namespace PROJ_INTER_BC4S
                         totalpd += pd.SUB_TOTAL;
                     }
 
-                    lblValorTotal.Text = Convert.ToString(totalsv + totalpd);
+                    lblValorTotal.Text = Convert.ToString(totalsv + totalpd + "C");
 
                     ORCAMENTO orc = con_bd.ORCAMENTO.First(linha => linha.ID.ToString().Equals(lblIDOrc.Text));
                     orc.VALOR_TOTAL = (totalsv + totalpd);

@@ -68,7 +68,7 @@
 				<asp:TextBox runat="server" type="number" name="vlr_serv" class="input_valor_serv" ID="txtValorServico" OnTextChanged="txtValorServico_TextChanged"></asp:TextBox>
 			</div>
 			<br/><br/>
-			<asp:Button runat="server" class="btn_cad_serv" Text="Cadastrar produto" ID="btnCadastrarServico" OnClick="btnCadastrarServico_Click"></asp:Button>
+			<asp:Button runat="server" class="btn_cad_serv" Text="Cadastrar Serviço" ID="btnCadastrarServico" OnClick="btnCadastrarServico_Click"></asp:Button>
 		</div>
 	</div>
 	<footer>
