@@ -93,6 +93,7 @@
     <Content Include="Cadastro_fornecedor.aspx" />
     <Content Include="Cadastro_produto.aspx" />
     <Content Include="Cadastro_servico.aspx" />
+    <Content Include="Cadastro_usuario.aspx" />
     <Content Include="Consulta_cliente.aspx" />
     <Content Include="Consulta_fabricante.aspx" />
     <Content Include="Consulta_fornecedor.aspx" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="Cadastro_servico.aspx.designer.cs">
       <DependentUpon>Cadastro_servico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro_usuario.aspx.cs">
+      <DependentUpon>Cadastro_usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cadastro_usuario.aspx.designer.cs">
+      <DependentUpon>Cadastro_usuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Consulta_cliente.aspx.cs">
       <DependentUpon>Consulta_cliente.aspx</DependentUpon>

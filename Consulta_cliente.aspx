@@ -53,7 +53,7 @@
         </div>
         <div class="corpo">
             <section id="titulo_consul_cliente">
-                <p>CONSULTA DE CLIENTE</p>
+                <p>Consulta de cliente</p>
             </section>  
             <div>
                 <asp:Label runat="server" ID="lblError"></asp:Label>

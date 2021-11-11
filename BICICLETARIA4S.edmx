@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BD_BICICLETARIA_4SModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="FABRICANTE">
           <Key>
             <PropertyRef Name="ID" />
@@ -31,7 +31,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NOME_FUNCIONARIO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NOME_FUNCIONARIO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="LOGIN1" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="SENHA" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -59,7 +59,7 @@
           <Property Name="CEP" Type="int" Nullable="false" />
           <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="TELEFONE" Type="varchar" MaxLength="11" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">
           <Key>
@@ -248,8 +248,7 @@
             <End Role="REG_SERV_ORCAMENTO" EntitySet="REG_SERV_ORCAMENTO" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BD_BICICLETARIA_4SModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -281,7 +280,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NOME_FUNCIONARIO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOME_FUNCIONARIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="LOGIN1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SENHA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_ORCAMENTO_FUNCIONARIO" FromRole="LOGIN" ToRole="ORCAMENTO" />
@@ -314,7 +313,7 @@
           <Property Name="CEP" Type="Int32" Nullable="false" />
           <Property Name="CPF" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="ORCAMENTO" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="PESSOA" ToRole="ORCAMENTO" />
         </EntityType>
         <EntityType Name="PROD_ORCAMENTO">

@@ -1377,3 +1377,44 @@ a.menu_orc:hover {
     font-weight: bold;
     padding: 1px;
 }
+
+/* Cadastro de usuário */
+
+.form_cad_user {
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    border-radius: 5%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    margin-bottom: 15%;
+    font-weight: bold;
+    box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
+    width: 300px;
+}
+
+.btn_cad_user {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 15%;
+    width: 70%;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
+    background-color: #d6d6d6;
+}
+
+    .btn_cad_user:hover {
+        background-color: #C0C0C0;
+        cursor: pointer;
+    }
+
+#titulo_cad_user {
+    padding: -5px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 2%;
+    text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
+}
