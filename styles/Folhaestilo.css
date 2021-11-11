@@ -9,6 +9,12 @@
 
 /* MENU */
 
+ /*INDEX*/
+
+#lblUserLogado{
+    font-size: 32px;
+    font-weight:bold;
+}
 .menu {
     font-family: 'Helvetica';
     color: white;
@@ -196,7 +202,7 @@ body {
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
     width: 45vw;
-    max-height: 1000px
+    max-height: 10000px
 }
 
 .cad_prod_orc button TextBox {
@@ -210,13 +216,16 @@ body {
     padding: -5px;
     font-weight: bold;
     font-size: 22px;
-    margin-top: 400px;
+    margin-top: 600px;
     text-shadow: 1px 1px 10px rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82), 0 0 0.1em rgb(82, 82, 82);
 }
 
-#valor_total {
+#valor_total{
     padding-left: 400px;
     font-size: 19px;
+}
+vtotal {
+    padding-left: 200px;
 }
 
 .btn_cad_orc {
@@ -236,39 +245,32 @@ body {
         background-color: #C0C0C0;
     }
 
-table tr, tbody, td {
-    border: 1px solid black;
+#gOrcProd th {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px;
+    background-color: gray;
+    border: 2px solid black;
+}
+
+#gOrcProd td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 3px;
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+#gOrcProd a {
+    color: black;
     text-align: center;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-.inpt_orc {
-    border: none;
-}
-
-td #cod_input {
-    max-width: 100%;
-    width: 100%;
-    border: none;
-}
-
-td input {
-    padding-left: 2%;
-}
-
-td #qtd_input {
-    width: 100%;
-}
-
-td #subt_input {
-    width: 100%;
-}
-
-td #vunit_input {
-    width: 100%;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
 }
 
 .func {
@@ -283,10 +285,12 @@ td #vunit_input {
         padding: 8px 12px;
         background-color: white;
         border-bottom: hidden;
+        border-bottom: 2px solid;
+        border-color: rgb(82, 82, 82);
         border-radius: 10px;
-        width:170px;
+        width: 170px;
         font-weight: 600;
-        margin-left: 250px;
+        margin-left: 200px;
         cursor: pointer;
         transition: .3s;
     }
@@ -336,9 +340,11 @@ td #vunit_input {
     padding: 8px 12px;
     background-color: white;
     border-bottom: hidden;
+    border-bottom: 2px solid;
+    border-color: rgb(82, 82, 82);
     border-radius: 10px;
     font-weight: 600;
-    margin-left: 110px;
+    margin-left: 60px;
     cursor: pointer;
     transition: .3s;
 }
@@ -352,10 +358,12 @@ td #vunit_input {
     padding: 8px 12px;
     background-color: white;
     border-bottom: hidden;
+    border-bottom: 2px solid;
+    border-color: rgb(82, 82, 82);
     border-radius: 10px;
     font-weight: 600;
-    width:180px;
-    margin-left: 280px;
+    width: 180px;
+    margin-left: 230px;
     cursor: pointer;
     transition: .3s;
 }
@@ -363,6 +371,106 @@ td #vunit_input {
     #lblCadastrarServico:hover {
         background-color: #DCDCDC;
     }
+
+#btnExcluirProd {
+    text-transform: uppercase;
+    padding: 8px;
+    background-color: white;
+    border-bottom: hidden;
+    border-radius: 10px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+    border-bottom: 2px solid;
+    border-color: rgb(82, 82, 82);
+    margin-left: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#btnExcluirServ {
+    text-transform: uppercase;
+    padding: 8px;
+    background-color: white;
+    border-bottom: hidden;
+    border-radius: 10px;
+    border-bottom: 2px solid;
+    border-color: rgb(82, 82, 82);
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+#gServProd th {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px;
+    background-color: gray;
+    border: 2px solid black;
+}
+
+#gServProd td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 3px;
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+#gServProd a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
+    /*ORDEM SERVIÇO*/
+#btnImprimir {
+    border-bottom: hidden;
+    background-color: orange;
+    padding: 6px 12px;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+    border-bottom: 2px solid;
+    border-color: rgb(82, 82, 82);
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+#gvOrdemServico th {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #FF8C00;
+    border: 2px solid black;
+}
+
+#gvOrdemServico td {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 3px;
+    background-color: orange;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+#gvOrdemServico a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px;
+}
+
 /*???*/
 .div-button {
     text-align: right;
@@ -486,7 +594,7 @@ input {
 /* RODAPÉ */
 
 footer {
-    margin-top: 20%;
+    margin-top: 40%;
     width: 100vw;
     height: 30vh;
     background-color: gray;
@@ -536,14 +644,14 @@ a.trodape {
     margin-bottom: 9.5%;
     font-weight: bold;
     box-shadow: 1px 1px 8px 1px rgb(82, 82, 82);
-    width: 300px;
+    width: 400px;
 }
 
 .btn_cad_prod {
     padding: 10px 15px;
     border: none;
     border-radius: 30px;
-    margin-left: 15%;
+    margin-left: 15px;
     width: 70%;
     font-size: 16px;
     font-weight: bold;

@@ -213,13 +213,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.Label lblErrorProduto;
 
         /// <summary>
-        /// Controle gvProduto.
+        /// Controle gOrcProd.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProduto;
+        protected global::System.Web.UI.WebControls.GridView gOrcProd;
 
         /// <summary>
         /// Controle btnExcluirProd.
@@ -285,13 +285,13 @@ namespace PROJ_INTER_BC4S
         protected global::System.Web.UI.WebControls.Label lblErrorServico;
 
         /// <summary>
-        /// Controle gvServico.
+        /// Controle gServProd.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvServico;
+        protected global::System.Web.UI.WebControls.GridView gServProd;
 
         /// <summary>
         /// Controle btnExcluirServ.

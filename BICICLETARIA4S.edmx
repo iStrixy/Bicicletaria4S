@@ -43,7 +43,7 @@
           <Property Name="ID_FUNCIONARIO" Type="int" Nullable="false" />
           <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
           <Property Name="VALOR_TOTAL" Type="float" Nullable="false" />
-          <Property Name="DATA_ORC" Type="date" />
+          <Property Name="DATA_ORC" Type="datetime" />
           <Property Name="STATUS" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="PESSOA">
@@ -294,7 +294,7 @@
           <Property Name="ID_FUNCIONARIO" Type="Int32" Nullable="false" />
           <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
           <Property Name="VALOR_TOTAL" Type="Double" Nullable="false" />
-          <Property Name="DATA_ORC" Type="DateTime" Precision="0" />
+          <Property Name="DATA_ORC" Type="DateTime" Precision="3" />
           <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="LOGIN" Relationship="Self.FK_ORCAMENTO_FUNCIONARIO" FromRole="ORCAMENTO" ToRole="LOGIN" />
           <NavigationProperty Name="PESSOA" Relationship="Self.FK_ORCAMENTO_CLIENTE" FromRole="ORCAMENTO" ToRole="PESSOA" />

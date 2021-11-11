@@ -75,15 +75,15 @@ namespace PROJ_INTER_BC4S
         private void carregarGridProduto(BD_BICICLETARIA_4SEntities con_bd)
         {
             List<PROD_ORCAMENTO> list_prod = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
-            gvProduto.DataSource = list_prod;
-            gvProduto.DataBind();
+            gOrcProd.DataSource = list_prod;
+            gOrcProd.DataBind();
         }
 
         private void carregarGridServico(BD_BICICLETARIA_4SEntities con_bd)
         {
             List<REG_SERV_ORCAMENTO> list_serv = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
-            gvServico.DataSource = list_serv;
-            gvServico.DataBind();
+            gServProd.DataSource = list_serv;
+            gServProd.DataBind();
         }
 
         private void limpar_campos_pessoa()
@@ -236,10 +236,10 @@ namespace PROJ_INTER_BC4S
                     lblDataAtual.Text = string.Empty;
                     lblIDOrc.Text = string.Empty;
                     /* Limpar Grid's */
-                    gvProduto.DataSource = null;
-                    gvProduto.DataBind();
-                    gvServico.DataSource = null;
-                    gvServico.DataBind();
+                    gOrcProd.DataSource = null;
+                    gOrcProd.DataBind();
+                    gServProd.DataSource = null;
+                    gServProd.DataBind();
                     /* Habilitar botões */
                     btnNewOrc.Enabled = true;
                     ddlPessoa.Enabled = true;
@@ -410,16 +410,16 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluirProd_Click(object sender, EventArgs e)
         {
-            if(gvProduto.SelectedValue == null)
+            if(gOrcProd.SelectedValue == null)
             {
                 lblErrorProduto.ForeColor = System.Drawing.Color.Red;
                 lblErrorProduto.Text = "Selecione um produto!";
             }
-            else if (gvProduto.SelectedValue != null)
+            else if (gOrcProd.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    string ID = gvProduto.SelectedValue.ToString();
+                    string ID = gOrcProd.SelectedValue.ToString();
                     PROD_ORCAMENTO prod_orcamento = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID.ToString().Equals(ID)).FirstOrDefault();
                     con_bd.PROD_ORCAMENTO.Remove(prod_orcamento);
                     con_bd.SaveChanges();
@@ -435,7 +435,7 @@ namespace PROJ_INTER_BC4S
                     }
 
                     lblSubtotalPd.Text = Convert.ToString(totalpd);
-                    gvProduto.SelectedIndex = -1;
+                    gOrcProd.SelectedIndex = -1;
 
                     var itemss = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
                     double totalsv = 0;
@@ -456,16 +456,16 @@ namespace PROJ_INTER_BC4S
 
         protected void btnExcluirServ_Click(object sender, EventArgs e)
         {
-            if (gvServico.SelectedValue == null)
+            if (gServProd.SelectedValue == null)
             {
                 lblErrorServico.ForeColor = System.Drawing.Color.Red;
                 lblErrorServico.Text = "Selecione um servico!";
             }
-            else if (gvServico.SelectedValue != null)
+            else if (gServProd.SelectedValue != null)
             {
                 using (BD_BICICLETARIA_4SEntities con_bd = new BD_BICICLETARIA_4SEntities())
                 {
-                    string ID = gvServico.SelectedValue.ToString();
+                    string ID = gServProd.SelectedValue.ToString();
                     REG_SERV_ORCAMENTO reg_serv_orcamento = con_bd.REG_SERV_ORCAMENTO.Where(linha => linha.ID.ToString().Equals(ID)).FirstOrDefault();
                     con_bd.REG_SERV_ORCAMENTO.Remove(reg_serv_orcamento);
                     con_bd.SaveChanges();
@@ -481,7 +481,7 @@ namespace PROJ_INTER_BC4S
                     }
 
                     lblSubtotalSv.Text = Convert.ToString(totalsv);
-                    gvServico.SelectedIndex = -1;
+                    gServProd.SelectedIndex = -1;
 
                     var itemsp = con_bd.PROD_ORCAMENTO.Where(linha => linha.ID_ORCAMENTO.ToString().Equals(lblIDOrc.Text)).ToList();
                     double totalpd = 0;

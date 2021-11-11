@@ -120,7 +120,7 @@
                     <div>
                         <asp:Label runat="server" ID="lblErrorProduto"></asp:Label>
                     </div>
-                    <asp:GridView runat="server" ID="gvProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
+                    <asp:GridView runat="server" ID="gOrcProd" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="ID">
                         <Columns>
                             <asp:BoundField DataField="ID_PRODUTO" HeaderText="Item" />
                             <asp:BoundField DataField="PRODUTO.DESCRICAO" HeaderText="Descrição" />
@@ -147,7 +147,7 @@
                     <div>
                         <asp:Label runat="server" ID="lblErrorServico"></asp:Label>
                     </div>
-                    <asp:GridView runat="server" ID="gvServico" AutoGenerateColumns="False" DataKeyNames="ID">
+                    <asp:GridView runat="server" ID="gServProd" AutoGenerateColumns="False" DataKeyNames="ID">
                         <Columns>
                             <asp:BoundField DataField="ID_SERVICO" HeaderText="Item" />
                             <asp:BoundField DataField="SERVICO.DESCRICAO" HeaderText="Descrição" />
@@ -167,7 +167,7 @@
                 <br />
                 <div id="titulo_dados_orcamento">Valor do orçamento</div>
                 <br/>
-                <div id="valor_total">
+                <div id="vtotal">
                     <asp:Label runat="server" ID="Label1" Text="Total: "></asp:Label><asp:Label runat="server" ID="lblValorTotal"></asp:Label>
                 </div>
                 <br />
