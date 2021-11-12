@@ -38,6 +38,11 @@ header {
     width: 200px;
     height: 103px;
 }
+#lblError{
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+}
 
 .logo img {
     width: 200px;
@@ -59,7 +64,7 @@ nav .menu {
 }
 
 #logout a {
-    margin-left: 150px;
+    margin-left: 100px;
     border-radius: 10px;
     background-color: #4a4848;
 }
