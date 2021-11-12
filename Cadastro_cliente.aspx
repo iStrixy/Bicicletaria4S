@@ -104,14 +104,14 @@
     <footer>
         <div class="topicos" id="topicos-principais">
             <h3><b>Menu</b></h3>
-            <p><a href="Index.html" class="trodape">Início</a></p>
-            <p><a href="Menu_cadastro.html" class="trodape">Cadastro</a></p>
-            <p><a href="Menu_consulta.html" class="trodape">Consulta</a></p>
-            <p><a href="Menu_orcamento.html" class="trodape">Orçamento</a></p>
+            <p><a href="Index.aspx" class="trodape">Início</a></p>
+            <p><a href="Menu_cadastro.aspx" class="trodape">Cadastro</a></p>
+            <p><a href="Menu_consulta.aspx" class="trodape">Consulta</a></p>
+            <p><a href="Menu_orcamento.aspx" class="trodape">Orçamento</a></p>
         </div>
         <div class="topicos" id="topicos-sobre">
             <h3><b>Sobre</b></h3>
-            <p><a href="Quem_somos.html" style="text-decoration: none;" class="trodape">Quem somos</a></p>
+            <p><a href="Quem_somos.aspx" style="text-decoration: none;" class="trodape">Quem somos</a></p>
         </div>
         <div class="topicos" id="topicos-contatos">
             <h3><b>Telefones para contato:</b></h3>
