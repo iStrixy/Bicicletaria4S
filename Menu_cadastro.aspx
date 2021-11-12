@@ -36,6 +36,11 @@
 							<li><a href="Ordem_servico.aspx" class="tmenu">Ordem de serviço</a></li>
 						</ul>
 					</li>
+					<li class="has-submenu"><a href="#" class="tmenu">Usuário</a>
+						<ul class="content_menu">
+							<li><a href="Cadastro_usuario.aspx" class="tmenu">Cadastro de usuário</a></li>
+						</ul>
+					</li>
 					<li class="has-submenu"><a href="#" class="tmenu">Consulta</a>
 						<ul class="content_menu">
 							<li><a href="Consulta_cliente.aspx" class="tmenu">Consulta de cliente</a></li>
@@ -61,6 +66,7 @@
 				<p><a href="Cadastro_servico.aspx" class="menu_cad">Serviço</a></p>
 				<p><a href="Cadastro_fabricante.aspx" class="menu_cad">Fabricante</a></p>
 				<p><a href="Cadastro_fornecedor.aspx" class="menu_cad">Fornecedor</a></p>
+				<p><a href="Cadastro_usuario.aspx" class="menu_cad">Cadastro de usuário</a></p>
 			</div>
 		</div>
 	</div>

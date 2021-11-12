@@ -14,7 +14,7 @@
         <div class="menu" id="topo">
 		<header>
 			<div class="logo">
-				<a href="#">
+				<a href="Index.aspx">
 					<img src="Imagens/Logotipo.png" alt="logotipo_site"/>
 				</a>
 			</div>

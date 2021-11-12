@@ -249,7 +249,7 @@ vtotal {
     font-size: 12px;
     font-weight: 700;
     padding: 10px;
-    background-color: gray;
+    background-color: darkorange;
     border: 2px solid black;
 }
 
@@ -257,16 +257,16 @@ vtotal {
     font-size: 12px;
     font-weight: 600;
     padding: 2px 3px;
-    background-color: white;
+    background-color: darkorange;
     text-decoration: none;
     border: 2px solid black;
 }
 
 #gOrcProd a {
-    color: black;
+    color: white;
     text-align: center;
     text-decoration: none;
-    background-color: white;
+    background-color: black;
     border-radius: 5px;
     font-size: 12px;
     font-weight: bold;
@@ -329,13 +329,16 @@ vtotal {
 #ddlServico{
     margin-left: 10px;
 }
+
 #qtd{
     margin-left: 10px;
 }
+
 #txtQuantidadeProduto{
     text-align:center;
    
 }
+
 #btnCadProduto {
     text-transform: uppercase;
     padding: 4px 4px;
@@ -409,11 +412,12 @@ vtotal {
     cursor: pointer;
     transition: .3s;
 }
+
 #gServProd th {
     font-size: 12px;
     font-weight: 700;
     padding: 10px;
-    background-color: gray;
+    background-color: darkorange;
     border: 2px solid black;
 }
 
@@ -421,13 +425,13 @@ vtotal {
     font-size: 12px;
     font-weight: 600;
     padding: 2px 3px;
-    background-color: white;
+    background-color: darkorange;
     text-decoration: none;
     border: 2px solid black;
 }
 
 #gServProd a {
-    color: black;
+    color: white;
     text-align: center;
     text-decoration: none;
     background-color: black;
@@ -436,7 +440,9 @@ vtotal {
     font-weight: bold;
     padding: 1px;
 }
-    /*ORDEM SERVIÇO*/
+
+/* Ordem de serviço */
+
 #btnImprimir {
     border-bottom: hidden;
     background-color: orange;
@@ -450,6 +456,7 @@ vtotal {
     cursor: pointer;
     text-align: center;
 }
+
 #gvOrdemServico th {
     font-size: 12px;
     padding: 10px;
@@ -475,6 +482,19 @@ vtotal {
     font-size: 12px;
     font-weight: bold;
     padding: 1px;
+}
+
+#titulo_consul_ordem_serv {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.consul_ordem_serv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
 }
 
 /*???*/
