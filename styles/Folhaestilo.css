@@ -64,7 +64,7 @@ nav .menu {
 }
 
 #logout a {
-    margin-left: 100px;
+    margin-left: 90px;
     border-radius: 10px;
     background-color: #4a4848;
 }
@@ -95,7 +95,7 @@ li.has-submenu:hover ul {
 }
 
 ul.menu {
-    margin-left: 0rem;
+    margin-left: -10rem;
     margin-top: 1.5rem;
     display: flex;
 }
