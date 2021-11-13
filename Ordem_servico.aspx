@@ -90,7 +90,7 @@
                 </div>
                 <div class="btn">
                     <asp:Button runat="server" class="btn_consul_imprimir" Text="Imprimir orçamento" ID="btnImprimir" OnClick="btnImprimir_Click"></asp:Button>
-                    <asp:Button runat="server" class="btn_consul_excluir" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
+                    <asp:Button runat="server" class="btn_ordem_excluir" Text="Excluir" ID="btnExcluir" OnClick="btnExcluir_Click"></asp:Button>
                 </div>
             </div>
         </div>

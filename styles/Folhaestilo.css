@@ -454,12 +454,20 @@ vtotal {
     padding: 6px 12px;
     color: black;
     border-radius: 5px;
+    margin-top: 20px;
     font-size: 14px;
     border-bottom: 2px solid;
     border-color: rgb(82, 82, 82);
     font-weight: bold;
     cursor: pointer;
     text-align: center;
+}
+.btn_ordem_excluir{
+    margin-top: 20px;
+}
+
+#gvOrdemServico{
+    margin-top: 50px;
 }
 
 #gvOrdemServico th {
